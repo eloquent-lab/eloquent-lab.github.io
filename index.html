@@ -1,48 +1,45 @@
 <html>
-<head>
-    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="newspaper.css">
-    <title>Newspaper Style Design Experiment</title>
-    <meta name="viewport" content="width=device-width">
+  <head>
+    <meta charset="UTF-8">
+    <title>ELOQUENT evaluation lab at CLEF</title>
+  </head>
+  <body>
+  <body style="background-color:#FAEBD7;color: 	#5A5A5A; padding: 20px; font-family: 'Verdana', sans-serif;">
+    <div style="padding:10px 200px; border: 5px solid #5a5a5a;border-radius: 20px;">
+    <h1 style="color: #5a5a5a">
+      ELOQUENT - quality of generative language models
+    </h1>
+    <p>
+      ELOQUENT is an evaluation lab with a set of shared tasks for evaluating the quality of generative language models. It will be launched in early 2024 as part of the <a href="http://clef2024.clef-initiative.eu/index.php">CLEF 2024</a> campaign. The lab will be presented at the <a href="https://clef2023.clef-initiative.eu/index.php">2023 CLEF</a> conference and at the <a href="https://www.ecir2024.org/">2024 ECIR</a> conference.
+    </p>
+    <p>
+      ELOQUENT is planned to run for three years, with the first year more exploratory and the two following years in a more consolidated manner. We are very interested in getting in touch with potential participants early on in the process to help formulate and fine-tune the tasks to achieve both feasibility and external impact.
+<!--      <img src="terminal.png" alt="" style="height: 140px; align:right"> -->
+    </p>
+    <h2>Proposed tasks</h2>
+    <p>
+      The evaluation tasks are planned to involve comparatively little human effort, and instead leverage the capacity of the current generation of AI models to generate, process, and assess human language input. The tasks will be designed with multilingual input in mind. Detailed design choices will be discussed among participants before the final version of the tasks is launched.
+    </p><p>
+	For this first year we propose four tasks:
+    </p>
+    
+      <h3>Task 1: Topical Test Generation</h3>
+      This task will test and verify a model's understanding of an application domain of interest through the application of automatically generated tests of domain knowledge. 
+      <h3>Task 2: Veracity and Hallucination</h3>
+      This task will test how the truthfulness or veracity of automatically generated text can be assessed. 
+      <h3>Task 3: Robustness</h3>
+      This task will test the capability of a model to handle input variation -- e.g.  dialectal, sociolectal, and cross-cultural --  as represented by human-generated varieties of input prompts. The results will be assessed by how variation in output is conditioned on variation of equivalent but non-identical input prompts.
 
-</head>
-<body>
-<div class="head">
-    <div class="headerobjectswrapper">
-        <div class="weatherforcastbox"><img src = "clef-logo.png" alt="CLEF Logo"></div>
-        <header>ELOQUENT Lab</header>
-	<div class="weatherforcastbox">	<img src = "clef2024-logo.png" alt="CLEF Logo"></div>
-    </div>
+      <h3>Task 4: Voight-Kampff</h3>
+      This task will explore whether automatically-generated text can be distinguished from human-authored text. This task will be organised in collaboration with the PAN lab at CLEF.
+    </p>
 
-    <div class="subhead">Shared tasks for evaluation of generative language model quality</div>
-</div>
-<div class="content">
-    <div class="collumns">
-        <div class="collumn">
-            <div class="head"><span class="headline hl3">Topical Competence</span><p><span class="headline hl4">Does it know what it is talking about?</span></p></div>
-	    <p>
-	      This task will test and verify a model's understanding of an application domain of interest through the application of automatically generated tests of domain knowledge.
-	    </p>
-	</div>
-	<div class="collumn">
-            <div class="head"><span class="headline hl5">Veracity and Hallucination</span><p><span class="headline hl6">Is it true? Or make-believe?</span></p></div>
-	  <p>
-	        This task will test how the truthfulness or veracity of automatically generated text can be assessed. 
-	  </p>
-        </div>
-        <div class="collumn"><div class="head"><span class="headline hl1">Robustness</span><p><span class="headline hl2">Will it respond with the same content to all of us?</span></p></div>
-	  <p>
-	        This task will test the capability of a model to handle input variation -- e.g.  dialectal, sociolectal, and cross-cultural --  as represented by human-generated varieties of input prompts. The results will be assessed by how variation in output is conditioned on variation of equivalent but non-identical input prompts.
-	  </p>
-        <div class="collumn"><div class="head"><span class="headline hl1">Voight-Kampff</span><p><span class="headline hl2">Has a machine written this? Or has a human author put together these words?</span></p></div>
-	  <p>
-	        This task will explore whether automatically-generated text can be distinguished from human-authored text. This task will be organised in collaboration with the PAN lab at CLEF.
-	  </p>
-	<figure class="figure">
-								<img class="media" src="terminal.png" alt="part human, part machine">
-								<figcaption class="figcaption">"This time, let go your conscious self and act on instinct."</figcaption>
-	</figure>
-    </div>
-</div>
-</body>
+    <h2>Organisers</h2>
+    <ul>
+      <li>   Jussi Karlgren, Aarne Talman, <a href="https://www.silo.ai/">SiloGen, Helsinki</a> </li>
+      <li>   Liane Guillou, Luise Dürlich, Evangelia Gogoulou, Joakim Nivre, <a href="https://www.ri.se/en/what-we-do/expertises/natural-language-processing">RISE ICT, Stockholm</a> </li>
+      <li>   Magnus Sahlgren, <a href="https://www.ai.se/en/projects-9/natural-language-understanding">AI Sweden, Stockholm</a> </li>
+    </ul>
+</div> 
+  </body>
 </html>
