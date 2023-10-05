@@ -36,7 +36,6 @@ p{
 
 }
 .weatherforcastbox{
-    position: relative;
     width: 12%;
     left: 10px;
     border: 3px double #2f2f2f;
