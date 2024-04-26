@@ -1,0 +1,155 @@
+{
+    "topicaltesttopics": {
+        "language": "en",
+        "date": "2024",
+        "type": "test",
+        "source": "eloquent organisers",
+        "prompt": "Create a set of questions that can be used to assess if someone knows about the following topic: ",
+        "topics": [
+            {
+                "id": "007",
+                "title": "ibs or irritable bowel syndrome",
+		"objective": "finding someone to write a health article for an in-flight  magazine",
+                "description": "IBS and its symptoms, treatments, and prognosis; causes, both lifestyle-related and somatic."
+            },
+            {
+                "id": "008",
+                "title": "choice of school and degree for high-schoolers",
+		"objective": "we want to hire a career advisor for our city school system",
+                "description": "Educational choice determines much of a student's future. Students want to study what they enjoy, what challenges them, and what is practically feasible for them. A career advisor needs to know about such things and also about future market outlooks for graduates with different degrees."
+            },
+            {
+                "id": "009",
+                "title": "wine and terroir",
+		"objective": "finding someone to write a popular science article for a gastronomy lifestyle magazine", 
+                "description": "The taste and chacter of wine is influenced by the terroir of the viticulture. We want to find someone with personal understanding of oenology to write a knowledgeable paper about this."
+            },
+            {
+                "id": "010",
+		"title"="graphology",
+		"objective": "personality analysis",
+                "description": "Many believe that handwriting reveals a lot about the writer's personality traits and employability. What are some things to think about when doing graphological analysis?"
+            },
+	    {
+                "id": "011",
+		"title"="marketing strategies for a newly founded publishing company",
+		"objective": "hiring a marketing manager",
+                "description": "We need help to define how to market our publishing company to creators, distributors, and readers. We need interview questions for candidates to hire."
+            },
+            {
+                "id": "012",
+		"title"="Cosplay clothing",
+		"objective": "hiring a cosplay specialist",
+                "description": "Our clothing store will open a department with cosplay materials. We need interview questions for candidates to hire to manage it."
+            },
+            {
+                "id": "013",
+		"title"="bespoke travel arrangement ",
+		"objective": "hiring a luxury travel agent",
+                "description": "Our company needs to hire someone who can tailor itineraries for very demanding customers. We need challenging interview questions for candidates for the position."
+            },
+            {
+                "id": "014",
+		"title"="guidance for professional attire and wardrobe choice",
+		"objective": "writing guidelines for our employees",
+                "description": "Our employees dress badly and we need to give them guidance. We need to select someone to be the attire counselor."
+            },
+            {
+                "id": "015",
+		"title"="fast food hygiene",
+		"objective": "We need to step up our food safety routines",
+                "description": "We need to hire someone to oversee our food storage, food preparation, and cleaning routines."
+            },
+            {
+                "id": "016",
+		"title"="quality assessment of generative AI systems",
+		"objective": "guidelines",
+                "description": "We need a quiz to test the quality of a generative language model."
+            },
+            {
+                "id": "017",
+		"title"="elevator maintenance",
+		"objective": "hiring a technician",
+                "description": "Elevator maintenance involves both routine upkeep and periodic inspection. What does a technician need to know to handle this?"
+            },
+            {
+                "id": "018",
+		"title"="climate change",
+		"objective": "hiring an editor"
+                "description": "We want to hire a correspondent who understands the research on climate change."
+            },
+            {
+                "id": "019",
+		"title"="tea",
+		"objective": "inspecific",
+                "description": "Tea, the drink, its preparation and serving, agriculture, and responsible sourcing."
+            },
+            {
+                "id": "020",
+		"title"="startup life",
+		"objective": "finding someone to write a feature article for a lifestyle magazine",
+                "description": "What are some of the good and bad things about starting a company in tech (including adjacent business sectors)."
+            },
+	    {
+                "id": "021",
+		"title"="detecting conspiracy theories",
+		"objective": "hiring an editor for a tabloid",
+                "description": "How can an editor detect that a news story is bunk?"
+            },
+            {
+                "id": "022",
+		"title"="Health insurance policy",
+		"objective": "hiring an HR specialist",
+                "description": "Health insurance works differently in different markets. Our company needs to know about this. "
+            },
+	    {
+                "id": "023",
+		"title"="Harry Potter books and Hogwarts School of Witchcraft and Wizardry",
+		"objective": "inspecific",
+                "description": "Harry Potter lore, characters, consistency, detail, bloopers, including fan fiction."
+            },
+            {
+                "id": "024",
+		"title"="Basketball news",
+		"objective": "hiring a commentator for a radio station",
+                "description": "Latest developments in basketball"
+            },
+	    {
+                "id": "025",
+		"title"="Cricket rules",
+		"objective": "hiring a commentator for a radio station",
+                "description": "Including history, arcane detail, and literary connotations."
+            },
+            {
+                "id": "026",
+                "title": "vegan food economy and ethics",
+		"objective": "inspecific",
+                "description": "Vegan food production, costs, alternative use of the resources, sustainability, ethical consideration including animal rights."
+            },
+	    {
+                "id": "027",
+		"title"="using social media to become a successful influencer",
+		"objective": "hiring a consultant",
+                "description": "I need help to become a famous influencer and I want to hire an assistant who knows how to use social media for maximum impact."
+            },
+            {
+                "id": "028",
+		"title"="receptionist duties",
+		"objective": "hiring a receptionist",
+                "description": "Things a receptionist should know to do their job, their duties, and what they should not expect to do."
+            },
+	    {
+                "id": "029",
+		"title"="pharmaceutical companies business outlook",
+		"objective": "investment advice",
+                "description": "We need an advisor to manage business investments in the pharmaceutical sector."
+            },
+            {
+                "id": "030",
+                "title": "risks and benefits of keeping a pet cat",
+		"objective": "inspecific", 
+                "description": "A set of questions to help decide if one should get a pet cat or not."
+            }
+	]
+    }
+}

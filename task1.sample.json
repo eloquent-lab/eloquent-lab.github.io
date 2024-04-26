@@ -1,0 +1,48 @@
+{
+    "topicaltesttopics": {
+        "language": "en",
+        "date": "2023",
+        "type": "example",
+        "source": "eloquent organisers",
+        "prompt": "Create a set of questions that can be used to assess if someone knows about the following topic: ",
+        "topics": [
+            {
+                "id": "001",
+                "title": "e-scooters",
+		"objective": "inspecific",
+                "description": "Electric scooters are a popular new vehicle found in many cities around the world, often available through scooter-sharing services."
+            },
+            {
+                "id": "002",
+                "title": "dietary advice",
+		"objective": "inspecific",
+                "description": "Diet advice has traditionally focussed on weight management and weight loss. Today, dietary advice is about a much broader range of effects, both on the individual and on broader society."
+            },
+            {
+                "id": "003",
+                "title": "beekeeping",
+		"objective": "finding someone to write a feature article for a gardening magazine",
+                "description": "Beekeeping can be both professional or a hobby and there are controversies as to its environmental impact. We need to check if a candidate author is knowledgeable about the various aspects of beekeeping before hiring them to write a feature article about it."
+            },
+            {
+                "id": "004",
+                "title": "audio technology",
+		"objective": "finding a new employee for a company that develops digital sound processing ",
+                "description": "Audio processing involves a broad range of technologies, both new and established. We need to hire someone who can make the right choices for our customer-facing operations, balancing quality, convenience, and market value. "
+            },
+            {
+                "id": "005",
+                "title": "recycling",
+		"objective": "recruiting an administrator for a city agency with new responsibilities for recycling processes",
+                "description": "Our city has reorganised its agencies and we will need to make a new ten-year plan for recycling, taking environmental, economic, administrative, and oversight effects into account."
+            },
+            {
+                "id": "006",
+                "title": "stenography",
+		"objective": "recruiting a teacher for a business college",
+                "description": "In spite of transcription systems, shorthand reporting or stenography retains value for some specific use cases. We need to have a teacher who has a broad understanding of where stenography is useful and what systems are the most convenient for those use cases."
+            }
+        ]
+    }
+}
+

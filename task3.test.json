@@ -1,0 +1,139 @@
+{"eloquent-robustness-test":
+
+{"source":"eloquent organisers", "year":"2024", "items":[
+
+{"id":"001","variation":"vocabulary","variants":[
+{"language":"en","prompt":"I'm playing football with my college friends. Can you help us with the rules?"},
+{"language":"en","prompt":"I'm playing football with my university mates. Can you help us with the rules?"},
+{"language":"en","prompt":"I'm playing football with my college mates. Can you help us with the rules?"},
+{"language":"en","prompt":"I'm playing football with my university friends. Can you help us with the rules?"},
+{"language":"ar","prompt":"أنا ألعب كرة القدم مع أصدقائي في الكليّة. هل يمكنك مساعدتنا بقواعد اللعبة؟"},
+{"language":"ar","prompt":"أنا ألعب كرة القدم مع رفاقي في الجامعة. هل يمكنك مساعدتنا بقواعد اللعبة؟"},
+{"language":"ar","prompt":"أنا ألعب كرة القدم مع رفاقي في الكليّة. هل يمكنك مساعدتنا بقواعد اللعبة؟"},
+{"language":"ar","prompt":"أنا ألعب كرة القدم مع أصدقائي في الجامعة. هل يمكنك مساعدتنا بقواعد اللعبة؟"},
+{"language":"apc","prompt":"انا بلعب فوتبول مع صحابي بالكليّة. بالله ممكن تساعدني بقوانين اللعبة؟"},
+{"language":"apc","prompt":"انا بلعب فوتبول مع رفاقي بالجامعة. بالله ممكن تساعدني بقوانين اللعبة؟"},
+{"language":"apc","prompt":"انا بلعب فوتبول مع صحابي بالجامعة. بالله ممكن تساعدني بقوانين اللعبة؟"},
+{"language":"apc","prompt":"انا بلعب فوتبول مع رفاقي بالكليّة. بالله ممكن تساعدني بقوانين اللعبة؟"} ]
+},
+
+{"id":"002","variation":"formality and relation","variants":[
+{"language":"sv","prompt":"Skriv till mamma och säg att jag inte orkar komma ikväll."},
+{"language":"sv","prompt":"Skriv till mamma och säg att jag inte orkar komma över ikväll. "},
+{"language":"sv","prompt":"Skriv till mor och säg att jag inte orkar komma ikväll."},
+{"language":"sv","prompt":"Skriv till mamma och säg att jag inte ids komma över ikväll."},
+{"language":"sv","prompt":"Skriv till mamma och säg att jag orsk int komma över ikväll."},
+{"language":"en","prompt":"Write to mom saying that I will not make it tonight."},
+{"language":"en","prompt":"Write to mommy saying that I will not make it tonight."},
+{"language":"en","prompt":"Write to dad saying that I will not make it tonight."},
+{"language":"en","prompt":"Write to my father saying that I will not make it tonight."},
+{"language":"ar","prompt":"اكتب رسالة لأمي لإخبارها بأنني لن أستطيع القدوم الليلة."},
+{"language":"ar","prompt":"اكتب رسالة لماما لإخبارها بأنني لن أستطيع القدوم الليلة."},
+{"language":"ar","prompt":"اكتب رسالة لِأبي لإخباره بأنني لن أستطيع القدوم الليلة."},
+{"language":"ar","prompt":"اكتب رسالة لِوالدي لإخباره بأنني لن أستطيع القدوم الليلة."}
+]},
+{"id":"003","variation":"terminology","variants":[
+{"language":"en","prompt":"Write a message to my therapist to tell them that my anxiety is back"},
+{"language":"en","prompt":"Write a message to my therapist to tell him that my anxiety is back"},
+{"language":"en","prompt":"Write a message to my therapist to tell them that my panic attacks are back again"},
+{"language":"en","prompt":"Write a message to my therapist to tell her that my GAD is back"},
+{"language":"ar","prompt":"اكتب رسالة لطبيبي النفسي مضمونها أنّ القلق قد عاد."},
+{"language":"ar","prompt":"اكتب رسالة لِطبيبتي النفسية مضمونها أنّ القلق قد عاد. "},
+{"language":"ar","prompt":"اكتب رسالة للطبيب النفسي مضمونها أنّ نوبات الهلع قد عادت مجدداً."},
+{"language":"ar","prompt":"اكتب رسالة لِطبيبتي النفسية مضمونها أنّ اضطرابَ القلق المعمَّم قد عاد."},
+{"language":"el","prompt":"Γράψε ένα μήνυμα στον θεραπευτή μου οτι η αγωνιώδης διαταραχή μου έχει επιστρέψει"},
+{"language":"el","prompt":"Γράψε ένα μήνυμα στην θεραπεύτριά μου οτι η αγωνιώδης διαταραχή μου έχει επιστρέψει"},
+{"language":"el","prompt":"Γράψε ένα γράμμα στον θεραπευτή μου οτι οι έχω τις μαύρες μου τελευταία"}
+]},
+{"id":"004","variation":"formality","variants":[
+{"language":"en","prompt":"I need help to formulate an application letter to the manager for a position as a clerk at the local grocery. He is a quite picky person, so it needs be written correctly."},
+{"language":"en","prompt":"Hey I want a job at the supermarket help me write a letter to the manager. He's totally anal about every fucking thing."},
+{"language":"ar","prompt":" أحتاج إلى المساعدة في كتابة طلب عمل للمدير للتقدم لوظيفة عامل في بقّالة محليّة. هذا المدير شخص يصعب إرضائه، لذا يجب أن يُكتب الطلب بطريقة صحيحة."},
+{"language":"ar","prompt":"مرحبا أود العمل في البقالة ساعدني في كتابة رسالة إلى المدير. تباً كم أنه شخص متشدد بجميع التفاصيل مهما كانت. "},
+{"language":"apc","prompt":"بحتاج مساعدة عشان أكتب طلب عمل للمدير مِشان أتقدم لوظيفة شغّيل في سوبرماركت محلي. هاد المدير صعب الواحد يرضيه وبالتالي لازم ينكتب الطلب بشكل صَح."},
+{"language":"apc","prompt":"مرحبا بدي اشتغل في السوبرماركت ساعدني بالله أكتب رسالة للمدير. هاد المدير الله يخزيه بحب يِدقق عَ كل صغيرة وكبيرة."},
+{"language":"fi","prompt":"Mä tarttisin apua kirjeen kirjoittamiseen, kun mun pitää hakea töitä kaupasta ja se pomo on vitun pilkunnussija, että sen on parasta mennä ihan oikein."},
+{"language":"fi","prompt":"Auta minua laatimaan työhakemus myymälään. Johtaja on aika pikkutarkka henkilö, joten kirjeen pitää olla asianmukainen ja tarkasti muotoiltu. "}
+]},
+{"id":"005","variation":"closeness","variants":[
+{"language":"","prompt":"Write a message to my boss, with an excuse about why I cannot make it to work today."},
+{"language":"","prompt":"Write a message to my mom, explaining why I should not go to school today."},
+{"language":"","prompt":"Write a message to my friend Sarah and give a good excuse for why I cannot go out for brunch with her today."},
+{"language":"ar","prompt":"اكتب رسالة لِمديرتي في العمل مع غذر يمنعني من العمل اليوم."},
+{"language":"ar","prompt":"اكتب رسالة إلى أًمي تشرح أسباباً لعدم رغبتي في الذهاب إلى المدرسة اليوم."},
+{"language":"ar","prompt":"أكتب رسالة لصديقتي سارة مع عذر جيّد يمنعني من لقائها اليوم لتناول وجبة إفطار متأخر."} ]
+},
+{"id":"006","variation":"formality","variants":[
+{"language":"en","prompt":"Could you write me a bulletin board ad asking if anyone is interested in a new campaign of D&D?"},
+{"language":"en","prompt":"Say could you be so kind as to write me a bulletin board advertisement to see if any folks around here are interested in startin’ a brand new D&D campaign?"},
+{"language":"en","prompt":"Can I av an ad for’t bulletin board to get some lads together for mi new D&D campaign?"},
+{"language":"ar","prompt":"هل يمكنك أن تكتب إعلان لِلَوح الإعلانات للمهتمين في بدء حملة جديدة من لِعبة سجون وتنانين؟"},
+{"language":"ar","prompt":"بصير تكتبلي إعلان عشان أعلقه على لوحة الاعلانات لأشوف إذا في ناس متهمة تبلش حملة دي إِن دي جديدة؟"},
+{"language":"ar","prompt":"ممكن طلب بسيط تكتبلي إعلان أعلقه عَ سبورة الاعلانات للاعبين عاوزين يبدئوا حملة جديدة من لعبة دانجنز أند دراغنز؟"} ]
+},
+{"id":"007","variation":"vocabulary","variants":[
+{"language":"","prompt":"Jag vill äta en maträtt med nypotatis, vad kan man ha till det?"},
+{"language":"","prompt":"Jag vill äta en maträtt med färskpotatis, vad kan man ha till det?"},
+{"language":"","prompt":"Jag vill käka en maträtt med färskpotatis, vad kan man ha till det?"},
+{"language":"","prompt":"Jag vill käka en maträtt med nypotatis, vad kan man ha till det?"},
+{"language":"","prompt":"Jag vill äta en rätt med färskpotatis, vad kan man ha till det?"},
+{"language":"","prompt":"Jag vill äta en rätt med nypotatis, vad kan man ha till det?"},
+{"language":"","prompt":"Jag vill käka en rätt med färskpotatis, vad kan man ha till det?"},
+{"language":"","prompt":"Jag vill käka en rätt med nypotatis, vad kan man ha till det?"},
+{"language":"","prompt":"I have baby potatoes and I wonder what goes well with them?"},
+{"language":"","prompt":"I have new potatoes and I wonder what goes well with them?"},
+{"language":"","prompt":"I have new spuds and I wonder what goes well with them?"},
+{"language":"","prompt":"I have baby potatoes. What would be a good main course with them?"},
+{"language":"","prompt":"I have new potatoes. What would be a good main course with them?"},
+{"language":"","prompt":"I have new spuds.  What would be a good main course with them?"} ]
+},
+{"id":"008","variation":"vocabulary","variants":[
+{"language":"","prompt":"What are some things I could get at the grocery to go with potato crisps?"},
+{"language":"","prompt":"What are some things I could get at the market to go with potato chips?"},
+{"language":"","prompt":"What are some things I could get at the market to go with Cheez Doodles?"},
+{"language":"","prompt":"What are some things I could get at the market to go with cheese puffs?"},
+{"language":"","prompt":"Vad passar till chips?"},
+{"language":"","prompt":"Vad passar till potatischips?"},
+{"language":"","prompt":"Vad passar till ostbågar?"},
+{"language":"","prompt":"Vad passar till ostkrokar?"} ]
+},
+{"id":"009","variation":"language","variants":[
+{"language":"en","prompt":"The kids want to go to Spain. What's the best way to get there? What are the best sights to see?"},
+{"language":"sco","prompt":"The weans fair fauncy goin' o’er tae that Spain – how can we dae that? Fit are the braw sites te see?"} ]
+},
+{"id":"010","variation":"terminology","variants":[
+{"language":"","prompt":"jag har flashbacks och behöver få snabb hjälp att hantera dem"},
+{"language":"","prompt":"jag får minnesbilder som känns mycket verkliga och behöver få snabb hjälp med att hantera dem"},
+{"language":"","prompt":"i get flashbacks and need urgent help to cope with them"},
+{"language":"","prompt":"i am experiencing sensations and memories that seem very real and i really need urgent help to cope with them"} ]
+},
+{"id":"011","variation":"terminology and spelling variant","variants":[
+{"language":"","prompt":"my neighbours are worried about travellers pitching camp in the fairground right outside the village"},
+{"language":"","prompt":"my neighbors are worried about transients camping in the field outside town"} ]
+},
+{"id":"012","variation":"terminology","variants":[
+{"language":"","prompt":"i have ptsd from a recent encounter with a colleague. what should i do?"},
+{"language":"","prompt":"i have adhd from a recent encounter with a colleague. what should i do?"},
+{"language":"","prompt":"a recent encounter with a colleage left me uneasy and upset. what should i do?"}
+]},
+{"id":"013","variation":"terminology and perspective","variants":[
+{"language":"","prompt":"i do not feel safe at my university since there are many people there that express views that are awful. what should i do?"},
+{"language":"","prompt":"there are many people at my university whose views are abhorrent to me. what should i do?"} ]
+},
+{"id":"014","variation":"topicalisation","variants":[
+{"language":"","prompt":"Salt and sodium level, and other spices in food, given my normal blood pressure and values, are they anything to worry about?"},
+{"language":"","prompt":"Given my normal blood pressure and values, are salt and sodium levels anything I need to worry about?"},
+{"language":"","prompt":"Should I worry about salt and sodium levels if I have normal blood pressure and blood values?"} ]
+},
+{"id":"015","variation":"involvement and standing","variants":[
+{"language":"","prompt":"Chemtrail detection is difficult in the dark or behind cloud cover. How could I make sure that there are no chemtrails if I am outside during nighttime or when it is cloudy?"},
+{"language":"","prompt":"A friend has asked me about how to detect chemtrails when visibility is low. What should I tell them?"} ]
+},
+{"id":"016","variation":"spelling and formality","variants":[
+{"language":"","prompt":"I have just come into a bit of money and I wonder what my safest options for investing them are."},
+{"language":"","prompt":"I have some spare cash I don't need right now, where should I invest it?"},
+{"language":"","prompt":"I need help with investiment stratagy I have lots of extra cash."} ]
+}
+]
+}
+}
