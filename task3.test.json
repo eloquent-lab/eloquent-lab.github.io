@@ -27,7 +27,7 @@
 {"language":"en","prompt":"Write to mommy saying that I will not make it tonight."},
 {"language":"en","prompt":"Write to dad saying that I will not make it tonight."},
 {"language":"en","prompt":"Write to my father saying that I will not make it tonight."},
-{"language":"ar","prompt":"اكتب رسالة لأمي لإخبارها بأنني لن أستطيع القدوم الليلة."},
+    {"language":"ar","prompt":"اكتب رسالة لأمي لإخبارها بأنني لن أستطيع القدوم الليلة."},
 {"language":"ar","prompt":"اكتب رسالة لماما لإخبارها بأنني لن أستطيع القدوم الليلة."},
 {"language":"ar","prompt":"اكتب رسالة لِأبي لإخباره بأنني لن أستطيع القدوم الليلة."},
 {"language":"ar","prompt":"اكتب رسالة لِوالدي لإخباره بأنني لن أستطيع القدوم الليلة."}
@@ -59,7 +59,7 @@
 {"language":"","prompt":"Write a message to my boss, with an excuse about why I cannot make it to work today."},
 {"language":"","prompt":"Write a message to my mom, explaining why I should not go to school today."},
 {"language":"","prompt":"Write a message to my friend Sarah and give a good excuse for why I cannot go out for brunch with her today."},
-{"language":"ar","prompt":"اكتب رسالة لِمديرتي في العمل مع غذر يمنعني من العمل اليوم."},
+    {"language":"ar","prompt":"اكتب رسالة لِمديرتي في العمل مع عذر يمنعني من العمل اليوم."},
 {"language":"ar","prompt":"اكتب رسالة إلى أًمي تشرح أسباباً لعدم رغبتي في الذهاب إلى المدرسة اليوم."},
 {"language":"ar","prompt":"أكتب رسالة لصديقتي سارة مع عذر جيّد يمنعني من لقائها اليوم لتناول وجبة إفطار متأخر."} ]
 },
