@@ -56,10 +56,10 @@
 {"language":"fi","prompt":"Auta minua laatimaan työhakemus myymälään. Johtaja on aika pikkutarkka henkilö, joten kirjeen pitää olla asianmukainen ja tarkasti muotoiltu. "}
 ]},
 {"id":"005","variation":"closeness","variants":[
-{"language":"","prompt":"Write a message to my boss, with an excuse about why I cannot make it to work today."},
-{"language":"","prompt":"Write a message to my mom, explaining why I should not go to school today."},
-{"language":"","prompt":"Write a message to my friend Sarah and give a good excuse for why I cannot go out for brunch with her today."},
-    {"language":"ar","prompt":"اكتب رسالة لِمديرتي في العمل مع عذر يمنعني من العمل اليوم."},
+{"language":"en","prompt":"Write a message to my boss, with an excuse about why I cannot make it to work today."},
+{"language":"en","prompt":"Write a message to my mom, explaining why I should not go to school today."},
+{"language":"en","prompt":"Write a message to my friend Sarah and give a good excuse for why I cannot go out for brunch with her today."},
+{"language":"ar","prompt":"اكتب رسالة لِمديرتي في العمل مع عذر يمنعني من العمل اليوم."},
 {"language":"ar","prompt":"اكتب رسالة إلى أًمي تشرح أسباباً لعدم رغبتي في الذهاب إلى المدرسة اليوم."},
 {"language":"ar","prompt":"أكتب رسالة لصديقتي سارة مع عذر جيّد يمنعني من لقائها اليوم لتناول وجبة إفطار متأخر."} ]
 },
@@ -72,67 +72,71 @@
 {"language":"ar","prompt":"ممكن طلب بسيط تكتبلي إعلان أعلقه عَ سبورة الاعلانات للاعبين عاوزين يبدئوا حملة جديدة من لعبة دانجنز أند دراغنز؟"} ]
 },
 {"id":"007","variation":"vocabulary","variants":[
-{"language":"","prompt":"Jag vill äta en maträtt med nypotatis, vad kan man ha till det?"},
-{"language":"","prompt":"Jag vill äta en maträtt med färskpotatis, vad kan man ha till det?"},
-{"language":"","prompt":"Jag vill käka en maträtt med färskpotatis, vad kan man ha till det?"},
-{"language":"","prompt":"Jag vill käka en maträtt med nypotatis, vad kan man ha till det?"},
-{"language":"","prompt":"Jag vill äta en rätt med färskpotatis, vad kan man ha till det?"},
-{"language":"","prompt":"Jag vill äta en rätt med nypotatis, vad kan man ha till det?"},
-{"language":"","prompt":"Jag vill käka en rätt med färskpotatis, vad kan man ha till det?"},
-{"language":"","prompt":"Jag vill käka en rätt med nypotatis, vad kan man ha till det?"},
-{"language":"","prompt":"I have baby potatoes and I wonder what goes well with them?"},
-{"language":"","prompt":"I have new potatoes and I wonder what goes well with them?"},
-{"language":"","prompt":"I have new spuds and I wonder what goes well with them?"},
-{"language":"","prompt":"I have baby potatoes. What would be a good main course with them?"},
-{"language":"","prompt":"I have new potatoes. What would be a good main course with them?"},
-{"language":"","prompt":"I have new spuds.  What would be a good main course with them?"} ]
+{"language":"sv","prompt":"Jag vill äta en maträtt med nypotatis, vad kan man ha till det?"},
+{"language":"sb","prompt":"Jag vill äta en maträtt med färskpotatis, vad kan man ha till det?"},
+{"language":"sv","prompt":"Jag vill käka en maträtt med färskpotatis, vad kan man ha till det?"},
+{"language":"sv","prompt":"Jag vill käka en maträtt med nypotatis, vad kan man ha till det?"},
+{"language":"sv","prompt":"Jag vill äta en rätt med färskpotatis, vad kan man ha till det?"},
+{"language":"sv","prompt":"Jag vill äta en rätt med nypotatis, vad kan man ha till det?"},
+{"language":"sv","prompt":"Jag vill käka en rätt med färskpotatis, vad kan man ha till det?"},
+{"language":"sv","prompt":"Jag vill käka en rätt med nypotatis, vad kan man ha till det?"},
+{"language":"en","prompt":"I have baby potatoes and I wonder what goes well with them?"},
+{"language":"en","prompt":"I have new potatoes and I wonder what goes well with them?"},
+{"language":"en","prompt":"I have new spuds and I wonder what goes well with them?"},
+{"language":"en","prompt":"I have baby potatoes. What would be a good main course with them?"},
+{"language":"en","prompt":"I have new potatoes. What would be a good main course with them?"},
+{"language":"en","prompt":"I have new spuds.  What would be a good main course with them?"} ]
 },
 {"id":"008","variation":"vocabulary","variants":[
-{"language":"","prompt":"What are some things I could get at the grocery to go with potato crisps?"},
-{"language":"","prompt":"What are some things I could get at the market to go with potato chips?"},
-{"language":"","prompt":"What are some things I could get at the market to go with Cheez Doodles?"},
-{"language":"","prompt":"What are some things I could get at the market to go with cheese puffs?"},
-{"language":"","prompt":"Vad passar till chips?"},
-{"language":"","prompt":"Vad passar till potatischips?"},
-{"language":"","prompt":"Vad passar till ostbågar?"},
-{"language":"","prompt":"Vad passar till ostkrokar?"} ]
+{"language":"en","prompt":"What are some things I could get at the grocery to go with potato crisps?"},
+{"language":"en","prompt":"What are some things I could get at the market to go with potato chips?"},
+{"language":"en","prompt":"What are some things I could get at the market to go with Cheez Doodles?"},
+{"language":"en","prompt":"What are some things I could get at the market to go with cheese puffs?"},
+{"language":"sv","prompt":"Vad passar till chips?"},
+{"language":"sv","prompt":"Vad passar till potatischips?"},
+{"language":"sv","prompt":"Vad passar till ostbågar?"},
+{"language":"sv","prompt":"Vad passar till ostkrokar?"} ]
 },
 {"id":"009","variation":"language","variants":[
 {"language":"en","prompt":"The kids want to go to Spain. What's the best way to get there? What are the best sights to see?"},
 {"language":"sco","prompt":"The weans fair fauncy goin' o’er tae that Spain – how can we dae that? Fit are the braw sites te see?"} ]
 },
 {"id":"010","variation":"terminology","variants":[
-{"language":"","prompt":"jag har flashbacks och behöver få snabb hjälp att hantera dem"},
-{"language":"","prompt":"jag får minnesbilder som känns mycket verkliga och behöver få snabb hjälp med att hantera dem"},
-{"language":"","prompt":"i get flashbacks and need urgent help to cope with them"},
-{"language":"","prompt":"i am experiencing sensations and memories that seem very real and i really need urgent help to cope with them"} ]
+{"language":"sv","prompt":"jag har flashbacks och behöver få snabb hjälp att hantera dem"},
+{"language":"sv","prompt":"jag får minnesbilder som känns mycket verkliga och behöver få snabb hjälp med att hantera dem"},
+{"language":"en","prompt":"i get flashbacks and need urgent help to cope with them"},
+{"language":"en","prompt":"i am experiencing sensations and memories that seem very real and i really need urgent help to cope with them"} ]
 },
 {"id":"011","variation":"terminology and spelling variant","variants":[
-{"language":"","prompt":"my neighbours are worried about travellers pitching camp in the fairground right outside the village"},
-{"language":"","prompt":"my neighbors are worried about transients camping in the field outside town"} ]
+{"language":"en","prompt":"my neighbours are worried about travellers pitching camp in the fairground right outside the village"},
+{"language":"en","prompt":"my neighbors are worried about transients camping in the field outside town"} ]
 },
 {"id":"012","variation":"terminology","variants":[
-{"language":"","prompt":"i have ptsd from a recent encounter with a colleague. what should i do?"},
-{"language":"","prompt":"i have adhd from a recent encounter with a colleague. what should i do?"},
-{"language":"","prompt":"a recent encounter with a colleage left me uneasy and upset. what should i do?"}
+{"language":"en","prompt":"i have ptsd from a recent encounter with a colleague. what should i do?"},
+{"language":"en","prompt":"i have adhd from a recent encounter with a colleague. what should i do?"},
+{"language":"en","prompt":"a recent encounter with a colleage left me uneasy and upset. what should i do?"}
+{"language":"en","prompt":"one of my collegues is a right bastard and is driving me fucking crazy! what should i do?"}
+{"language":"sv","prompt":"jag får fan spel av en kollega som är så jävla otrevlig! vad ska jag göra?"},
+{"language":"sv","prompt":"jag har ptsd efter ett möte med en mina kollegor. vad ska jag göra?"},
+{"language":"sv","prompt":"jag blev jätteledsen efter att ha snackat med en av mina kollegor. vad ska jag göra?"}
 ]},
 {"id":"013","variation":"terminology and perspective","variants":[
-{"language":"","prompt":"i do not feel safe at my university since there are many people there that express views that are awful. what should i do?"},
-{"language":"","prompt":"there are many people at my university whose views are abhorrent to me. what should i do?"} ]
+{"language":"en","prompt":"i do not feel safe at my university since there are many people there that express views that are awful. what should i do?"},
+{"language":"en","prompt":"there are many people at my university whose views are abhorrent to me. what should i do?"} ]
 },
 {"id":"014","variation":"topicalisation","variants":[
-{"language":"","prompt":"Salt and sodium level, and other spices in food, given my normal blood pressure and values, are they anything to worry about?"},
-{"language":"","prompt":"Given my normal blood pressure and values, are salt and sodium levels anything I need to worry about?"},
-{"language":"","prompt":"Should I worry about salt and sodium levels if I have normal blood pressure and blood values?"} ]
+{"language":"en","prompt":"Salt and sodium level, and other spices in food, given my normal blood pressure and values, are they anything to worry about?"},
+{"language":"en","prompt":"Given my normal blood pressure and values, are salt and sodium levels anything I need to worry about?"},
+{"language":"en","prompt":"Should I worry about salt and sodium levels if I have normal blood pressure and blood values?"} ]
 },
 {"id":"015","variation":"involvement and standing","variants":[
-{"language":"","prompt":"Chemtrail detection is difficult in the dark or behind cloud cover. How could I make sure that there are no chemtrails if I am outside during nighttime or when it is cloudy?"},
-{"language":"","prompt":"A friend has asked me about how to detect chemtrails when visibility is low. What should I tell them?"} ]
+{"language":"en","prompt":"Chemtrail detection is difficult in the dark or behind cloud cover. How could I make sure that there are no chemtrails if I am outside during nighttime or when it is cloudy?"},
+{"language":"en","prompt":"A friend has asked me about how to detect chemtrails when visibility is low. What should I tell them?"} ]
 },
 {"id":"016","variation":"spelling and formality","variants":[
-{"language":"","prompt":"I have just come into a bit of money and I wonder what my safest options for investing them are."},
-{"language":"","prompt":"I have some spare cash I don't need right now, where should I invest it?"},
-{"language":"","prompt":"I need help with investiment stratagy I have lots of extra cash."} ]
+{"language":"en","prompt":"I have just come into a bit of money and I wonder what my safest options for investing them are."},
+{"language":"en","prompt":"I have some spare cash I don't need right now, where should I invest it?"},
+{"language":"en","prompt":"I need help with investiment stratagy I have lots of extra cash."} ]
 }
 ]
 }
