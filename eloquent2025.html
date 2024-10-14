@@ -39,7 +39,10 @@
 	    <span class="headline hl1">Dictionary Definition</span>
 	  </div>
 	  <p>
-	  This task tests the capability of a generative language model to select the correct terminological definition from a list of sham and correct choices. It is inspired by the dictionary board game which is marketed in various languages under various names where a player picking a rare word from a dictionary and the other players write sham definitions for the word. Each player then needs to identify which definition is the actual one and players gain points from fooling other players into believing their suggested definitions are the actual real one. 
+The Dictionary Definition Task is new for the second edition, and involves having participating systems play a variant of the popular Dictionary parlour game, implemented and marketed as a popular 1980's board game under various names such as Balderdash, Rappakalja, or Kokkelimonke. The idea is for each player to formulate plausible and convincing definitions to uncommmon and unknown words. These definitions are shared to the other players, with a correct definition mixed in with the player-authored ones, and points are awarded to a player's definition if other players are fooled into believing it to be the true one.
+
+This task will be implemented as a system-submission task, where participants are expected to provide a runnable script to be executed by the organisers. The participants are restricted to a shared set of pre-trained models, which will be fine-tuned over the course of the experiment by the organisers, with both helpful and confounding data, and the scoring will be influenced by the robustness of the script, its prompting, and its continued adaptation to incoming data.  
+
 	  </p>
 	  	    <img class="media" src="ordbok.png" alt="an image of a page from a dictionary">
 	  <p>
