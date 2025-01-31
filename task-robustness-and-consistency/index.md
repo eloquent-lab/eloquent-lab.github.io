@@ -1,7 +1,3 @@
-yaml
-layout: default
-title: "Robustness and Consistency Task"
-
 # Robustness and Consistency
 ### A task of the 2025 ELOQUENT lab on evaluating quality of generative language models
 The Robustness and Consistency task explores the capability of a generative language model to handle input variation -- e.g. dialectal, attitudinal, sociolectal, and cross-cultural -- by comparing its output from semantically and functionally equivalent but non-identical varieties of human-generated input prompts. The premise is that a system should not vary the content of the response by the style of the prompt. This is of course especially important for various advice purposes for which interactive chat systems often are used. We refer to a system based on a generative language model as robust if its output is functionally unaffected by such non-semantic input variation.
