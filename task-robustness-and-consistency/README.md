@@ -1,3 +1,7 @@
+```yaml
+layout: default
+title: "Robustness and Consistency Task"
+
 # Robustness and Consistency
 ### A task of the 2025 ELOQUENT lab on evaluating quality of generative language models
 The Robustness and Consistency task explores the capability of a generative language model to handle input variation -- e.g. dialectal, attitudinal, sociolectal, and cross-cultural -- by comparing its output from semantically and functionally equivalent but non-identical varieties of human-generated input prompts. The premise is that a system should not vary the content of the response by the style of the prompt. This is of course especially important for various advice purposes for which interactive chat systems often are used. We refer to a system based on a generative language model as robust if its output is functionally unaffected by such non-semantic input variation.
@@ -45,10 +49,10 @@ before the test data are released. Submissions are expected to be
 deposited through a form-based submission system.
 
 ## Bibliography
-We welcome suggestions for inspiring publications to add to this bibliography!
+* We welcome suggestions for inspiring publications to add to this bibliography!
 Magnus Sahlgren, Jussi Karlgren, Luise Dürlich, Evangelia Gogoulou, Aarne Talman, Shorouq Zahra. "ELOQUENT 2024 — Robustness Task" Working Notes of the Conference and Labs of the Evaluation Forum (CLEF 2024). CEUR-WS Proceedings 3740.
-Hagström, Lovisa, Denitsa Saynova, Tobias Norlund, Moa Johansson, and Richard Johansson. "The Effect of Scaling, Retrieval Augmentation and Form on the Factual Consistency of Language Models." arXiv preprint arXiv:2311.01307 (2023).
-Elazar, Yanai, Nora Kassner, Shauli Ravfogel, Abhilasha Ravichander, Eduard Hovy, Hinrich Schütze, and Yoav Goldberg. "Measuring and improving consistency in pretrained language models." Transactions of the Association for Computational Linguistics 9 (2021): 1012-1031.
-Bell, Allan. "Language style as audience design." Language in society 13, no. 2 (1984): 145-204.
-Clark, Herbert H., and Gregory L. Murphy. "Audience design in meaning and reference." In Advances in psychology, vol. 9, pp. 287-299. North-Holland, 1982.
+* Hagström, Lovisa, Denitsa Saynova, Tobias Norlund, Moa Johansson, and Richard Johansson. "The Effect of Scaling, Retrieval Augmentation and Form on the Factual Consistency of Language Models." arXiv preprint arXiv:2311.01307 (2023).
+* Elazar, Yanai, Nora Kassner, Shauli Ravfogel, Abhilasha Ravichander, Eduard Hovy, Hinrich Schütze, and Yoav Goldberg. "Measuring and improving consistency in pretrained language models." Transactions of the Association for Computational Linguistics 9 (2021): 1012-1031.
+* Bell, Allan. "Language style as audience design." Language in society 13, no. 2 (1984): 145-204.
+* Clark, Herbert H., and Gregory L. Murphy. "Audience design in meaning and reference." In Advances in psychology, vol. 9, pp. 287-299. North-Holland, 1982.
 
