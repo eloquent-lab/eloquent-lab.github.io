@@ -5,17 +5,24 @@ The Robustness and Consistency task explores the capability of a generative lang
 The results will be assessed by how variation in output is conditioned on variation of functionally equivalent but non-identical input prompts.
 
 ## Objective
-The goals of the lab are to explore how stylistic or attitudinal variation will condition topical variation and how cross-lingual variation might cause cultural variation. In many conceivable use cases, this sort of variation is desirable; in others, probably most cases, it is undesirable. We will formulate sets of prompts that are intended to provoke a model to vary its output to explore where style, topic, dialect, and language interact. 
+The goals of the lab are to explore how stylistic or attitudinal variation will condition topical variation and how cross-lingual variation might cause cultural variation. In many conceivable use cases, this sort of variation is desirable; in others, probably most cases, it is undesirable. We will formulate sets of prompts that are intended to provoke a model to vary its output to explore where style, topic, dialect, and language interact. We hope to be able to demonstrate what sort of variation can be traced to cultural background of models, most obviously related to the data they are trained on. 
 
-Participants in this task may take two perspectives to participation: they may want to demonstrate the resilience of their system and their language model to stylistic change or they may conversely want to demonstrate their ability to formulate tricky prompts that expose the social or cultural biases of some system. Both perspectives are welcome! 
+Participants in this task may take several perspectives to participation: 
+* they may want to demonstrate the resilience of their system and their language model to stylistic variation; 
+* they may want to probe the effect on output of switching language or register for some model or system or some sets of models or systems; 
+* they may want to test their ability to formulate tricky prompts that expose the social or cultural biases of some system.
+
+All perspectives are welcome! 
 
 ## Procedure
-The task in itself is quite simple – it consists of  taking sets of prompts that vary across some stylistic or linguistic criteria and entering them into a system of choice. Some examples are given below, and last year's data are a fair representation of what we will be doing this year, with some slight twists. 
+The task in itself is quite simple – it consists of taking sets of prompts that vary across some stylistic or linguistic criteria and entering them into a generative system of choice, recording the output and submitting it to us. 
+
+Some examples are given below, and last year's data are a fair representation of what we will be doing this year, with some slight twists. 
 
 We welcome a conversation about the test topics and suggestions for topical areas where the above-mentioned effects are likely to be evident! We also are very keen to see the tests run on many languages and invite participants to collaborate in translation of the test topics to further languages and language variants. 
 
 ## Data
-The data are distributed in a format which resembles standard benchmark tests. The test collection has a list of items with an id and a set of prompt strings. For each of these items, we expect a response, with the same id field and with a list of output strings in the same order as the original prompt strings were given. The prompts will be in several languages for some of the items! 
+The test collection has a list of prompt string items. For each of these items, we expect a textual response. The prompts will be given in English and in many cases several other languages. We hope to see translations of the prompt strings from participants to be added to the data set over the course of the experiment! 
 
 Example item from the 2024 test set:
 
