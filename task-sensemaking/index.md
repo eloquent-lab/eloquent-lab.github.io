@@ -1,4 +1,4 @@
- [ELOQUENT Lab](https://eloquent-lab.github.io/) @ [CLEF 2025](https://clef2025.clef-initiative.eu/) 
+[ELOQUENT Lab](https://eloquent-lab.github.io/) @ [CLEF 2025](https://clef2025.clef-initiative.eu/)
 
 # _Sensemaking_
 
@@ -10,13 +10,11 @@ This task is intended to address the question:
 
 The goal of the task is to automatically generate a quiz for a given learning material and to answer and evaluate such answers.
 
-
 ## **Motivation**
 
 LLMs store immense amounts of information and easily answer questions about it. Can they _limit_ their knowledge to information provided in given materials?
 
 **Why “sensemaking”:** Here is some input text. Its meaning (i.e. what you should take from it) can be represented as a set of questions and answers to them. Let’s see how reliable LLMs are in extracting this sense (i.e. generating a quiz), “understanding” this sense (i.e. answering the questions) as well as assessing someone else’s understanding (i.e. evaluating the answers).
-
 
 ## **Expected participation types**
 
@@ -26,11 +24,9 @@ LLMs store immense amounts of information and easily answer questions about it. 
 
 “**Evaluator**” submissions = systems that, given input materials, a question and an answer score the answer.
 
-
 ## **Want to steer the task more?**
 
 “**Director**” participation is also welcome. As a director, you provide input materials to teachers, and you are then required to analyze what “teachers”, “evaluators” and “students” did in that domain.
-
 
 ## **Domains and Data**
 
@@ -47,7 +43,6 @@ All the documents, questions and answers are processed. Participants will be all
 Across the domains, the inputs will be organized to a uniform hierarchical structure: “source”, “chapter”, “section”. Some sources will have only one chapter. A section is simply a structural unit of the chapter which may be useful for question generation. Some chapters will consist of only one section.
 
 Chapter will be the unit used in evaluation, questions will be expected to be generated for each chapter, across all its sections.
-
 
 ## **Task procedure**
 
@@ -77,7 +72,6 @@ All deadlines are AoE.
 
 This means that participating in this task will involve being available for the above three operations during the two weeks of April 26 till May 10, depending on the exact days and your intended submission type(s).
 
-
 ## **“Teacher” submissions scoring**
 
 For **automatic evaluation**, we will use at least two kinds of different **language models**. The evaluation will primarily concern plain text formulations; assessment of symbolic expressions such as equations is likely to be limited and unreliable.
@@ -85,7 +79,6 @@ For **automatic evaluation**, we will use at least two kinds of different **lang
 Subject to funding availability, we will also try to obtain manual **Likert scores**. The properties evaluated will be: **Relevance, Coverage, Answerability, Complexity** and **Diversity** of the questions your model generates.
 
 The total number of questions you provide will also be a factor in our evaluation. Roughly speaking, the fewer questions the better, for the same scores in other criteria.
-
 
 ### Definitions
 
@@ -95,18 +88,16 @@ We will evaluate the documents **separately**. We take the set of questions _Q_ 
 
 We work with the document _D_ using its plain text. We split the text into a set of overlapping windows _W_ beginning at sentence boundaries and containing sentences including up to some number of words _K_ ignoring punctuation, i.e. spanning into subsequent sentences. Utilizing the language models we will define _p: WxQ -> R_, estimating the joint probability of a text and question pair appearing in an expert-made quiz. Window-question pairs that are completely unrelated should have a very low probability and vice-versa.
 
-
 ### Summary of measures
 
-|||||
-|:-:| :-: | :-: | :-: |
-|    **Measure**    |                      **Description**                     |                         **Automatic**                        | **Manual/LLM** |
-|   **Relevance**   |           Alignment between questions and text           |                 Arithmetic mean of relevance                 |  Likert scores |
-|    **Coverage**   |      Uniformity of question coverage across the text     | Entropy of the p(w). The marginal distribution over windows. |  Likert scores |
-|   **Diversity**   |               How diverse are the questions              |  Sum of KL divergences between pairs p(w, q\_i), p(w, q\_j)  |  Likert scores |
-| **Answerability** | Whether questions can be answered from the document text |                           ~~-----~~                             | Likert scores |
-|   **Complexity**  |    Difficulty of questions while remaining answerable    |                           ~~-----~~                              | Likert scores |
-
+|                   |                                                          |                                                              |                |
+| :---------------: | :------------------------------------------------------: | :----------------------------------------------------------: | :------------: |
+|    **Measure**    |                     **Description**                      |                        **Automatic**                         | **Manual/LLM** |
+|   **Relevance**   |           Alignment between questions and text           |                 Arithmetic mean of relevance                 | Likert scores  |
+|   **Coverage**    |     Uniformity of question coverage across the text      | Entropy of the p(w). The marginal distribution over windows. | Likert scores  |
+|   **Diversity**   |              How diverse are the questions               |   Sum of KL divergences between pairs p(w, q<sub>i</sub>), p(w, q<sub>j</sub>)   | Likert scores  |
+| **Answerability** | Whether questions can be answered from the document text |                          ~~-----~~                           | Likert scores  |
+|  **Complexity**   |    Difficulty of questions while remaining answerable    |                          ~~-----~~                           | Likert scores  |
 
 ### Example probability distribution
 
@@ -140,34 +131,31 @@ As hinted, the individual probabilities are estimated using a language model. Th
 ### Measure descriptions
 
 1. **Relevance** measures how much a given set of questions and text **relate to each other**. It is aggregated from the relevance of a question to a window over the elements of WxQ. Not all window question pairs will necessarily be used.  
-In the example above, a simplified calculation could be _((1+1-0.5)+(-0.5-0.5+1))/6 =  0.25_ indicating a good overall relevance of the question set to the text. The actual computation is more complicated.
+   In the example above, a simplified calculation could be _((1+1-0.5)+(-0.5-0.5+1))/6 =  0.25_ indicating a good overall relevance of the question set to the text. The actual computation is more complicated.
 
 2. **Coverage** measures how **uniformly the questions cover** different parts of the text. Formally, we define it as the **entropy of the distribution _p_**_: W -> R._ The marginal distribution over windows.  
-_p(w) = Sum\_{q \in Q} (p(w,q))_.  
-Maximizing this is equivalent to making the coverage of the text by the questions as uniform as possible.  
-In the example above, we get _Entropy((.29 + .01, .19 + .01, .01 + .49)) = -log2(.29)\*.29 - log2(.19)\*.19- log2(.49)\*.49 = 1.48_, indicating quite a uniform distribution, which is what we want.  
+   _p(w) = Sum<sub>{q \in Q} (p(w,q)</sub>)_.  
+   Maximizing this is equivalent to making the coverage of the text by the questions as uniform as possible.  
+   In the example above, we get _Entropy((.29 + .01, .19 + .01, .01 + .49)) = -log2(.29)\*.29 - log2(.19)\*.19- log2(.49)\*.49 = 1.48_, indicating quite a uniform distribution, which is what we want.
 
 3. **Diversity** estimates how differently **different questions cover different parts** of the text. It will be computed from conditional distributions:  
-_p\_{q\_i}: W -> R p(w|q\_i) = p(w,q\_i)/Sum\_{w’ \in W} p(w’, q\_i)_, for fixed q\_i where q\_i is the i-th question. We take the **sum of the values KL-DIV(p(w|q\_i) || p(w|q\_j))** over all combinations of i and j. High values indicate that the distributions _p(q\_i)_ are diverse.  
-In the example above, we get the marginal probabilities  
-_s1 =_ _p(q\_1) = .29+.19+.01_ and  
-_s2 = p(q\_2) = .01+.01+.49_.  
-_Diversity = KL-DIV((.29/s1, .19/s1, .01/s1) || (.01/s2, .01/s2, .49/s2)) + KL-DIV((.01/s2, .01/s2, .49/s2) || (.29/s1, .19/s1, .01/s1)) = 6.67_.    This indicates that the two are very far from each other. This example simplifies the actual computation.
+   _p~{q<sub>i</sub>}: W -> R p(w|q~i) = p(w,q~i)/Sum<sub>{w’ \in W}</sub> p(w’, q<sub>i</sub>)_, for fixed q<sub>i</sub> where q<sub>i</sub> is the i-th question. We take the **sum of the values KL-DIV(p(w|q<sub>i</sub>) || p(w|q<sub>j</sub>))** over all combinations of i and j. High values indicate that the distributions _p(q<sub>i</sub>)_ are diverse.  
+   In the example above, we get the marginal probabilities  
+   _s1 = p(q~1) = .29+.19+.01_ and  
+   _s2 = p(q~2) = .01+.01+.49_.  
+   _Diversity = KL-DIV((.29/s1, .19/s1, .01/s1) || (.01/s2, .01/s2, .49/s2)) + KL-DIV((.01/s2, .01/s2, .49/s2) || (.29/s1, .19/s1, .01/s1)) = 6.67_. This indicates that the two are very far from each other. This example simplifies the actual computation.
 
 4. **Answerability** will determine whether **questions can be answered from** the document text and will be mainly determined by Likert scores, either obtained automatically using at least two LLMs, or manually, subject to funding availability.
 
-5) **Complexity** will rate **how easy questions are** to answer. Ideally, the questions should be **as difficult as possible while remaining answerable**. It will again be determined mainly by Likert scores, automatic or (hopefully) manual.  All of these measures should be **as high as possible**. Preference is given to answerability, but it will not be enough on its own. In the end, the measures for the documents will be aggregated but **also manually reviewed independently**. We will do qualitative manual error analysis to further supplement the automatic quantitative measures.
-
+5) **Complexity** will rate **how easy questions are** to answer. Ideally, the questions should be **as difficult as possible while remaining answerable**. It will again be determined mainly by Likert scores, automatic or (hopefully) manual. All of these measures should be **as high as possible**. Preference is given to answerability, but it will not be enough on its own. In the end, the measures for the documents will be aggregated but **also manually reviewed independently**. We will do qualitative manual error analysis to further supplement the automatic quantitative measures.
 
 ## **“Student” submissions scoring**
 
 The student submissions will be mostly rated using simple word sequence based algorithms on the confidential test dataset golden **question-answer pairs**. This will be supplemented by manual review and the output of Teacher and Evaluator submissions.
 
-
 ## **“Evaluator” submissions scoring**
 
 We will compare different evaluator systems and **manually select ones with best results**. We will use test dataset golden question-answer pairs and Teacher and Student submissions to base our evaluation of the evaluator on.
-
 
 ## **Submission format**
 
@@ -181,7 +169,6 @@ Example outputs are listed below for each submission type.
     Check the JSON of your submission before uploading – use e.g.
     https://jsonlint.com/
     to validate it!
-
 
 ### Submission 1: Teacher
 
@@ -220,10 +207,9 @@ Expected output format for a teacher submission:
        "popular/video-23/questions0.json": [...]
     }
 
-
 ### Submission 2: Student
 
-We expect the participating systems to **accept a document**, ****a number of **test quizzes as above** (without the reference answers) and to **return the questions with responses**, in a format scorable by evaluator systems. When evaluating, **only the first response** is scored but you are allowed to submit multiple answer lists with different locations. Notice that the format is the same as in the task above.
+We expect the participating systems to **accept a document**, \***\*a number of **test quizzes as above** (without the reference answers) and to **return the questions with responses**, in a format scorable by evaluator systems. When evaluating, **only the first response\*\* is scored but you are allowed to submit multiple answer lists with different locations. Notice that the format is the same as in the task above.
 
 Expected output format for a student submission:
 
@@ -249,7 +235,6 @@ Expected output format for a student submission:
        "popular/video-22/answers1.json": [...],
        "popular/video-23/answers0.json": [...]
     }
-
 
 ### Submission 3: Evaluator
 
@@ -280,7 +265,6 @@ Expected output format for an evaluator submission:
     }
 
 [Submit your response scores here](https://docs.google.com/forms/d/e/1FAIpQLScrLJrbeBwXnqUBCoZObbNL5Mv5STTkOue68uoDWrz5nCZFZw/viewform?usp=sf_link)!
-
 
 ## **Multilinguality**
 
