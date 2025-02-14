@@ -98,14 +98,14 @@ We work with the document _D_ using its plain text. We split the text into a set
 
 ### Summary of measures
 
-|                   |                                                          |                                                              |                |
-| :---------------: | :------------------------------------------------------: | :----------------------------------------------------------: | :------------: |
+|||||
+|:-:| :-: | :-: | :-: |
 |    **Measure**    |                      **Description**                     |                         **Automatic**                        | **Manual/LLM** |
 |   **Relevance**   |           Alignment between questions and text           |                 Arithmetic mean of relevance                 |  Likert scores |
 |    **Coverage**   |      Uniformity of question coverage across the text     | Entropy of the p(w). The marginal distribution over windows. |  Likert scores |
 |   **Diversity**   |               How diverse are the questions              |  Sum of KL divergences between pairs p(w, q\_i), p(w, q\_j)  |  Likert scores |
-| **Answerability** | Whether questions can be answered from the document text |                              --                              | Likert scores |
-|   **Complexity**  |    Difficulty of questions while remaining answerable    |                              --                              | Likert scores |
+| **Answerability** | Whether questions can be answered from the document text |                           ~~-----~~                             | Likert scores |
+|   **Complexity**  |    Difficulty of questions while remaining answerable    |                           ~~-----~~                              | Likert scores |
 
 
 ### Example probability distribution
@@ -137,43 +137,26 @@ The function p could look like this:
 
 As hinted, the individual probabilities are estimated using a language model. The details will be described in the task overview paper. We ensure the distribution has some minimal value for all probabilities so as not to blow up measures which use them in the denominator.
 
-\
-
-
-
 ### Measure descriptions
 
-1. **Relevance** measures how much a given set of questions and text **relate to each other**. It is aggregated from the relevance of a question to a window over the elements of WxQ. Not all window question pairs will necessarily be used.
-
+1. **Relevance** measures how much a given set of questions and text **relate to each other**. It is aggregated from the relevance of a question to a window over the elements of WxQ. Not all window question pairs will necessarily be used.  
 In the example above, a simplified calculation could be _((1+1-0.5)+(-0.5-0.5+1))/6 =  0.25_ indicating a good overall relevance of the question set to the text. The actual computation is more complicated.
 
-2. **Coverage** measures how **uniformly the questions cover** different parts of the text. Formally, we define it as the **entropy of the distribution _p_**_: W -> R._ The marginal distribution over windows.
+2. **Coverage** measures how **uniformly the questions cover** different parts of the text. Formally, we define it as the **entropy of the distribution _p_**_: W -> R._ The marginal distribution over windows.  
+_p(w) = Sum\_{q \in Q} (p(w,q))_.  
+Maximizing this is equivalent to making the coverage of the text by the questions as uniform as possible.  
+In the example above, we get _Entropy((.29 + .01, .19 + .01, .01 + .49)) = -log2(.29)\*.29 - log2(.19)\*.19- log2(.49)\*.49 = 1.48_, indicating quite a uniform distribution, which is what we want.  
 
-_p(w) = sum\_{q \in Q} (p(w,q))_.
-
-Maximizing this is equivalent to making the coverage of the text by the questions as uniform as possible.
-
-In the example above, we get _entropy((.29 + .01, .19 + .01, .01 + .49)) = -log2(.29)\*.29 - log2(.19)\*.19- log2(.49)\*.49 = 1.48_, indicating quite a uniform distribution, which is what we want.
-
-3. **Diversity** estimates how differently **different questions cover different parts** of the text. It will be computed from conditional distributions:
-
-_p\_{q\_i}: W -> R p\_{q\_i}(w) = p(w,q\_i)/sum\_{w’ \in W} (p(w’, q\_i)_, for fixed q\_i where q\_i is the i-th question. We take the **sum of the values KL-DIV(p\_{q\_i} || p\_{q\_j})** over all combinations of i and j. High values indicate that the distributions _p(q\_i)_ are diverse.
-
-In the example above, we could for example look at
-
-_s1 =_ _p(q\_1) = .29+.19+.01_
-
-_s2 = p(q\_2) = .01+.01+.49_
-
-_Diversity = KL-DIV((.29/s1, .19/s1, .01/s1) || (.01/s2, .01/s2, .49/s2)) + KL-DIV((.01/s2, .01/s2, .49/s2) || (.29/s1, .19/s1, .01/s1)) = 6.67_.
-
-This indicates that the two are very far from each other. This example simplifies the actual computation.
+3. **Diversity** estimates how differently **different questions cover different parts** of the text. It will be computed from conditional distributions:  
+_p\_{q\_i}: W -> R p(w|q\_i) = p(w,q\_i)/Sum\_{w’ \in W} p(w’, q\_i)_, for fixed q\_i where q\_i is the i-th question. We take the **sum of the values KL-DIV(p(w|q\_i) || p(w|q\_j))** over all combinations of i and j. High values indicate that the distributions _p(q\_i)_ are diverse.  
+In the example above, we get the marginal probabilities  
+_s1 =_ _p(q\_1) = .29+.19+.01_ and  
+_s2 = p(q\_2) = .01+.01+.49_.  
+_Diversity = KL-DIV((.29/s1, .19/s1, .01/s1) || (.01/s2, .01/s2, .49/s2)) + KL-DIV((.01/s2, .01/s2, .49/s2) || (.29/s1, .19/s1, .01/s1)) = 6.67_.    This indicates that the two are very far from each other. This example simplifies the actual computation.
 
 4. **Answerability** will determine whether **questions can be answered from** the document text and will be mainly determined by Likert scores, either obtained automatically using at least two LLMs, or manually, subject to funding availability.
 
-5) **Complexity** will rate **how easy questions are** to answer. Ideally, the questions should be **as difficult as possible while remaining answerable**. It will again be determined mainly by Likert scores, automatic or (hopefully) manual.
-
-All of these measures should be **as high as possible**. Preference is given to answerability, but it will not be enough on its own. In the end, the measures for the documents will be aggregated but **also manually reviewed independently**. We will do qualitative manual error analysis to further supplement the automatic quantitative measures.
+5) **Complexity** will rate **how easy questions are** to answer. Ideally, the questions should be **as difficult as possible while remaining answerable**. It will again be determined mainly by Likert scores, automatic or (hopefully) manual.  All of these measures should be **as high as possible**. Preference is given to answerability, but it will not be enough on its own. In the end, the measures for the documents will be aggregated but **also manually reviewed independently**. We will do qualitative manual error analysis to further supplement the automatic quantitative measures.
 
 
 ## **“Student” submissions scoring**
