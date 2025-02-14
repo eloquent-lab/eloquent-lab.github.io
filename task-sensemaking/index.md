@@ -131,7 +131,9 @@ As hinted, the individual probabilities are estimated using a language model. Th
 ### Measure descriptions
 
 1. **Relevance** measures how much a given set of questions and text **relate to each other**. It is aggregated from the relevance of a question to a window over the elements of WxQ. Not all window question pairs will necessarily be used.  
-   In the example above, a simplified calculation could be _((1+1-0.5)+(-0.5-0.5+1))/6 =  0.25_ indicating a good overall relevance of the question set to the text. The actual computation is more complicated.
+   In the example above, a simplified calculation could be:  
+   _((1+1-0.5)+(-0.5-0.5+1))/6 =  0.25._ Which would indicate a good overall relevance of the question set to the text.  
+   The actual computation is more complicated.
 
 2. **Coverage** measures how **uniformly the questions cover** different parts of the text. Formally, we define it as the **entropy of the distribution _p_**_: W -> R._ The marginal distribution over windows.  
    _p(w) = Σ<sub>{q \in Q} </sub>p(w,q)_.  
@@ -140,10 +142,12 @@ As hinted, the individual probabilities are estimated using a language model. Th
 
 3. **Diversity** estimates how differently **different questions cover different parts** of the text. It will be computed from conditional distributions:  
    _p(w|q<sub>i</sub>): W -> R p(w|q<sub>i</sub>) = p(w,q<sub>i</sub>)/Σ<sub>{w' \in W}</sub> p(w', q<sub>i</sub>)_, for fixed q<sub>i</sub> where q<sub>i</sub> is the i-th question. We take the **sum of the values KL-DIV(p(w|q<sub>i</sub>) || p(w|q<sub>j</sub>))** over all combinations of i and j. High values indicate that the set of distributions _p(q<sub>i</sub>)_ over all i is diverse.  
-   In the example above, we get the marginal probabilities  
+   In the example above, we get the marginal probabilities:  
    _s1 = p(<sub>1</sub>) = .29+.19+.01_ and  
    _s2 = p(<sub>2</sub>) = .01+.01+.49_.  
-   _Diversity = KL-DIV((.29/s1, .19/s1, .01/s1) || (.01/s2, .01/s2, .49/s2)) + KL-DIV((.01/s2, .01/s2, .49/s2) || (.29/s1, .19/s1, .01/s1)) = 6.67_. This indicates that the two are very far from each other. This example simplifies the actual computation.
+   Diversity would be:  
+   _KL-DIV((.29/s1, .19/s1, .01/s1) || (.01/s2, .01/s2, .49/s2)) + KL-DIV((.01/s2, .01/s2, .49/s2) || (.29/s1, .19/s1, .01/s1)) = 6.67_. This indicates that the two are very far from each other.  
+   This example simplifies the actual computation.
 
 4. **Answerability** will determine whether **questions can be answered from** the document text and will be mainly determined by Likert scores, either obtained automatically using at least two LLMs, or manually, subject to funding availability.
 
