@@ -1,1 +1,1 @@
-The first lecture is on evaluating machine translation quality.
+Good morning, welcome to the class on statistical machine translation. The first lecture is on evaluating machine translation quality.
