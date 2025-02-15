@@ -1,0 +1,3 @@
+So to fix this fundamental problem we can evaluate coarser units, so not exact word forms, but lemmas or diplomas. We can focus on characters instead of words, so that's CHRF3 or Hrv3. That's something which is equally simple to the BLAST core calculation and it should be popular because it is
+shorter and gapy sequences. So these other metrics are a bit more complicated and there is a number of, a large number of other metrics. And another option is that you could use better references. If you use more references alone that helps, but it is costly. If you use references which are created from the empty outputs, then you will indeed have a mismatch only when there was an error that the
+based on the MB outputs, then they will serve better.
