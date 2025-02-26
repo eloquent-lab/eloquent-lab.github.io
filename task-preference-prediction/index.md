@@ -4,7 +4,7 @@
 This task tests the capability of systems to predict human preferences for different outputs from generative large language models (LLMs) and explain their predictions with respect to five criteria: relevance, naturalness, truthfulness, safety, and overall quality. This task offers two sub-tasks with participation open to anyone:
 
 1. **Preference prediction.** Predict human preferences between two LLM responses with respect to the criteria.
-2. **reference prediction & explanation generation.** Predict human preferences between two LLM responses with respect to the criteria and explain your system’s predictions.
+2. **Preference prediction & explanation generation.** Predict human preferences between two LLM responses with respect to the criteria and explain your system’s predictions.
 
 We describe the motivation and general procedure for our shared task and detail each sub-task below.
 
