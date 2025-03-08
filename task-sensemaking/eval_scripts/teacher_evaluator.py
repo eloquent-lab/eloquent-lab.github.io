@@ -13,7 +13,7 @@ from transformers import AutoTokenizer, BitsAndBytesConfig
 from helpers import *
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--token", default="none", type=str, help="Huggingface token.")
+parser.add_argument("--token", default=default_access_token, type=str, help="Huggingface token.")
 parser.add_argument("--json_path", default="out.json", type=str, help="Path to the json containing the outputs.")
 parser.add_argument("--data_path", default="data", type=str, help="Path to the folder containing the data.")
 parser.add_argument("--verbose", default=False, action="store_true")

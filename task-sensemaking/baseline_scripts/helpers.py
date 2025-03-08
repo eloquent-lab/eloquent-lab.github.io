@@ -25,3 +25,7 @@ def load_questions_and_texts(json_file, data_path):
             q = json.load(f)
         r.append((q, t, qr, x))
     return r
+
+##Just a placeholder definition until all the issues are worked out.
+def lora(model, train_loader, valid_loader, tokenizer, EPOCHS, MODEL_PATH):
+    raise NotImplementedError()
