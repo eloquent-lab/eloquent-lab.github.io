@@ -8,8 +8,8 @@ from sentence_transformers import SentenceTransformer
 from helpers import *
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--json_path", default=1, type=str, help="Path to the json containing the outputs.")
-parser.add_argument("--data_path", default=1, type=str, help="Path to the json containing the outputs.")
+parser.add_argument("--json_path", default="devset.json", type=str, help="Path to the json containing the outputs.")
+parser.add_argument("--data_path", default="../devset", type=str, help="Path to the json containing the outputs.")
 
 
 def expand_and_broadcast(arr, dim, shape):

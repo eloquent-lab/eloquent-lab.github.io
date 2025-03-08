@@ -20,6 +20,12 @@ from helpers import *
 parser = argparse.ArgumentParser()
 parser.add_argument("--token", default=default_access_token, type=str, help="Huggingface token.")
 
+locs = ["meta-llama/Llama-3.1-8B-Instruct",
+        "meta-llama/Llama-3.2-3B-Instruct",
+        "meta-llama/Llama-3.2-1B-Instruct"]
+
+parser.add_argument("--model_num", default=locs[2], type=str, help="The model and tokenizer to use.")
+
 
 def reshape(enumerable, per=25):
     r = []
@@ -60,12 +66,7 @@ class mock_model:
 
 def make_model(args, mock = False):
     cuda = torch.cuda.is_available()
-    locs = ["meta-llama/Llama-3.1-8B",
-            "meta-llama/Llama-3.1-8B-Instruct",
-            "meta-llama/Llama-Guard-3-8B-INT8",
-            "meta-llama/Llama-3.2-3B-Instruct",
-            "meta-llama/Llama-3.2-1B-Instruct"]
-    loc = locs[-2]
+    loc = locs[args.model_num]
     quantization_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16) if cuda else None
     model = mock_model() if mock else AutoModelForCausalLM.from_pretrained(loc, token=args.access_token, force_download=False,
                                                  quantization_config=quantization_config, device_map="auto")
