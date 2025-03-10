@@ -1,0 +1,66 @@
+{
+    "popular/video-22/questions.json": [
+        [
+            " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects. How do vaccinations work and how dangerous are they really?",
+            " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects."
+        ],
+        [
+            " How do vaccinations work and how dangerous are they really?",
+            " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination"
+        ]
+    ],
+    "ukrbiology/book01/topic01-Різноманітність тварин/questions.json": [
+        [
+            " What are the main groups of animals studied in the topic of Animal Diversity?",
+            " Plants and Animals"
+        ],
+        [
+            " How do animals adapt to exist in different environments?",
+            " They adapt to exist in different environments by interacting with each other."
+        ],
+        [
+            " What role do animals play in nature?",
+            " Animals play a crucial role in nature."
+        ],
+        [
+            " How closely related are a person's interests with each species of animal?",
+            " A person's interests are closely related to each species of animal."
+        ],
+        [
+            " What is the role of animals in the life of the planet?",
+            " Animals play a vital role in the life of the planet."
+        ],
+        [
+            " What are the different groups of animals studied in the topic of Animal Diversity?",
+            " The different groups of animals studied in the topic of Animal Diversity are: soil organisms, land-air animals, and those who have chosen other creatures as their habitat."
+        ]
+    ],
+    "ukrbiology/book01/topic02-Процеси життєдіяльностітварин/questions.json": [
+        [
+            " What are the basic functions of an animal's body?",
+            " Metabolism, nutrition, respiration, digestion, excretion, movement, irritability, reproduction, and development of animal organisms."
+        ],
+        [
+            " What are the main properties of animals as living beings?",
+            " Organisms are heterotrophs, and animals are living beings that obtain energy through food."
+        ],
+        [
+            " What is the process by which animals obtain energy through food?",
+            " Digestion."
+        ],
+        [
+            " What is carried out by the organs of the digestive system?",
+            " Digestion is carried out by the organs of the digestive system.<|end_of_text|>"
+        ]
+    ],
+    "ukrbiology/book01/topic03-Поведінка тварин/questions.json": [
+        [
+            " What are the characteristic features of animals?",
+            " Hares, foxes, wolves, herons, flies, beetles, and crayfish."
+        ],
+        [
+            " What are some examples of unique and often inexplicable behavior in animals?",
+            " Animals such as hares, foxes, wolves, herons, flies, beetles, and crayfish.<|end_of_text|>"
+        ]
+    ]
+}

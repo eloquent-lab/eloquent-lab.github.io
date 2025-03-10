@@ -14,4 +14,4 @@ if __name__ == "__main__":
     for x in l:
         p = os.path.join(root, x)
         d[x] = json.load(open(p))
-    json.dump(d, open("devset.json", "w"))
+    json.dump(d, open("devset.json", "w"), indent=4, ensure_ascii=False)

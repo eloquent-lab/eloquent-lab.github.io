@@ -8,22 +8,22 @@ def load_questions_and_texts(json_file, data_path):
     r = []
     with open(json_file) as f:
         paths = json.load(f)
-    for x in paths:
-        dn = os.path.join(data_path, os.path.dirname(x))
+    for path in paths:
+        dn = os.path.join(data_path, os.path.dirname(path))
         enpath = os.path.join(dn, "text.en.txt")
         if os.path.isfile(enpath):
             with open(enpath) as f:
-                t = f.read()
+                text = f.read()
         else:
             with open(os.path.join(dn, "text.txt")) as f:
-                t = f.read()
+                text = f.read()
         qp = os.path.join(dn, "questions.json")
         if os.path.isfile(qp):
             with open(qp) as f:
-                qr = json.load(f)
-        with open(os.path.join(data_path, x)) as f:
-            q = json.load(f)
-        r.append((q, t, qr, x))
+                question_reference = json.load(f)
+        with open(os.path.join(data_path, path)) as f:
+            question = json.load(f)
+        r.append((question, text, question_reference, path))
     return r
 
 ##Just a placeholder definition until all the issues are worked out.

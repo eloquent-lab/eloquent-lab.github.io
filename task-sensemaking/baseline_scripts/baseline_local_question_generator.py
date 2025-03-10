@@ -24,7 +24,8 @@ locs = ["meta-llama/Llama-3.1-8B-Instruct",
         "meta-llama/Llama-3.2-3B-Instruct",
         "meta-llama/Llama-3.2-1B-Instruct"]
 
-parser.add_argument("--model_num", default=locs[2], type=str, help="The model and tokenizer to use.")
+parser.add_argument("--model_name", default=locs[2], type=str, help="The model and tokenizer to use.")
+parser.add_argument("--max_new_tokens", default=200, type=str, help="Max tokens for the model to generate.")
 
 
 def reshape(enumerable, per=25):
@@ -66,18 +67,17 @@ class mock_model:
 
 def make_model(args, mock = False):
     cuda = torch.cuda.is_available()
-    loc = locs[args.model_num]
     quantization_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16) if cuda else None
-    model = mock_model() if mock else AutoModelForCausalLM.from_pretrained(loc, token=args.access_token, force_download=False,
+    model = mock_model() if mock else AutoModelForCausalLM.from_pretrained(args.model_name, token=args.token, force_download=False,
                                                  quantization_config=quantization_config, device_map="auto")
-    tokenizer = AutoTokenizer.from_pretrained(loc, token=access_token, force_download=False, add_bos_token=True)
+    tokenizer = AutoTokenizer.from_pretrained(args.model_name, token=args.token, force_download=False, add_bos_token=True)
     tokenizer.pad_token = tokenizer.eos_token
     model.config.pad_token_id = model.config.eos_token_id
     return model, tokenizer
 
-def make_prompt(text, question, answer, tokenizer: PreTrainedTokenizer):
-    system_prompt = "Create a question given a text."
-    user_prompt = f"Create a question and an example short answer given the following text. {text}"
+def make_prompt(text, question, answer, tokenizer: PreTrainedTokenizer, question_tag, answer_tag):
+    system_prompt = f"Create a sequence of question and example answer pairs given a text. Do not describe your output, give the output directly. Mark each question with \"{question_tag}\" and the answer with \"{answer_tag}\"."
+    user_prompt = f"Create questions and example short answers given the following text. {text}"
     prompt = tokenizer.apply_chat_template(
         [{"role": "system", "content": system_prompt},
          {"role": "user", "content": user_prompt}], tokenize=True, return_dict=True, add_generation_prompt=True)
@@ -122,30 +122,37 @@ def make_devset_json(root):
     for x in l:
         p = os.path.join(root, x)
         d[x] = json.load(open(p))
-    json.dump(d, open("devset.json", "w"))
+    json.dump(d, open("devset.json", "w"), indent=4, ensure_ascii=False)
 
 
 def eval_test(model: PreTrainedModel, tokenizer: PreTrainedTokenizer):
     path2 = "/mnt/c/school/mtproject/data/sensemaking-2025-internal-data/devset"
     path = "/mnt/c/school/eloquent-lab.github.io/task-sensemaking/devset"
     make_devset_json(path)
-    r = load_questions_and_texts("devset.json", path)
+    vs = load_questions_and_texts("devset.json", path)
+    r = {}
     def get_first_end_with_sentence(x, amount):
         vs = x[:amount]
         i = vs.rfind(".")
         return vs[:i+1]
 
-    prompts = [make_prompt(get_first_end_with_sentence(x[1],1000), None, None, tokenizer)[0] for x in r]
-    generationConfig = [GenerationConfig(max_new_tokens=100), GenerationConfig(num_beams=5, max_new_tokens=100),  GenerationConfig(top_k=2 ,max_new_tokens=100,do_sample=True)]
-    for x in prompts:
-        x = x + tokenizer.encode("""
+    question_tag = "**Question:**"
+    answer_tag = "**Answer:**"
+    prompts = [(make_prompt(get_first_end_with_sentence(text,1000), None, None, tokenizer, question_tag, answer_tag)[0], path) for question, text, question_reference, path in vs]
+    generationConfig = GenerationConfig(num_beams=5, max_new_tokens=args.max_new_tokens)
+    for i, (x, path) in enumerate(prompts):
+        x = x + tokenizer.encode(f"""\n\n{question_tag}""")
+        output = model.generate(torch.tensor([x]).to(model.device), generationConfig)
+        t = tokenizer.decode(output[0])
+        print(t)
+        lq = len(question_tag)
+        la = len(answer_tag)
+        questions = [x.strip()[lq:] for x in t.split("\n") if x.strip().startswith(question_tag)]
+        answers = [x.strip()[la:] for x in t.split("\n") if x.strip().startswith(answer_tag)]
+        questions = questions if len(questions) > 0 else ["Generation failed."]
+        r[path] = list(zip(questions, answers)) if len(answers) > 0 else [questions[0]]
+    return r
 
-Here's a question and an example short answer based on the given text:
-
-**Question:** """)
-        output = model.generate(torch.tensor([x]).to(model.device), generationConfig[1])
-        text = tokenizer.decode(output[0])
-        print(text)
 
 
 def main(args):
@@ -157,7 +164,8 @@ def main(args):
     os.makedirs("data", exist_ok=True)
     if finetune:
         model, tokenizer = train(model, tokenizer)
-    eval_test(model, tokenizer)
+    r = eval_test(model, tokenizer)
+    json.dump(r, open("baseline.json", "w"), indent=4, ensure_ascii=False)
 
 
 if __name__ == "__main__":
