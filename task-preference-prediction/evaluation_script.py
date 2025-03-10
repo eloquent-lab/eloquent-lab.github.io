@@ -215,7 +215,7 @@ def evaluate_preferences(predictions, references):
     return preference_results
 
 
-def evaluate_explanations(predictions, references):
+def evaluate_explanations(predictions, references, judge_model_name):
     """
     Computes the language generation evaluation metric & LLM-as-a-judge evaluator's scores for all criteria.
     args:
@@ -252,7 +252,7 @@ def evaluate_explanations(predictions, references):
         explanation_results[f"{criterion}_bertscore_f1"] = bertscore_f1
     # another iteration over the criteria to save RAM
     del bertscore_metric
-    judge = LLM(args.judge_model_name, dtype=torch.bfloat16)
+    judge = LLM(judge_model_name, dtype=torch.bfloat16)
     # compute the LLM-as-a-judge score
     for criterion in CRITERION_DESCRIPTIONS:
         print(f"Computing the LLM-as-a-judge scores for {criterion}...", flush=True)
@@ -262,7 +262,7 @@ def evaluate_explanations(predictions, references):
             judge=judge,
             criterion=criterion,
         )
-        explanation_results[f"{criterion}_{args.judge_model_name}"] = judge_score
+        explanation_results[f"{criterion}_{judge_model_name}"] = judge_score
     return explanation_results
 
 
@@ -273,7 +273,7 @@ if __name__ == "__main__":
     results = evaluate_preferences(predictions=predictions, references=dataset)
     if args.evaluate_explanations:
         explanation_results = evaluate_explanations(
-            predictions=predictions, references=dataset
+            predictions=predictions, references=dataset, judge_model_name=args.judge_model_name
         )
         results.update(explanation_results)
     out_fpath = args.prediction_fpath.replace(".tsv", "_results.json")
