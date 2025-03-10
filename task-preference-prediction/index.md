@@ -4,14 +4,13 @@
 This task tests the capability of systems to predict human preferences for different outputs from generative large language models (LLMs) and explain their predictions with respect to five criteria: relevance, naturalness, truthfulness, safety, and overall quality. This task offers two sub-tasks with participation open to anyone:
 
 1. **Preference prediction.** Predict human preferences between two LLM responses with respect to the criteria.
-2. **reference prediction & explanation generation.** Predict human preferences between two LLM responses with respect to the criteria and explain your system’s predictions.
+2. **Preference prediction & explanation generation.** Predict human preferences between two LLM responses with respect to the criteria and explain your system’s predictions.
 
 We describe the motivation and general procedure for our shared task and detail each sub-task below.
 
 ### Motivation
 
 Side-by-side evaluation has become a well-established paradigm for assessing how well LLMs align with human preferences across various tasks. Recent research has explored methods to automatically evaluate the LLM alignment using “judge” models to mitigate the cost of collecting human-based preference data [1,2]. However, the capabilities of LLMs to reproduce human preferences and explain their choices are still underexplored [3,4]. 
-
 
 ### Goal and procedure
 
@@ -26,20 +25,19 @@ Our target language is English. In addition to predicting human preferences acro
 
 We are running our sub-tasks in two stages: development and private test stages. 
 
-#### 📈 Development stage: 03.02.2025 – 02.03.2025 (23:59 AoE)
+#### 📈 Development stage: 03.02.2025 – 02/09.03.2025 (23:59 AoE)
 
 *This stage provides access to our development sets, allowing you to develop and improve your systems during the competition.*
 
-* We release our development set with human-annotated preferences and explanations (see **Data** below). The development set can be found at [HuggingFace](https://huggingface.co/datasets/Eloquent/preference_prediction).
-* We provide an official evaluation script (to be released later💥), which is used during both development and private test stages. At this stage, you do **not** submit any predictions, but you are able to evaluate your systems offline to improve them 🦾
+* We release our development set with human-annotated preferences and explanations (see **Data** below). The development set can be found at [HuggingFace](https://huggingface.co/datasets/Eloquent/preference_prediction) (see the ```validation```split). 
 
-#### 📊 Private test stage: 03.03.2025 – 20.05.2025 (23:59 AoE).
+#### 📊 Private test stage: 03/10.03.2025 – 20.05.2025 (23:59 AoE).
 
 *This stage defines the final system rankings based on our private test set and offers you further opportunity to explore various approaches.*
 
-* We release our private test set without human-annotated preferences  and explanations (see Data below). We will provide the link to the private test set and inform you about the release later. Stay tuned💥
-* We offer open-source baselines for our sub-tasks, allowing you to benchmark your systems against them on our development set. You can improve the baselines as part of your submission. Our baselines will also be ranked on our private test leaderboards.
-* You are required to submit your system description and your final predictions for the sub-task(s) of interest by the deadline. We will provide the submission details and inform you about this later. Stay tuned💥
+* We release our private test set without human-annotated preferences  and explanations (see Data below). The private test set can be found at [HuggingFace](https://huggingface.co/datasets/Eloquent/preference_prediction) (see the ```test``` split).
+* We offer a baseline based on [```meta-llama/Meta-Llama-3.1-8B-Instruct```](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct). The codebase can be found [here](./baseline.py). Please find an example for running the baseline on the development set: ```python3 baseline.py --dataset_split validation```. The code will save the baseline predictions for the *second* sub-task in the required format (see **Submission** for more details below). You can benchmark your systems against the baseline on our development set. You can improve the baseline as part of your submission. Our baseline will also be ranked on our private test leaderboards.
+* We provide an [official evaluation script](./evaluation_script.py), which is used during both development and private test stages. Please refer to the **Experimental setup** section for more details.
 
 ### Data
 
@@ -49,7 +47,7 @@ All human-annotated preferences and explanations are collected from scratch on [
 
 ```
 {	
-    'id': 71,
+    'id': '71',
     'instruction': 'What is the capital of Australia?',
     'output_a': 'The capital of Australia is Canberra.',
     'output_b': "The capital of Australia is Canberra. Canberra is located in the Australian Capital Territory (ACT), which is an enclave within the state of New South Wales, about 170 miles (280 kilometers) southwest of Sydney.\n\n\n\nSome key facts about Canberra:\n\n\n\n1. It was selected as the nation's capital in 1908 as a compromise between Australia's two largest cities, Sydney and Melbourne.\n\n\n\n2. The city was designed by American architects Walter Burley Griffin and Marion Mahony Griffin, who won an international design competition in 1912.\n\n\n\n3. Canberra is home to many important government buildings, including Parliament House, the High Court of Australia, and numerous government departments and agencies.\n\n\n\n4. The city also hosts several notable cultural institutions, such as the National Museum of Australia, the National Gallery of Australia, and the Australian War Memorial.\n\n\n\nWhile Canberra is the capital, it is not the largest city in Australia. Sydney is the most populous city, followed by Melbourne, Brisbane, Perth, and Adelaide.",
@@ -93,15 +91,34 @@ The preference prediction task is framed as a four-way classification problem wi
 * `both_good`: both responses are equally good;
 * `both_bad`: both responses are equally bad. 
 
-Your system’s predictions will be evaluated by the accuracy score, which represents the proportion of examples on which your system and human annotators agree. 
+Your system’s predictions will be evaluated by the accuracy score, which represents the proportion of examples on which your system and human annotators agree.
+
+Below is an example for running our [official evaluation script](./evaluation_script.py) for this sub-task:
+
+```python3 evaluation_script.py --prediction_fpath first_subtask_sample_submission.tsv```
 
 #### Preference prediction & explanation generation
 
-The explanation generation task is framed as an open-ended generation problem. Your system's free-form explanations will be evaluated using standard natural language generation evaluation metrics (BLEU, BERTScore) and an external judge LLM. While the `<to be announced>` LLM will be used as the judge model during the development phase, a “surprise” judge LLM (which will not be disclosed) will be used for the final evaluation of your submissions. We will compute metric-specific rankings of all participants' systems and then aggregate these to establish the final ranking.
+The explanation generation task is framed as an open-ended generation problem. Your system's free-form explanations will be evaluated using standard natural language generation evaluation metrics (ROUGE-L, BERTScore) and an external judge LLM. While the [```google/gemma-2-9b-it```](https://huggingface.co/google/gemma-2-9b-it) LLM will be used as the judge model during the development phase, a “surprise” judge LLM (which will not be disclosed) will be used for the final evaluation of your submissions. We will compute metric-specific rankings of all participants' systems and then aggregate these to establish the final ranking.
+
+Below is an example for running our [official evaluation script](./evaluation_script.py) for this sub-task:
+
+```python3 evaluation_script.py --prediction_fpath second_subtask_sample_submission.tsv --evaluate_explanations True```
 
 ### Submission
 
-Stay tuned💥
+#### Preference prediction
+
+Your submission for the first sub-task must be in the form of a tab-separated dataframe as shown [here](./first_subtask_sample_submission.tsv). The sample submission is based on our baseline's predictions on the development set.
+
+#### Preference prediction & explanation generation
+
+Your submission for the second sub-task must be in the form of a tab-separated dataframe as shown [here](./second_subtask_sample_submission.tsv). The sample submission is based on our baseline's predictions on the development set.
+
+#### How to submit?
+
+You are required to submit your system description and your final predictions for the sub-task(s) of interest by the deadline. We will provide the submission details and inform you about this later. Stay tuned💥
+
 
 ### Bibliography
 
