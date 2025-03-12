@@ -121,10 +121,10 @@ def rate(candidate, references, verbose=False):
     return averagerougelF1, averagesimilarity
 
 
-def evaluate(args):
+def evaluate(**kwargs):
     d = {}
-    for questions_answers, contexts, reference_questions, path in load_questions_and_texts(args.json_path,
-                                                                                           args.data_path):
+    for questions_answers, contexts, reference_questions, path in load_questions_and_texts(kwargs["json_path"],
+                                                                                           kwargs["data_path"]):
         if any(len(x) == 1 for x in questions_answers):
             continue
         a = [x[1] for x in questions_answers]
@@ -135,4 +135,4 @@ def evaluate(args):
 
 if __name__ == "__main__":
     args = parser.parse_args([] if "__file__" not in globals() else None)
-    evaluate(args)
+    evaluate(**vars(args))

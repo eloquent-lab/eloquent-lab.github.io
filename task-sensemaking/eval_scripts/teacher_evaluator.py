@@ -269,11 +269,16 @@ def cosinesimilarity(question_embeds, sentanceset_embeds, args):
     return vals, m1
 
 
-def id(x):
+def identity(x):
     return x
 
 
 def kldivs(arr):
+    """
+    Kl-divergence.
+    :param arr:
+    :return:
+    """
     r = []
     one_then_zeros = np.concatenate([[1], np.zeros(arr.shape[0] - 1)])
     maxkldiv = kldiv(one_then_zeros, 1 - one_then_zeros)
@@ -296,7 +301,7 @@ def harmonic_mean(values):
     return values.shape[0] / np.sum(1 / values)
 
 
-def results(similiarity, prew, preq, args, questionset, windows, global_args):
+def results(similiarity, prew, preq, args, questionset, windows, **kwargs):
     """
     Calculate a set of results for all combinations of a set of similarity metrics given by args and list of sets of questions working on a set of windows.
     :param similiarity: The similarity function taking the elements of the output of prew and preq.
@@ -316,8 +321,8 @@ def results(similiarity, prew, preq, args, questionset, windows, global_args):
     else:
         windowspre = prew(windows)
         np.save(windowspref, np.array(windowspre))
-    if global_args.llm_amount > 0:
-        access_token = global_args.access_token
+    if kwargs["llm_amount"] > 0:
+        access_token = kwargs["access_token"]
         tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-1B-Instruct", token=access_token)
         quantization_config = BitsAndBytesConfig(load_in_4bit=True,
                                                  bnb_4bit_compute_dtype=torch.bfloat16)
@@ -345,7 +350,7 @@ def results(similiarity, prew, preq, args, questionset, windows, global_args):
                 toptexts = [sorted(list(zip([x[0] for x in windows], x)), key=lambda x: x[1], reverse=True)[:numtop]
                             for x in sct.tolist()]
                 for x in sorted(list(zip(questionstext, toptexts)), key=lambda x: sum([y[1] for y in x[1]]),
-                                reverse=True)[:global_args.top_windows]:
+                                reverse=True)[:kwargs["top_windows"]]:
 
                     def writeline2(x):
                         """Log some interesting question answer pairs and some relevant values."""
@@ -353,14 +358,14 @@ def results(similiarity, prew, preq, args, questionset, windows, global_args):
                         f2.write("\n")
                         f2.flush()
 
-                    if global_args.llm_amount > 0:
+                    if kwargs["llm_amount"] > 0:
                         difficulties = \
-                            run(model2, tokenizer, [y[0] for y in x[1]][:global_args.llm_amount], [x[0]], args, 4)[
-                                0] + (numtop - global_args.llm_amount) * [0.0]
+                            run(model2, tokenizer, [y[0] for y in x[1]][:kwargs["llm_amount"]], [x[0]], args, 4)[
+                                0] + (numtop - kwargs["llm_amount"]) * [0.0]
                         answerability = \
-                            run(model2, tokenizer, [y[0] for y in x[1]][:global_args.llm_amount], [x[0]], args, 4,
-                                answerability=True)[0] + (numtop - global_args.llm_amount) * [0.0]
-                        c = (global_args.llm_amount * global_args.top_windows)
+                            run(model2, tokenizer, [y[0] for y in x[1]][:kwargs["llm_amount"]], [x[0]], args, 4,
+                                answerability=True)[0] + (numtop - kwargs["llm_amount"]) * [0.0]
+                        c = (kwargs["llm_amount"] * kwargs["top_windows"])
                     else:
                         difficulties = numtop * [10.0]
                         answerability = numtop * [1.0]
@@ -377,20 +382,34 @@ def results(similiarity, prew, preq, args, questionset, windows, global_args):
                 s = {"name": name, "harmonic_mean": harmonic_mean(
                     list(vals.values()) + [avg_complexity / 9] + [avg_answerability]),
                      "values_from_similarity": vals,
-                     f"avg_complexity{'(mocked)' if global_args.llm_amount == 0 else ''}": avg_complexity,
-                     f"avg_answerability{'(mocked)' if global_args.llm_amount == 0 else ''}": avg_answerability}
+                     f"avg_complexity{'(mocked)' if kwargs['llm_amount'] == 0 else ''}": avg_complexity,
+                     f"avg_answerability{'(mocked)' if kwargs['llm_amount'] == 0 else ''}": avg_answerability}
                 r[-1].append(s)
     return r
 
 
-def evaluate(global_args):
+def evaluate(**kwargs):
+    """
+    Evaluate the output dicionary of a teacher system.
+    :param token: Huggingface token
+    :param json_path: Path to the json containing the outputs
+    :param data_path: Path to the folder containing the data
+    :param verbose:
+    :param llm_amount:
+    :param top_windows:
+    :param system_prompt_answerability:
+    :param response_prompt_answerability:
+    :param system_prompt_complexity:
+    :param response_prompt_complexity:
+    :return:
+    """
     d = {}
-    for questions, contexts, reference_questions, path in load_questions_and_texts(args.json_path, args.data_path):
-        d[path] = evaluate_one(contexts, questions, reference_questions, global_args)
+    for questions, contexts, reference_questions, path in load_questions_and_texts(kwargs["json_path"], kwargs["data_path"]):
+        d[path] = evaluate_one(contexts, questions, reference_questions, **kwargs)
     print(d)
 
 
-def evaluate_one(text, questions_eval, questions_gold, global_args):
+def evaluate_one(text, questions_eval, questions_gold, **kwargs):
     torch.manual_seed(42)
     random.seed(42)
     np.random.seed(42)
@@ -402,7 +421,7 @@ def evaluate_one(text, questions_eval, questions_gold, global_args):
     join = True
     if join:
         windows = [(".".join(x),) for x in windows]
-    if global_args.verbose:
+    if kwargs["verbose"]:
         print("--text--", text)
         print("--questions_gold--", questions_gold)
         print("--questions_eval--", questions_eval)
@@ -422,10 +441,10 @@ def evaluate_one(text, questions_eval, questions_gold, global_args):
     os.makedirs("outs", exist_ok=True)
     nnsim = Nnsim()
     r = results(cosinesimilarity, nnsim.nnembed, nnsim.nnembed, args, questionslist,
-                windows, global_args)
+                windows, **kwargs)
     return r
 
 
 if __name__ == "__main__":
     args = parser.parse_args([] if "__file__" not in globals() else None)
-    evaluate(args)
+    evaluate(**vars(args))
