@@ -1,20 +1,16 @@
-import json
-import os
+import argparse
 import os.path
-import re
 import random
 import string
 from itertools import chain
+
 import numpy as np
-import regex
 import torch.utils.data
-from torch.utils.data import DataLoader, Dataset
+from datasets import load_dataset
+from torch.utils.data import DataLoader
 from transformers import AutoModelForCausalLM, PreTrainedModel, PreTrainedTokenizer, GenerationConfig
 from transformers import AutoTokenizer, BitsAndBytesConfig
-from udapi.block.corefud.movehead import MoveHead
-from udapi.block.read.conllu import Conllu as ConlluReader
-from datasets import load_dataset
-import argparse
+
 from helpers import *
 
 parser = argparse.ArgumentParser()
@@ -57,6 +53,7 @@ def unzip(l):
             r[i].append(x[i])
     return r
 
+
 class mock_model:
     def __init__(self):
         self.device = "cuda"
@@ -65,38 +62,49 @@ class mock_model:
         return {
             "logits": torch.tensor([[[0] for y in range(input_tensor.shape[1])] for x in range(input_tensor.shape[0])])}
 
-def make_model(args, mock = False):
+
+def make_model(args, mock=False):
     cuda = torch.cuda.is_available()
     quantization_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16) if cuda else None
-    model = mock_model() if mock else AutoModelForCausalLM.from_pretrained(args.model_name, token=args.token, force_download=False,
-                                                 quantization_config=quantization_config, device_map="auto")
-    tokenizer = AutoTokenizer.from_pretrained(args.model_name, token=args.token, force_download=False, add_bos_token=True)
+    model = mock_model() if mock else AutoModelForCausalLM.from_pretrained(args.model_name, token=args.token,
+                                                                           force_download=False,
+                                                                           quantization_config=quantization_config,
+                                                                           device_map="auto")
+    tokenizer = AutoTokenizer.from_pretrained(args.model_name, token=args.token, force_download=False,
+                                              add_bos_token=True)
     tokenizer.pad_token = tokenizer.eos_token
     model.config.pad_token_id = model.config.eos_token_id
     return model, tokenizer
 
+
 def make_prompt(text, question, answer, tokenizer: PreTrainedTokenizer, question_tag, answer_tag):
-    system_prompt = f"Create a sequence of question and example answer pairs given a text. Do not describe your output, give the output directly. Mark each question with \"{question_tag}\" and the answer with \"{answer_tag}\"."
+    system_prompt = f"You are a university teacher's assistant. Create a sequence of question and example answer pairs given a text. Make sure the questions challenge the students but are answerable . Do not describe your output, give the output directly. Mark each question with \"{question_tag}\" and the answer with \"{answer_tag}\"."
     user_prompt = f"Create questions and example short answers given the following text. {text}"
     prompt = tokenizer.apply_chat_template(
         [{"role": "system", "content": system_prompt},
          {"role": "user", "content": user_prompt}], tokenize=True, return_dict=True, add_generation_prompt=True)
-    input_ids = prompt["input_ids"] + (tokenizer.encode(f"\n{question}\n{answer}") if question is not None and answer is not None else [])
-    #print(tokenizer.decode(prompt["input_ids"]), tokenizer.decode(input_ids))
+    input_ids = prompt["input_ids"] + (
+        tokenizer.encode(f"\n{question}\n{answer}") if question is not None and answer is not None else [])
+    # print(tokenizer.decode(prompt["input_ids"]), tokenizer.decode(input_ids))
     return input_ids, [1 if x > len(prompt["input_ids"]) else 0 for x in range(len(input_ids))]
+
 
 class Collator:
     def __init__(self, tokenizer: PreTrainedTokenizer):
         self.tokenizer = tokenizer
+
     def collate_fn(self, datapoints):
-        finishedtokens, masks = unzip([make_prompt(x["context"], x["question"], x["answers"]["text"][0], self.tokenizer) for x in datapoints])
+        finishedtokens, masks = unzip(
+            [make_prompt(x["context"], x["question"], x["answers"]["text"][0], self.tokenizer) for x in datapoints])
         lens = [len(x) for x in finishedtokens]
         ml = max(lens)
         finishedtokens, masks, attention_masks = unzip(
-            [(x + [0] * (ml - len(x)), y + [0] * (ml - len(x)), [1] * len(x) + [0] * (ml - len(x))) for x, y in zip(finishedtokens, masks)])
+            [(x + [0] * (ml - len(x)), y + [0] * (ml - len(x)), [1] * len(x) + [0] * (ml - len(x))) for x, y in
+             zip(finishedtokens, masks)])
         return {"concatenated": torch.tensor(finishedtokens),
                 "response_mask": torch.tensor(masks),
                 "attention_mask": torch.tensor(attention_masks)}
+
 
 def train(model, tokenizer):
     dataset_path = "rajpurkar/squad"
@@ -110,6 +118,7 @@ def train(model, tokenizer):
     valid_loader = DataLoader(valid_dataset, batch_size=BS, shuffle=False, collate_fn=collator.collate_fn)
     model, tokenizer = lora(model, train_loader, valid_loader, tokenizer, 100, "data/model")
     return model, tokenizer
+
 
 def make_devset_json(root):
     l = []
@@ -131,15 +140,22 @@ def eval_test(model: PreTrainedModel, tokenizer: PreTrainedTokenizer):
     make_devset_json(path)
     vs = load_questions_and_texts("devset.json", path)
     r = {}
+
     def get_first_end_with_sentence(x, amount):
         vs = x[:amount]
         i = vs.rfind(".")
-        return vs[:i+1]
+        return vs[:i + 1]
 
     question_tag = "**Question:**"
     answer_tag = "**Answer:**"
-    prompts = [(make_prompt(get_first_end_with_sentence(text,1000), None, None, tokenizer, question_tag, answer_tag)[0], path) for question, text, question_reference, path in vs]
-    generationConfig = GenerationConfig(num_beams=5, max_new_tokens=args.max_new_tokens)
+    prompts = [
+        (make_prompt(get_first_end_with_sentence(text, 1000), None, None, tokenizer, question_tag, answer_tag)[0], path)
+        for question, text, question_reference, path in vs]
+    GenerationConfig(num_beams=5, do_sample=True, top_k=10, top_p=0.9)
+    bad_words_ids = []
+    generationConfig = GenerationConfig(num_beams=10, num_beam_groups=2, max_new_tokens=args.max_new_tokens,
+                                        eos_token_id=model.config.eos_token_id, cache_implementation="offloaded_static",
+                                        bad_words_ids=bad_words_ids, diversity_penalty=0.1)
     for i, (x, path) in enumerate(prompts):
         x = x + tokenizer.encode(f"""\n\n{question_tag}""")
         output = model.generate(torch.tensor([x]).to(model.device), generationConfig)
@@ -152,7 +168,6 @@ def eval_test(model: PreTrainedModel, tokenizer: PreTrainedTokenizer):
         questions = questions if len(questions) > 0 else ["Generation failed."]
         r[path] = list(zip(questions, answers)) if len(answers) > 0 else [questions[0]]
     return r
-
 
 
 def main(args):
