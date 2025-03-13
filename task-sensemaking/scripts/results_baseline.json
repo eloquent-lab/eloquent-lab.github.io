@@ -3,22 +3,22 @@
         [
             {
                 "name": "evaluated",
-                "harmonic_mean": 0.00034302677082679494,
+                "harmonic_mean": 0.00017499105059766358,
                 "values_from_similarity": {
-                    "relevance": 36.22867166996002,
-                    "diversity question": 0.0037123237425175934,
-                    "diversity window": 0.0073989222696651934,
-                    "coverage question to window": 0.9853884313548208,
-                    "coverage window to question": 0.9997563362121582
+                    "relevance": 35.546377301216125,
+                    "diversity question": 0.0,
+                    "diversity window": 0.0,
+                    "coverage question to window": 0.9827526613834676,
+                    "coverage window to question": 1.0
                 }
             },
             {
                 "name": "gold",
-                "harmonic_mean": 0.00033934486174668453,
+                "harmonic_mean": 0.0003296589987507799,
                 "values_from_similarity": {
                     "relevance": 4.770396277308464,
-                    "diversity question": 0.0031955626021592794,
-                    "diversity window": 0.0031966622103085708,
+                    "diversity question": 0.0016230370907033209,
+                    "diversity window": 0.0016241368921215702,
                     "coverage question to window": 0.9959299073234151,
                     "coverage window to question": 0.9911454234545227
                 }
@@ -27,22 +27,22 @@
         [
             {
                 "name": "evaluated",
-                "harmonic_mean": 0.00034955796236657794,
+                "harmonic_mean": 0.00017499105059766358,
                 "values_from_similarity": {
-                    "relevance": 36.99338063597679,
-                    "diversity question": 0.7082932123151839,
-                    "diversity window": 0.04580104373539415,
-                    "coverage question to window": 0.9851542594993536,
-                    "coverage window to question": 0.9962881207466125
+                    "relevance": 35.546377301216125,
+                    "diversity question": 0.0,
+                    "diversity window": 0.0,
+                    "coverage question to window": 0.9827526613834676,
+                    "coverage window to question": 1.0
                 }
             },
             {
                 "name": "gold",
-                "harmonic_mean": 0.00034973114885059216,
+                "harmonic_mean": 0.00034972899380756033,
                 "values_from_similarity": {
                     "relevance": 4.931410308927298,
-                    "diversity question": 0.1460655042291512,
-                    "diversity window": 0.17171979653108171,
+                    "diversity question": 0.14454932296428605,
+                    "diversity window": 0.17021376641513547,
                     "coverage question to window": 0.9939967598462511,
                     "coverage window to question": 0.6683474333494615
                 }
@@ -51,22 +51,22 @@
         [
             {
                 "name": "evaluated",
-                "harmonic_mean": 0.0003495566563157771,
+                "harmonic_mean": 0.00017499105059766358,
                 "values_from_similarity": {
-                    "relevance": 36.91760078072548,
-                    "diversity question": 0.7065965761299553,
-                    "diversity window": 0.045651583588183296,
-                    "coverage question to window": 0.9851824884353552,
-                    "coverage window to question": 0.996364951133728
+                    "relevance": 35.546377301216125,
+                    "diversity question": 0.0,
+                    "diversity window": 0.0,
+                    "coverage question to window": 0.9827526613834676,
+                    "coverage window to question": 1.0
                 }
             },
             {
                 "name": "gold",
-                "harmonic_mean": 0.0003494906775016091,
+                "harmonic_mean": 0.0003494807982221713,
                 "values_from_similarity": {
                     "relevance": 4.959729965776205,
-                    "diversity question": 0.07298632476675859,
-                    "diversity window": 0.0764039746270108,
+                    "diversity question": 0.07144132037668934,
+                    "diversity window": 0.07486031613994551,
                     "coverage question to window": 0.9946354395232853,
                     "coverage window to question": 0.8695512063281978
                 }
@@ -77,70 +77,70 @@
         [
             {
                 "name": "evaluated",
-                "harmonic_mean": 0.00034338046248786426,
+                "harmonic_mean": 0.0002321457757189314,
                 "values_from_similarity": {
-                    "relevance": 8.184191770851612,
-                    "diversity question": 0.019540200964992822,
-                    "diversity window": 0.0030098684839244697,
-                    "coverage question to window": 0.989887216647147,
-                    "coverage window to question": 0.998180193610529
+                    "relevance": 5.700951442122459,
+                    "diversity question": 0.006610098324996816,
+                    "diversity window": 6.804124636801404e-05,
+                    "coverage question to window": 0.992868936159181,
+                    "coverage window to question": 0.999217669169108
                 }
             },
             {
                 "name": "gold",
-                "harmonic_mean": 0.0003441874260522849,
+                "harmonic_mean": 0.00032244312842175647,
                 "values_from_similarity": {
                     "relevance": 8.233464322984219,
-                    "diversity question": 0.0494533840830734,
-                    "diversity window": 0.0031705526004013832,
-                    "coverage question to window": 0.9912477297507033,
-                    "coverage window to question": 0.9974647785493616
+                    "diversity question": 0.0487409159035335,
+                    "diversity window": 0.0005929069735847314,
+                    "coverage question to window": 0.9912475172867221,
+                    "coverage window to question": 0.9974646936229502
                 }
             }
         ],
         [
             {
                 "name": "evaluated",
-                "harmonic_mean": 0.00034934557646931595,
+                "harmonic_mean": 0.00023216733114001645,
                 "values_from_similarity": {
-                    "relevance": 8.459068834781647,
-                    "diversity question": 1.6527115297166044,
-                    "diversity window": 0.029047923983134823,
-                    "coverage question to window": 0.9902264153931184,
-                    "coverage window to question": 0.7653087315605881
+                    "relevance": 5.7000103406608105,
+                    "diversity question": 0.0067347319759409946,
+                    "diversity window": 6.846104470242615e-05,
+                    "coverage question to window": 0.9927986105814067,
+                    "coverage window to question": 0.9992249806722006
                 }
             },
             {
                 "name": "gold",
-                "harmonic_mean": 0.00034959943321084206,
+                "harmonic_mean": 0.00034958025738438735,
                 "values_from_similarity": {
                     "relevance": 8.762615732848644,
-                    "diversity question": 1.9620010366831342,
-                    "diversity window": 0.04945559092463008,
+                    "diversity question": 1.9616442831505396,
+                    "diversity window": 0.046907830207016124,
                     "coverage question to window": 0.991701340350546,
-                    "coverage window to question": 0.9403590705434437
+                    "coverage window to question": 0.940359155469855
                 }
             }
         ],
         [
             {
                 "name": "evaluated",
-                "harmonic_mean": 0.00034932789834420493,
+                "harmonic_mean": 0.00023216733114001645,
                 "values_from_similarity": {
-                    "relevance": 8.30002035945654,
-                    "diversity question": 1.6355901486941513,
-                    "diversity window": 0.0282238577137739,
-                    "coverage question to window": 0.9900182006915512,
-                    "coverage window to question": 0.7652752971355625
+                    "relevance": 5.7000103406608105,
+                    "diversity question": 0.0067347319759409946,
+                    "diversity window": 6.846104470242615e-05,
+                    "coverage question to window": 0.9927986105814067,
+                    "coverage window to question": 0.9992249806722006
                 }
             },
             {
                 "name": "gold",
-                "harmonic_mean": 0.0003495829511944534,
+                "harmonic_mean": 0.0003495619046615842,
                 "values_from_similarity": {
                     "relevance": 8.51637776941061,
-                    "diversity question": 1.933233115987384,
-                    "diversity window": 0.04727706768754345,
+                    "diversity question": 1.932870676701104,
+                    "diversity window": 0.044727900254544,
                     "coverage question to window": 0.9912815115237127,
                     "coverage window to question": 0.939494095043171
                 }
@@ -151,22 +151,22 @@
         [
             {
                 "name": "evaluated",
-                "harmonic_mean": 0.0003448815067452268,
+                "harmonic_mean": 0.00017499054505837672,
                 "values_from_similarity": {
-                    "relevance": 13.59152514487505,
-                    "diversity question": 0.022125522508229467,
-                    "diversity window": 0.0040073296811074695,
-                    "coverage question to window": 0.9889508173192407,
-                    "coverage window to question": 0.9979634284973145
+                    "relevance": 6.588738411664963,
+                    "diversity question": 1.1586209711343722e-09,
+                    "diversity window": 4.06184911926152e-08,
+                    "coverage question to window": 0.9906166814348879,
+                    "coverage window to question": 1.0000000408937837
                 }
             },
             {
                 "name": "gold",
-                "harmonic_mean": 0.00034429875377692466,
+                "harmonic_mean": 0.0003092511939158275,
                 "values_from_similarity": {
                     "relevance": 11.460503563284874,
-                    "diversity question": 0.022207291879058674,
-                    "diversity window": 0.0035205106487299015,
+                    "diversity question": 0.021327263455920932,
+                    "diversity window": 0.00038664791991839835,
                     "coverage question to window": 0.9893894644656704,
                     "coverage window to question": 0.9977581289255442
                 }
@@ -175,22 +175,22 @@
         [
             {
                 "name": "evaluated",
-                "harmonic_mean": 0.0003494378745411076,
+                "harmonic_mean": 0.00017499054505837672,
                 "values_from_similarity": {
-                    "relevance": 14.32268787175417,
-                    "diversity question": 1.4325053115967894,
-                    "diversity window": 0.0341445121691047,
-                    "coverage question to window": 0.9894535042700932,
-                    "coverage window to question": 0.9031074047088623
+                    "relevance": 6.588738411664963,
+                    "diversity question": 1.1586209711343722e-09,
+                    "diversity window": 4.06184911926152e-08,
+                    "coverage question to window": 0.9906166814348879,
+                    "coverage window to question": 1.0000000408937837
                 }
             },
             {
                 "name": "gold",
-                "harmonic_mean": 0.00034956093180182375,
+                "harmonic_mean": 0.0003495318893872656,
                 "values_from_similarity": {
                     "relevance": 12.356585822999477,
-                    "diversity question": 1.5142945856321097,
-                    "diversity window": 0.04475599432659539,
+                    "diversity question": 1.5137485580130554,
+                    "diversity window": 0.041654493133141034,
                     "coverage question to window": 0.9892542409742597,
                     "coverage window to question": 0.9750532414111464
                 }
@@ -199,22 +199,22 @@
         [
             {
                 "name": "evaluated",
-                "harmonic_mean": 0.00034942709123995214,
+                "harmonic_mean": 0.00017499054505837672,
                 "values_from_similarity": {
-                    "relevance": 14.124112203717232,
-                    "diversity question": 1.4212388845868522,
-                    "diversity window": 0.03344460823150822,
-                    "coverage question to window": 0.9892939788210281,
-                    "coverage window to question": 0.9042418003082275
+                    "relevance": 6.588738411664963,
+                    "diversity question": 1.1586209711343722e-09,
+                    "diversity window": 4.06184911926152e-08,
+                    "coverage question to window": 0.9906166814348879,
+                    "coverage window to question": 1.0000000408937837
                 }
             },
             {
                 "name": "gold",
-                "harmonic_mean": 0.000349545447457621,
+                "harmonic_mean": 0.0003495139812724929,
                 "values_from_similarity": {
                     "relevance": 12.076020240783691,
-                    "diversity question": 1.4912599283481578,
-                    "diversity window": 0.043068320752742764,
+                    "diversity question": 1.490708671835892,
+                    "diversity window": 0.03996549539477757,
                     "coverage question to window": 0.9893145812680685,
                     "coverage window to question": 0.9755122267909825
                 }
@@ -225,22 +225,22 @@
         [
             {
                 "name": "evaluated",
-                "harmonic_mean": 0.00034583186247010695,
+                "harmonic_mean": 0.00023310548413857274,
                 "values_from_similarity": {
-                    "relevance": 26.37181244790554,
-                    "diversity question": 0.00960920516430444,
-                    "diversity window": 0.0074114175529213676,
-                    "coverage question to window": 0.9937618137995572,
-                    "coverage window to question": 0.9882287979125977
+                    "relevance": 11.678528971970081,
+                    "diversity question": 0.0030800066195083046,
+                    "diversity window": 0.00010306566322611798,
+                    "coverage question to window": 0.9944519608452167,
+                    "coverage window to question": 0.9947485402268873
                 }
             },
             {
                 "name": "gold",
-                "harmonic_mean": 0.0003421603050247535,
+                "harmonic_mean": 0.0002315017018022132,
                 "values_from_similarity": {
                     "relevance": 10.703479871153831,
-                    "diversity question": 0.0053174250201840955,
-                    "diversity window": 0.0037303741796759424,
+                    "diversity question": 0.004250934638581402,
+                    "diversity window": 8.425209790026078e-05,
                     "coverage question to window": 0.9853153190715639,
                     "coverage window to question": 0.9920661449432373
                 }
@@ -249,22 +249,22 @@
         [
             {
                 "name": "evaluated",
-                "harmonic_mean": 0.00034879410086345966,
+                "harmonic_mean": 0.0003486217515437096,
                 "values_from_similarity": {
-                    "relevance": 28.19633111357689,
-                    "diversity question": 0.6543696837354248,
-                    "diversity window": 0.015528041435420232,
-                    "coverage question to window": 0.9943746492909216,
-                    "coverage window to question": 0.4591728448867798
+                    "relevance": 11.839688755571842,
+                    "diversity question": 0.3083183637286302,
+                    "diversity window": 0.013892036522507058,
+                    "coverage question to window": 0.994558763929004,
+                    "coverage window to question": 0.36345203965946127
                 }
             },
             {
                 "name": "gold",
-                "harmonic_mean": 0.000349194406209371,
+                "harmonic_mean": 0.00034906011216474407,
                 "values_from_similarity": {
                     "relevance": 11.495283804833889,
-                    "diversity question": 0.6848585977775903,
-                    "diversity window": 0.02358137090026181,
+                    "diversity question": 0.6839746161711636,
+                    "diversity window": 0.019953377558873355,
                     "coverage question to window": 0.9869718982588667,
                     "coverage window to question": 0.8522038459777832
                 }
@@ -273,22 +273,22 @@
         [
             {
                 "name": "evaluated",
-                "harmonic_mean": 0.0003487890425305636,
+                "harmonic_mean": 0.00034860749000422347,
                 "values_from_similarity": {
-                    "relevance": 28.01552414894104,
-                    "diversity question": 0.6519554750480986,
-                    "diversity window": 0.015458247749532594,
-                    "coverage question to window": 0.9943309776909831,
-                    "coverage window to question": 0.46036529541015625
+                    "relevance": 11.77244447171688,
+                    "diversity question": 0.3059938049025253,
+                    "diversity window": 0.013740538091024882,
+                    "coverage question to window": 0.9945307809176445,
+                    "coverage window to question": 0.36310656844906786
                 }
             },
             {
                 "name": "gold",
-                "harmonic_mean": 0.00034918085375877856,
+                "harmonic_mean": 0.0003490412342972173,
                 "values_from_similarity": {
                     "relevance": 11.346487328410149,
-                    "diversity question": 0.677328033204966,
-                    "diversity window": 0.0231654366841441,
+                    "diversity question": 0.6764420053763288,
+                    "diversity window": 0.01953706402573186,
                     "coverage question to window": 0.9866544306178633,
                     "coverage window to question": 0.852982759475708
                 }

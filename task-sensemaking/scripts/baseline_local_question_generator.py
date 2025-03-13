@@ -13,6 +13,7 @@ from transformers import AutoTokenizer, BitsAndBytesConfig
 
 from eval_scripts import teacher_evaluator
 from eval_scripts.helpers import *
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--token", default=default_access_token, type=str, help="Huggingface token.")
 
@@ -23,6 +24,7 @@ locs = ["meta-llama/Llama-3.1-8B-Instruct",
 parser.add_argument("--model_name", default=locs[2], type=str, help="The model and tokenizer to use.")
 parser.add_argument("--max_new_tokens", default=200, type=str, help="Max tokens for the model to generate.")
 parser.add_argument("--data_path", default="../devset", type=str, help="Path to the folder containing the data.")
+
 
 def reshape(enumerable, per=25):
     r = []
@@ -150,13 +152,14 @@ def eval_test(model: PreTrainedModel, tokenizer: PreTrainedTokenizer, args):
         (make_prompt(get_first_end_with_sentence(text, 1000), None, None, tokenizer, question_tag, answer_tag)[0], path)
         for question, text, question_reference, path in vs]
     GenerationConfig(num_beams=5, do_sample=True, top_k=10, top_p=0.9)
-    bad_words_ids = []
+    bad_words_ids = None
     generationConfig = GenerationConfig(num_beams=10, num_beam_groups=2, max_new_tokens=args.max_new_tokens,
-                                        eos_token_id=model.config.eos_token_id, cache_implementation="offloaded_static",
-                                        bad_words_ids=bad_words_ids, diversity_penalty=0.1)
+                                        eos_token_id=model.config.eos_token_id[0],
+                                        bad_words_ids=bad_words_ids, diversity_penalty=0.1, pad_token_id=model.config.pad_token_id[0])
     for i, (x, path) in enumerate(prompts):
         x = x + tokenizer.encode(f"""\n\n{question_tag}""")
-        output = model.generate(torch.tensor([x]).to(model.device), generationConfig)
+        inp = torch.tensor([x]).to(model.device)
+        output = model.generate(inp, generationConfig,attention_mask = torch.ones_like(inp))
         t = tokenizer.decode(output[0])
         print(t)
         lq = len(question_tag)
@@ -172,9 +175,9 @@ def main(args):
     torch.manual_seed(42)
     random.seed(42)
     np.random.seed(42)
-    eval_only = True
+    eval_only = False
+    finetune = False
     if not eval_only:
-        finetune = False
         model, tokenizer = make_model(args)
         os.makedirs("data", exist_ok=True)
         if finetune:
@@ -188,7 +191,6 @@ def main(args):
                 z.pop("avg_complexity(mocked)")
                 z.pop("avg_answerability(mocked)")
     json.dump(r_1, open("results_baseline.json", "w"), indent=4)
-
 
 
 if __name__ == "__main__":

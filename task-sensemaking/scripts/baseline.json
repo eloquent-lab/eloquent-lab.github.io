@@ -2,65 +2,93 @@
     "popular/video-22/questions.json": [
         [
             " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects. How do vaccinations work and how dangerous are they really?",
-            " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects."
+            " Vaccinations work by introducing a small, harmless piece of a pathogen (such as a virus or bacteria) to the body, which triggers the production of antibodies and activates the immune system to fight off the infection.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " How do vaccinations work and how dangerous are they really?",
-            " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination"
+            " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects. How do vaccinations work and how dangerous are they really?",
+            " Vaccinations work by introducing"
         ]
     ],
     "ukrbiology/book01/topic01-Різноманітність тварин/questions.json": [
         [
-            " What are the main groups of animals studied in the topic of Animal Diversity?",
-            " Plants and Animals"
+            " What are the main groups of animals studied in this topic?",
+            " Plants and Animals<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " How do animals adapt to exist in different environments?",
-            " They adapt to exist in different environments by interacting with each other."
+            " What are the main groups of animals studied in this topic?",
+            " Animals<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " What role do animals play in nature?",
-            " Animals play a crucial role in nature."
+            " Who divided living organisms into two large kingdoms - Plants and Animals?",
+            " Aristotle<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " How closely related are a person's interests with each species of animal?",
-            " A person's interests are closely related to each species of animal."
+            " What are the main groups of animals studied in this topic?",
+            " Animals<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " What is the role of animals in the life of the planet?",
-            " Animals play a vital role in the life of the planet."
+            " What are the main groups of animals studied in this topic?",
+            " Animals<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " What are the different groups of animals studied in the topic of Animal Diversity?",
-            " The different groups of animals studied in the topic of Animal Diversity are: soil organisms, land-air animals, and those who have chosen other creatures as their habitat."
+            " Who divided living organisms into two large kingdoms - Plants and Animals?",
+            " Aristotle<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+        ],
+        [
+            " What are the main groups of animals studied in this topic?",
+            " Animals<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+        ],
+        [
+            " What are the main groups of animals studied in this topic?",
+            " Animals<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ]
     ],
     "ukrbiology/book01/topic02-Процеси життєдіяльностітварин/questions.json": [
         [
-            " What are the basic functions of an animal's body?",
-            " Metabolism, nutrition, respiration, digestion, excretion, movement, irritability, reproduction, and development of animal organisms."
+            " What is one of the main properties of animals as living beings?",
+            " Animals are heterotrophs.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " What are the main properties of animals as living beings?",
-            " Organisms are heterotrophs, and animals are living beings that obtain energy through food."
+            " What is one of the main properties of animals as living beings?",
+            " Animals are heterotrophs.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " What is the process by which animals obtain energy through food?",
-            " Digestion."
+            " What is one of the main properties of animals as living beings?",
+            " Animals are heterotrophs.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " What is carried out by the organs of the digestive system?",
-            " Digestion is carried out by the organs of the digestive system.<|end_of_text|>"
+            " What is one of the main properties of animals as living beings?",
+            " Animals are heterotrophs.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+        ],
+        [
+            " What is one of the main properties of animals as living beings?",
+            " Animals are heterotrophs.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+        ],
+        [
+            " What is one of the main properties of animals as living beings?",
+            " Animals are heterotrophs.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ]
     ],
     "ukrbiology/book01/topic03-Поведінка тварин/questions.json": [
         [
-            " What are the characteristic features of animals?",
-            " Hares, foxes, wolves, herons, flies, beetles, and crayfish."
+            " Why do animals exhibit unique and often inexplicable behavior?",
+            " The biological meaning of this or that behavior refers to the scientific study of animal behavior, which is known as ethology.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " What are some examples of unique and often inexplicable behavior in animals?",
-            " Animals such as hares, foxes, wolves, herons, flies, beetles, and crayfish.<|end_of_text|>"
+            " What are some examples of unique and often inexplicable animal behavior?",
+            " Hares, foxes, wolves, herons, flies, beetles, and crayfish are all examples of animals that exhibit unique and often inexplicable behavior.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+        ],
+        [
+            " What are some characteristic features of animals?",
+            " The characteristic features of animals include their behavior.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+        ],
+        [
+            " What are some methods of studying animal behavior?",
+            " Methods of studying animal behavior include ethology.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+        ],
+        [
+            " What are some examples of animals that exhibit unique and often inexplicable behavior?",
+            " Hares, foxes, wolves, herons, flies, beetles, and crayfish are all examples"
         ]
     ]
 }

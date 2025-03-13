@@ -197,7 +197,7 @@ def kldiv(dist1, dist2):
     dist2 = dist2 + additional
     dist1 = np.array(dist1) / np.sum(dist1)
     dist2 = np.array(dist2) / np.sum(dist2)
-    return np.sum(dist1 * np.log2((dist1 / dist2) + 0.001))
+    return np.sum(dist1 * np.where(dist1 == 0, 0,np.log2((dist1 / dist2))))
 
 
 def r1f1similarity(questions, sentanceset):
@@ -261,8 +261,11 @@ def cosinesimilarity(question_embeds, sentanceset_embeds, args):
     if type == "quantile":
         q = np.quantile(m, val)
         c = np.where(m > q)[0].shape[0]
-        to_dist = np.sum(np.where(m > q, 0, np.quantile(m, val / 2)))
-        vals = (np.where(m > q, m + to_dist / c, np.finfo(float).eps))
+        if c != 0:
+            to_dist = np.sum(np.where(m > q, 0, np.quantile(m, val / 2)))
+            vals = (np.where(m > q, m + to_dist / c, np.finfo(float).eps))
+        else:
+            vals = m
     elif type == "similarity":
         k = (np.where(m > 0, np.power(m, 1 / val), 0))
         vals = k
