@@ -7,8 +7,8 @@ default_access_token = ...
 def load_questions_and_texts(json_file, data_path):
     r = []
     with open(json_file) as f:
-        paths = json.load(f)
-    for path in paths:
+        questions_answers = json.load(f)
+    for path in questions_answers:
         dn = os.path.join(data_path, os.path.dirname(path))
         enpath = os.path.join(dn, "text.en.txt")
         if os.path.isfile(enpath):
@@ -21,8 +21,7 @@ def load_questions_and_texts(json_file, data_path):
         if os.path.isfile(qp):
             with open(qp) as f:
                 question_reference = json.load(f)
-        with open(os.path.join(data_path, path)) as f:
-            question = json.load(f)
+        question = questions_answers[path]
         r.append((question, text, question_reference, path))
     return r
 

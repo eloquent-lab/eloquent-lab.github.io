@@ -11,8 +11,8 @@ from torch.utils.data import DataLoader
 from transformers import AutoModelForCausalLM, PreTrainedModel, PreTrainedTokenizer, GenerationConfig
 from transformers import AutoTokenizer, BitsAndBytesConfig
 
-from helpers import *
-
+from eval_scripts import teacher_evaluator
+from eval_scripts.helpers import *
 parser = argparse.ArgumentParser()
 parser.add_argument("--token", default=default_access_token, type=str, help="Huggingface token.")
 
@@ -22,7 +22,7 @@ locs = ["meta-llama/Llama-3.1-8B-Instruct",
 
 parser.add_argument("--model_name", default=locs[2], type=str, help="The model and tokenizer to use.")
 parser.add_argument("--max_new_tokens", default=200, type=str, help="Max tokens for the model to generate.")
-
+parser.add_argument("--data_path", default="../devset", type=str, help="Path to the folder containing the data.")
 
 def reshape(enumerable, per=25):
     r = []
@@ -134,11 +134,9 @@ def make_devset_json(root):
     json.dump(d, open("devset.json", "w"), indent=4, ensure_ascii=False)
 
 
-def eval_test(model: PreTrainedModel, tokenizer: PreTrainedTokenizer):
-    path2 = "/mnt/c/school/mtproject/data/sensemaking-2025-internal-data/devset"
-    path = "/mnt/c/school/eloquent-lab.github.io/task-sensemaking/devset"
-    make_devset_json(path)
-    vs = load_questions_and_texts("devset.json", path)
+def eval_test(model: PreTrainedModel, tokenizer: PreTrainedTokenizer, args):
+    make_devset_json(args.data_path)
+    vs = load_questions_and_texts("devset.json", args.data_path)
     r = {}
 
     def get_first_end_with_sentence(x, amount):
@@ -174,13 +172,22 @@ def main(args):
     torch.manual_seed(42)
     random.seed(42)
     np.random.seed(42)
-    finetune = False
-    model, tokenizer = make_model(args)
-    os.makedirs("data", exist_ok=True)
-    if finetune:
-        model, tokenizer = train(model, tokenizer)
-    r = eval_test(model, tokenizer)
-    json.dump(r, open("baseline.json", "w"), indent=4, ensure_ascii=False)
+    eval_only = True
+    if not eval_only:
+        finetune = False
+        model, tokenizer = make_model(args)
+        os.makedirs("data", exist_ok=True)
+        if finetune:
+            model, tokenizer = train(model, tokenizer)
+        r = eval_test(model, tokenizer, args)
+        json.dump(r, open("baseline.json", "w"), indent=4, ensure_ascii=False)
+    r_1 = teacher_evaluator.evaluate(json_path="baseline.json", data_path=args.data_path, outs_path="outs_baseline")
+    for x in r_1:
+        for y in r_1[x]:
+            for z in y:
+                z.pop("avg_complexity(mocked)")
+                z.pop("avg_answerability(mocked)")
+    json.dump(r_1, open("results_baseline.json", "w"), indent=4)
 
 
 

@@ -5,7 +5,7 @@ import numpy as np
 import pylcs
 from sentence_transformers import SentenceTransformer
 
-from helpers import *
+from .helpers import *
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--json_path", default="devset.json", type=str, help="Path to the json containing the outputs.")

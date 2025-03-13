@@ -10,15 +10,17 @@ from sentence_transformers import SentenceTransformer
 from transformers import AutoModelForCausalLM
 from transformers import AutoTokenizer, BitsAndBytesConfig
 
-from helpers import *
+from .helpers import *
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--token", default=default_access_token, type=str, help="Huggingface token.")
 parser.add_argument("--json_path", default="devset.json", type=str, help="Path to the json containing the outputs.")
 parser.add_argument("--data_path", default="../devset", type=str, help="Path to the folder containing the data.")
+parser.add_argument("--outs_path", default="outs", type=str, help="Path to the folder containing the data.")
 parser.add_argument("--verbose", default=False, action="store_true")
 parser.add_argument("--llm_amount", default=0, type=int)
 parser.add_argument("--top_windows", default=0, type=int)
+parser.add_argument("--cache", default=False, action="store_true")
 
 SYSTEM_PROMPT_ANSWERABILITY = "You are a model that is given questions and tasked with evaluating whether it can be answered."
 SYSTEM_PROMPT_COMPLEXITY = "You are a model that is given questions and tasked with evaluating how hard it is to answer."
@@ -190,12 +192,12 @@ def entropy(dist):
 
 
 def kldiv(dist1, dist2):
-    additional = 0.5 / (dist1.shape[0])
+    additional = 1 / (dist1.shape[0])
     dist1 = dist1 + additional
     dist2 = dist2 + additional
     dist1 = np.array(dist1) / np.sum(dist1)
     dist2 = np.array(dist2) / np.sum(dist2)
-    return np.sum(dist1 * np.log2((dist1 / dist2)))
+    return np.sum(dist1 * np.log2((dist1 / dist2) + 0.001))
 
 
 def r1f1similarity(questions, sentanceset):
@@ -315,12 +317,15 @@ def results(similiarity, prew, preq, args, questionset, windows, **kwargs):
     """
     r = []
     questionsetpre = preq([[y for y in x[1]] for x in questionset])
-    windowspref = "windowspre"
-    if os.path.isfile(windowspref):
-        windowspre = np.load(windowspref)
+    if kwargs["cache"]:
+        windowspref = "windowspre"
+        if os.path.isfile(windowspref):
+            windowspre = np.load(windowspref)
+        else:
+            windowspre = prew(windows)
+            np.save(windowspref, np.array(windowspre))
     else:
         windowspre = prew(windows)
-        np.save(windowspref, np.array(windowspre))
     if kwargs["llm_amount"] > 0:
         access_token = kwargs["access_token"]
         tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-1B-Instruct", token=access_token)
@@ -340,7 +345,7 @@ def results(similiarity, prew, preq, args, questionset, windows, **kwargs):
                         "coverage question to window": normalized_entropy(np.mean(scores, 1)),
                         "coverage window to question": normalized_entropy(np.mean(scores, 0))}
 
-            with open(("outs/" + name + "-" + arg).replace(".", "-") + "best_texts.txt", "a") as f2:
+            with open((f"{kwargs['outs_path']}/" + name + "-" + arg).replace(".", "-") + "best_texts.txt", "a") as f2:
                 sct = scores / np.sum(scores)
                 assert sct.shape[0] == len(windows)
                 numtop = 15
@@ -390,24 +395,28 @@ def results(similiarity, prew, preq, args, questionset, windows, **kwargs):
 
 def evaluate(**kwargs):
     """
-    Evaluate the output dicionary of a teacher system.
+    Evaluate the output dictionary of a teacher system.
     :param token: Huggingface token
     :param json_path: Path to the json containing the outputs
     :param data_path: Path to the folder containing the data
     :param verbose:
     :param llm_amount:
     :param top_windows:
+    :param outs_path:
     :param system_prompt_answerability:
     :param response_prompt_answerability:
     :param system_prompt_complexity:
     :param response_prompt_complexity:
+    :param cache:
     :return:
     """
+    default_args = vars(parser.parse_args([]))
+    for x in default_args:
+        kwargs.setdefault(x, default_args[x])
     d = {}
     for questions, contexts, reference_questions, path in load_questions_and_texts(kwargs["json_path"], kwargs["data_path"]):
         d[path] = evaluate_one(contexts, questions, reference_questions, **kwargs)
-    print(d)
-
+    return d
 
 def evaluate_one(text, questions_eval, questions_gold, **kwargs):
     torch.manual_seed(42)
@@ -436,9 +445,9 @@ def evaluate_one(text, questions_eval, questions_gold, **kwargs):
         cosinesimilarity(None, None, arg)
     questionslist = [("evaluated", questions_eval), ("gold", questions_gold)]
     questionslist = [(x, [z[0] for z in y]) for x, y in questionslist]
-    if os.path.isdir("outs"):
-        shutil.rmtree('outs')
-    os.makedirs("outs", exist_ok=True)
+    if os.path.isdir(kwargs['outs_path']):
+        shutil.rmtree(kwargs['outs_path'])
+    os.makedirs(kwargs['outs_path'], exist_ok=True)
     nnsim = Nnsim()
     r = results(cosinesimilarity, nnsim.nnembed, nnsim.nnembed, args, questionslist,
                 windows, **kwargs)
@@ -447,4 +456,5 @@ def evaluate_one(text, questions_eval, questions_gold, **kwargs):
 
 if __name__ == "__main__":
     args = parser.parse_args([] if "__file__" not in globals() else None)
-    evaluate(**vars(args))
+    d = evaluate(**vars(args))
+    print(d)
