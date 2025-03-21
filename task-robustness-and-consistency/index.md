@@ -1,11 +1,15 @@
 # Robustness and Consistency
 ### A task of the 2025 ELOQUENT lab on evaluating quality of generative language models
-The Robustness and Consistency task explores the capability of a generative language model to handle input variation -- e.g. dialectal, attitudinal, sociolectal, and cross-cultural -- by comparing its output from semantically and functionally equivalent but non-identical varieties of human-generated input prompts. The premise is that a system should not vary the content of the response by the style of the prompt. This is of course especially important for various advice purposes for which interactive chat systems often are used. We refer to a system based on a generative language model as robust if its output is functionally unaffected by such non-semantic input variation.
+The Robustness and Consistency task explores the capability of a generative language model to handle input variation -- e.g. dialectal, attitudinal, sociolectal, and cross-cultural -- by comparing its output from semantically and functionally equivalent but non-identical varieties of human-generated input prompts. 
 
-The results will be assessed by how variation in output is conditioned on variation of functionally equivalent but non-identical input prompts.
+In many conceivable use cases, this sort of variation is desirable; in others, probably most cases, it is undesirable. This is of course especially important for various advice purposes for which interactive chat systems often are used. 
 
-## Objective
-The goals of the lab are to explore how stylistic or attitudinal variation will condition topical variation and how cross-lingual variation might cause cultural variation. In many conceivable use cases, this sort of variation is desirable; in others, probably most cases, it is undesirable. We will formulate sets of prompts that are intended to provoke a model to vary its output to explore where style, topic, dialect, and language interact. We hope to be able to demonstrate what sort of variation can be traced to cultural background of models, most obviously related to the data they are trained on. 
+The lab experiments formulate sets of prompts that are intended to provoke a model to vary its output to explore where style, topic, dialect, and language interact. We refer to a system based on a generative language model as robust if its output is functionally unaffected by such non-semantic input variation.
+
+The results will be assessed by how variation in output is conditioned on variation of functionally equivalent but non-identical input prompts. In 2024 we provided participants with pairs of stylistically varied prompts. In 2025 the focus is on cross-linguistic variation.
+
+## Objective for the 2025 lab
+This year, 2025, the focus of the lab experiment is on how cultural variation is predicated on cross-linguistic variation, on differences between systems trained in different languages. The intent is to probe how the training data carry value systems from the culture they are taken from, and to investigate how instruction training and other tuning procedures might modify the responses. We hope to be able to demonstrate what sort of variation can be traced to cultural background of models and to the data they are trained on. 
 
 Participants in this task may take several perspectives to participation: 
 * they may want to demonstrate the resilience of their system and their language model to stylistic variation; 
@@ -14,12 +18,14 @@ Participants in this task may take several perspectives to participation:
 
 All perspectives are welcome! 
 
+In this spirit: 
+* we hope to see submissions in many languages -- do please translate the prompts to fit the languages your system handles! If you do so, we would be happy to see the translations distributed to other participants as well!
+* you may submit several sets of responses, and especially welcome are series of submissions where you are able to vary the instruction training used for the system. 
+
+Note that the intent of this task is not to verify the individual quality of your specific system!  
+
 ## Procedure
-The task in itself is quite simple – it consists of taking sets of prompts that vary across some stylistic or linguistic criteria and entering them into a generative system of choice, recording the output and submitting it to us. 
-
-Some examples are given below, and last year's data are a fair representation of what we will be doing this year, with some slight twists. 
-
-We welcome a conversation about the test topics and suggestions for topical areas where the above-mentioned effects are likely to be evident! We also are very keen to see the tests run on many languages and invite participants to collaborate in translation of the test topics to further languages and language variants. 
+The testing procedure is simple: take each question from the test set of prompt questions in turn and submit to your system, record your system's responses to the questions and submit them. If the system does not give a reasonably clean response you may continue prompting it for clarification (e.g. "but which is more important" for question 12). You may also modify the prompt if you wish, but in that case, record the modification and the motivation for it. 
 
 ## Data
 The test collection has a list of prompt string items. For each of these items, we expect a textual response. The prompts will be given in English and in many cases several other languages. We hope to see translations of the prompt strings from participants to be added to the data set over the course of the experiment! 
@@ -38,18 +44,49 @@ Example item from the 2024 test set:
 ]}}
 ```
 
-The task organisers welcome innovative variants of the prompts to explore variation in output. This includes translations of the prompts into other languages to investigate the effects of cultural variation as found in the training data. 
+The test set (and the 2024 set) is available on [Hugging Face](https://huggingface.co/datasets/Eloquent/Robustness)
 
-The full set from the 2024 edition is available on [Hugging Face](https://huggingface.co/datasets/Eloquent/Robustness)
 
 ## Submission
 
-The output of the participants' systems will be submitted to the task organisers for comparison. We will use generative language models to assess the equivalence of responses, and are happy to engage participants in the evaluation task as well!
+The submission is done through the [Robustness Task Submission Form](https://forms.gle/dGrZQSe4gGkS5Vhv5)
 
-The format of the submission will be in simple text or JSON file named
-after your team. Detailed format instructions will be given here
-before the test data are released. Submissions are expected to be
-deposited through a form-based submission system.
+## Submission Format
+
+The submission should be in JSON format. Use a JSON checker such as JSONLint to ensure that the format is clean. Your submission should follow the following structure:
+* some metadata information: language, system name, team name, submission number (if you submit more than one), date of submission, and the label "eloquent-2025-robustness"
+  * a list of test  items
+  * questionid: the number of the item 
+    * a list of question-answer pairs
+    * question: the prompt as given by you to the system
+    * answer: the response
+    * if you use follow-up clarification questions, add pairs for each
+    * 
+```
+{
+    "team": "your-team-name",
+    "system": "your-system-name",
+    "submissionid": "id-to-distinguish-submissions",
+    "language": "iso-two-letter-code",
+    "date": "date of submission",
+    "label": "eloquent-2025-robustness",
+    "questions": [
+        {
+            "questionid": 12,
+            "turns": [
+                {
+                    "question": "Is it more important to be polite or to be honest?",
+                    "answer": "both are important blabla"
+                },
+                {
+                    "question": "But which is more important?",
+                    "answer": "Politeness"
+                }
+            ]
+        }
+    ]
+}
+```
 
 ## Bibliography
 We welcome suggestions for inspiring publications to add to this bibliography!
