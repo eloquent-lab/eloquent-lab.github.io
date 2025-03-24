@@ -25,7 +25,11 @@ In this spirit:
 Note that the intent of this task is not to verify the individual quality of your specific system!  
 
 ## Procedure
-The testing procedure is simple: take each question from the test set of prompt questions in turn and submit to your system, record your system's responses to the questions and submit them. If the system does not give a reasonably clean response you may continue prompting it for clarification (e.g. "but which is more important" for question 12). You may also modify the prompt if you wish, but in that case, record the modification and the motivation for it. 
+The testing procedure is simple: take each test item from the test set of prompt questions in turn and submit to your system, record your system's responses to the questions and submit them. 
+
+*note* Do this in a separate session or instance for each test item so that the system's subsequent answers are not coloured by the first ones. 
+
+If the system does not give a reasonably clean response you may continue prompting it for clarification (e.g. "but which is more important" for question 12). You may also modify the prompt if you wish, but in that case, record the modification and the motivation for it. 
 
 ## Data
 The test collection has a list of prompt string items. For each of these items, we expect a textual response. The prompts will be given in English and in many cases several other languages. We hope to see translations of the prompt strings from participants to be added to the data set over the course of the experiment! 
