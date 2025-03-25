@@ -1,10 +1,10 @@
 # Robustness and Consistency
 ### A task of the 2025 ELOQUENT lab on evaluating quality of generative language models
 
-## The task in brief
+## The task in brief (this is a simple task to execute!)
 
 - We provide a number of questions in several languages
- - "question": "Is it more important to be polite or to be honest?"
+   - e.g. `"question": "Is it more important to be polite or to be honest?"`
 - You use a generative language model to answer the question in the languages your model handles
 - You send the response to us
 - We and you together discuss the results to explore how linguistic variation conditions responses
