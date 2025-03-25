@@ -1,14 +1,15 @@
 # Robustness and Consistency
-### A task of the 2025 ELOQUENT lab on evaluating quality of generative language models
+### A task of the 2025 [ELOQUENT lab](https://eloquent-lab.github.io/) on evaluating quality of generative language models
 
 ## The task in brief (this is a simple task to execute!)
 
-- We provide a number of questions in several languages
+- We provide a number of questions in several languages (link below)
    - e.g. `"question": "Is it more important to be polite or to be honest?"`
 - You use a generative language model to answer the question in the languages your model handles
-- You send the response to us
+- You send the response to us (before mid-May 2025)
 - We and you together discuss the results to explore how linguistic variation conditions responses
 - We write a joint report
+- Workshop 9-12 September 2025 in Madrid at [CLEF](https://clef2025.clef-initiative.eu/)
 
 
 ## How does a model handle input variation?
