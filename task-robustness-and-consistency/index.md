@@ -1,5 +1,17 @@
 # Robustness and Consistency
 ### A task of the 2025 ELOQUENT lab on evaluating quality of generative language models
+
+## The task in brief
+
+- We provide a number of questions in several languages
+ - "question": "Is it more important to be polite or to be honest?"
+- You use a generative language model to answer the question in the languages your model handles
+- You send the response to us
+- We and you together discuss the results to explore how linguistic variation conditions responses
+- We write a joint report
+
+
+## How does a model handle input variation?
 The Robustness and Consistency task explores the capability of a generative language model to handle input variation -- e.g. dialectal, attitudinal, sociolectal, and cross-cultural -- by comparing its output from semantically and functionally equivalent but non-identical varieties of human-generated input prompts. 
 
 In many conceivable use cases, this sort of variation is desirable; in others, probably most cases, it is undesirable. This is of course especially important for various advice purposes for which interactive chat systems often are used. 
