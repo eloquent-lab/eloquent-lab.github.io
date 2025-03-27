@@ -109,16 +109,13 @@ Below is an example for running our [official evaluation script](./evaluation_sc
 
 #### Preference prediction
 
-Your submission for the first sub-task must be in the form of a tab-separated dataframe as shown [here](./first_subtask_sample_submission.tsv). The sample submission is based on our baseline's predictions on the development set.
+* **Submission format:** Your submission for the first sub-task must be in the form of a tab-separated dataframe as shown [here](./first_subtask_sample_submission.tsv). The sample submission is based on our baseline's predictions on the development set.
+* **Submission form:** Please fill in the [Google form](https://forms.gle/U5nWinbFBF3GXb3E6); answer the questions and upload your best system's predictions. Please submit *only once*.
 
 #### Preference prediction & explanation generation
 
-Your submission for the second sub-task must be in the form of a tab-separated dataframe as shown [here](./second_subtask_sample_submission.tsv). The sample submission is based on our baseline's predictions on the development set.
-
-#### How to submit?
-
-You are required to submit your system description and your final predictions for the sub-task(s) of interest by the deadline. We will provide the submission details and inform you about this later. Stay tuned💥
-
+* **Submission format:** Your submission for the second sub-task must be in the form of a tab-separated dataframe as shown [here](./second_subtask_sample_submission.tsv). The sample submission is based on our baseline's predictions on the development set.
+* **Submission form:** Please fill in the [Google form](https://forms.gle/Zq6hKj62Gjp88PFP7); answer the questions and upload your best system's predictions. Please submit *only once*.
 
 ### Bibliography
 
