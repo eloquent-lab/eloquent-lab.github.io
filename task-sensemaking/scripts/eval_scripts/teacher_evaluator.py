@@ -197,7 +197,9 @@ def kldiv(dist1, dist2):
     dist2 = dist2 + additional
     dist1 = np.array(dist1) / np.sum(dist1)
     dist2 = np.array(dist2) / np.sum(dist2)
-    return np.sum(dist1 * np.log2(np.where(dist1 == 0, 0,(dist1 / dist2))))
+    if len(dist1) == 1 or len(dist2) == 1:
+        return 0
+    return np.sum(dist1 * np.log2(np.where(dist1 == 0, 1, (dist1 / dist2))))
 
 
 def r1f1similarity(questions, sentanceset):
@@ -290,13 +292,15 @@ def kldivs(arr):
     for x in range(arr.shape[1]):
         for y in range(arr.shape[1]):
             if x != y:
-                r.append(kldiv(arr[:, x], arr[:, y]) / maxkldiv)
+                r.append(kldiv(arr[:, x], arr[:, y]) / (maxkldiv if maxkldiv > 0 else 1))
     return r
 
 
 def normalized_entropy(dist):
     """Return entropy divided by the maximum (entropy of a discrete uniform distribution with the same number of elements)."""
     dist = np.array(dist) / np.sum(dist)
+    if dist.shape[0] == 1:
+        return 0
     return entropy(dist) / np.log2(dist.shape[0])
 
 
@@ -343,7 +347,7 @@ def results(similiarity, prew, preq, args, questionset, windows, **kwargs):
             scores = np.array([x[0] for x in out])
 
             def getvals(scores):
-                return {"relevance": np.mean(scores) * 1000, "diversity question": np.mean(kldivs(scores)) * 4,
+                return {"relevance": np.mean(scores) * 1000, "diversity question": 1 if len(questions) > 1 else np.mean(kldivs(scores)) * 4,
                         "diversity window": np.mean(kldivs(scores.transpose(1, 0))) * 4,
                         "coverage question to window": normalized_entropy(np.mean(scores, 1)),
                         "coverage window to question": normalized_entropy(np.mean(scores, 0))}

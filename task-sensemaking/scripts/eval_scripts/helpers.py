@@ -6,7 +6,6 @@ default_access_token = ...
 
 def load_to_list(f):
     d = json.load(f)
-    print(d)
     def get_one(v):
         rak = "reference-answers"
         if rak in v:
