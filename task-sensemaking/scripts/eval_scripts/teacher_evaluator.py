@@ -193,13 +193,21 @@ def entropy(dist):
 
 def kldiv(dist1, dist2):
     additional = 1 / (dist1.shape[0])
+    dist1 -= np.min(dist1)
+    dist2 -= np.min(dist2)
+    if np.sum(dist1) == 0 or np.sum(dist2) == 0:
+        return 0 if np.abs(np.sum(dist1) - np.sum(dist2)) < 0.001 else 1
     dist1 = dist1 + additional
     dist2 = dist2 + additional
     dist1 = np.array(dist1) / np.sum(dist1)
     dist2 = np.array(dist2) / np.sum(dist2)
-    if len(dist1) == 1 or len(dist2) == 1:
+    if dist1.shape[0] == 1 or dist2.shape[0] == 1:
         return 0
-    return np.sum(dist1 * np.log2(np.where(dist1 == 0, 1, (dist1 / dist2))))
+    try:
+        v = np.sum(dist1 * np.log2(np.where(dist1 <= 0, 1, (dist1 / dist2))))
+    except:
+        print(np.unique(dist1), np.unique(dist2))
+    return v
 
 
 def r1f1similarity(questions, sentanceset):
@@ -298,9 +306,11 @@ def kldivs(arr):
 
 def normalized_entropy(dist):
     """Return entropy divided by the maximum (entropy of a discrete uniform distribution with the same number of elements)."""
-    dist = np.array(dist) / np.sum(dist)
     if dist.shape[0] == 1:
         return 0
+    if np.sum(dist) == 0:
+        return np.log2(dist.shape[0])
+    dist = np.array(dist) / np.sum(dist)
     return entropy(dist) / np.log2(dist.shape[0])
 
 
@@ -347,7 +357,7 @@ def results(similiarity, prew, preq, args, questionset, windows, **kwargs):
             scores = np.array([x[0] for x in out])
 
             def getvals(scores):
-                return {"relevance": np.mean(scores) * 1000, "diversity question": 1 if len(questions) > 1 else np.mean(kldivs(scores)) * 4,
+                return {"relevance": np.mean(scores) * 1000, "diversity question": 1 if len(questions) <= 1 else np.mean(kldivs(scores)) * 4,
                         "diversity window": np.mean(kldivs(scores.transpose(1, 0))) * 4,
                         "coverage question to window": normalized_entropy(np.mean(scores, 1)),
                         "coverage window to question": normalized_entropy(np.mean(scores, 0))}
@@ -421,6 +431,7 @@ def evaluate(**kwargs):
     :param cache:
     :return:
     """
+    np.seterr(all='raise')
     default_args = vars(parser.parse_args([]))
     for x in default_args:
         kwargs.setdefault(x, default_args[x])

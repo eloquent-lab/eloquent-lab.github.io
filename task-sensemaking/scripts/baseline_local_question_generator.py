@@ -178,7 +178,7 @@ def eval_test(model: PreTrainedModel, tokenizer: PreTrainedTokenizer, args):
 
 
 def main(args):
-    args.experiment_name = "baseline2"
+    args.experiment_name = "baseline"
     torch.manual_seed(42)
     random.seed(42)
     np.random.seed(42)
