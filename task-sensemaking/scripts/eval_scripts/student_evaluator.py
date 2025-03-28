@@ -19,8 +19,8 @@ def expand_and_broadcast(arr, dim, shape):
 def loadq(fol, requiresanswers=True, forbidabcd=True):
     qs = "/questions.json"
     with open(fol + qs) as f:
-        return [x for x in json.loads(f.read()) if (not requiresanswers or len(x) > 1) and (
-                not forbidabcd or len(x) == 1 or x[1] not in ["A", "B", "C", "D"])]
+        return [x for x in json.loads(f.read()) if (not requiresanswers or len(x) > 1) and not (
+                forbidabcd and x["answer"] in ["A", "B", "C", "D"])]
 
 
 def cosinesimilarity(question_embed, sentance_embed):

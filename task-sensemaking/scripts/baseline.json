@@ -1,70 +1,100 @@
 {
     "popular/video-22/questions.json": [
-        [
-            " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects.",
-            " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects."
-        ]
+        {
+            "question": " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects.",
+            "reference-answers": [
+                " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects."
+            ]
+        }
     ],
     "ukrbiology/book01/topic01-Різноманітність тварин/questions.json": [
-        [
-            " What is the main focus of the study of animal diversity?",
-            " Carl von Linnaeus was a prominent Swedish biologist, professor at Uppsala University, and the author of modern classification of plants and animals.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
-        ],
-        [
-            " What is the basis of any classification in biology?",
-            " The basis of any classification in biology is the species.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
-        ],
-        [
-            " What is the scientific name of a species?",
-            " The scientific name of a species consists of two words, written in Latin, and is translated into the local language.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
-        ],
-        [
-            " Who is the author of modern classification of plants and animals?",
-            " Carl von Linnaeus was a prominent Swedish biologist, professor at Uppsala University, and the author of modern classification of plants and animals.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
-        ],
-        [
-            " What is the common name for the species Green Toad?",
-            " The common name for the species"
-        ]
+        {
+            "question": " What is the main focus of the study of animal diversity?",
+            "reference-answers": [
+                " Carl von Linnaeus was a prominent Swedish biologist, professor at Uppsala University, and the author of modern classification of plants and animals.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            ]
+        },
+        {
+            "question": " What is the basis of any classification in biology?",
+            "reference-answers": [
+                " The basis of any classification in biology is the species.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            ]
+        },
+        {
+            "question": " What is the scientific name of a species?",
+            "reference-answers": [
+                " The scientific name of a species consists of two words, written in Latin, and is translated into the local language.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            ]
+        },
+        {
+            "question": " Who is the author of modern classification of plants and animals?",
+            "reference-answers": [
+                " Carl von Linnaeus was a prominent Swedish biologist, professor at Uppsala University, and the author of modern classification of plants and animals.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            ]
+        },
+        {
+            "question": " What is the common name for the species Green Toad?",
+            "reference-answers": [
+                " The common name for the species"
+            ]
+        }
     ],
     "ukrbiology/book01/topic02-Процеси життєдіяльностітварин/questions.json": [
-        [
-            " 123",
-            " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through digestion."
-        ],
-        [
-            " 31",
-            " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through digestion."
-        ],
-        [
-            " 123",
-            " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through digestion."
-        ],
-        [
-            " 31",
-            " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through digestion."
-        ],
-        [
-            " 123",
-            " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through"
-        ]
+        {
+            "question": " 123",
+            "reference-answers": [
+                " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through digestion."
+            ]
+        },
+        {
+            "question": " 31",
+            "reference-answers": [
+                " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through digestion."
+            ]
+        },
+        {
+            "question": " 123",
+            "reference-answers": [
+                " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through digestion."
+            ]
+        },
+        {
+            "question": " 31",
+            "reference-answers": [
+                " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through digestion."
+            ]
+        },
+        {
+            "question": " 123",
+            "reference-answers": [
+                " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through"
+            ]
+        }
     ],
     "ukrbiology/book01/topic03-Поведінка тварин/questions.json": [
-        [
-            " Why?",
-            " What is the biological meaning of this or that behavior?"
-        ],
-        [
-            " What elements does it consist of?",
-            " It answers these questions, the science of ethology, which you will also learn about. After studying this section, the world of animals will become more understandable and interesting for you."
-        ],
-        [
-            " What are the specific ethological methods used in ethology?",
-            " There are research methods that are used only in ethology. Yes, K. Lorenz developed an ethological method for studying animal behavior. In conditions of semi-captivity. Based on observation, description, and comparison, scientists formulate Scientific hypotheses are assumptions that explain facts. A specific method is the compilation of species ethograms - \"catalogs\" behavior\" of different species. By comparing ethograms, scientists make conclusions about the evolution of various forms of behavior."
-        ],
-        [
-            " What are the general biological methods of studying ethology?",
-            " Ethological studies are conducted by zo"
-        ]
+        {
+            "question": " Why?",
+            "reference-answers": [
+                " What is the biological meaning of this or that behavior?"
+            ]
+        },
+        {
+            "question": " What elements does it consist of?",
+            "reference-answers": [
+                " It answers these questions, the science of ethology, which you will also learn about. After studying this section, the world of animals will become more understandable and interesting for you."
+            ]
+        },
+        {
+            "question": " What are the specific ethological methods used in ethology?",
+            "reference-answers": [
+                " There are research methods that are used only in ethology. Yes, K. Lorenz developed an ethological method for studying animal behavior. In conditions of semi-captivity. Based on observation, description, and comparison, scientists formulate Scientific hypotheses are assumptions that explain facts. A specific method is the compilation of species ethograms - \"catalogs\" behavior\" of different species. By comparing ethograms, scientists make conclusions about the evolution of various forms of behavior."
+            ]
+        },
+        {
+            "question": " What are the general biological methods of studying ethology?",
+            "reference-answers": [
+                " Ethological studies are conducted by zo"
+            ]
+        }
     ]
 }

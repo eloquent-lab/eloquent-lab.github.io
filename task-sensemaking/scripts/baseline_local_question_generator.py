@@ -182,7 +182,7 @@ def main(args):
     torch.manual_seed(42)
     random.seed(42)
     np.random.seed(42)
-    eval_only = False
+    eval_only = True
     finetune = False
     os.makedirs("outputs", exist_ok=True)
     os.makedirs("results", exist_ok=True)
