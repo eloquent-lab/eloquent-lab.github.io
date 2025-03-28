@@ -197,7 +197,7 @@ def kldiv(dist1, dist2):
     dist2 = dist2 + additional
     dist1 = np.array(dist1) / np.sum(dist1)
     dist2 = np.array(dist2) / np.sum(dist2)
-    return np.sum(dist1 * np.where(dist1 == 0, 0,np.log2((dist1 / dist2))))
+    return np.sum(dist1 * np.log2(np.where(dist1 == 0, 0,(dist1 / dist2))))
 
 
 def r1f1similarity(questions, sentanceset):
@@ -318,7 +318,7 @@ def results(similiarity, prew, preq, args, questionset, windows, **kwargs):
     :param global_args:
     :return:
     """
-    r = []
+    r = {}
     questionsetpre = preq([[y for y in x[1]] for x in questionset])
     if kwargs["cache"]:
         windowspref = "windowspre"
@@ -337,7 +337,7 @@ def results(similiarity, prew, preq, args, questionset, windows, **kwargs):
         model2 = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.2-1B-Instruct", token=access_token,
                                                       quantization_config=quantization_config, device_map="auto")
     for arg in args:
-        r.append([])
+        r[arg] = []
         for (name, questionstext), questions in zip(questionset, questionsetpre):
             out = [similiarity(questions, x, arg) for x in windowspre]
             scores = np.array([x[0] for x in out])
@@ -357,6 +357,7 @@ def results(similiarity, prew, preq, args, questionset, windows, **kwargs):
                 sct = np.transpose(sct, (1, 0))
                 toptexts = [sorted(list(zip([x[0] for x in windows], x)), key=lambda x: x[1], reverse=True)[:numtop]
                             for x in sct.tolist()]
+                examples = []
                 for x in sorted(list(zip(questionstext, toptexts)), key=lambda x: sum([y[1] for y in x[1]]),
                                 reverse=True)[:kwargs["top_windows"]]:
 
@@ -380,19 +381,22 @@ def results(similiarity, prew, preq, args, questionset, windows, **kwargs):
                         c = numtop
                     avg_complexity += np.sum(difficulties) / c
                     avg_answerability += np.sum(answerability) / c
-                    writeline2(f"{np.sum(difficulties):.05};{np.sum(answerability):.05}: " + "\n".join(x[0]))
-                    writeline2("-------")
-                    writeline2("\n\n".join([f"{y[1]:.05};{z:.05};{a:.05}: {y[0]}" for y, z, a in
-                                            zip(x[1], difficulties, answerability)]))
-                    writeline2("************************")
+                    t = ""
+                    t += f"{np.sum(difficulties):.05};{np.sum(answerability):.05}: " + x[0] + "\n"
+                    t += "-------\n"
+                    t += "\n\n".join([f"{y[1]:.05};{z:.05};{a:.05}: {y[0]}" for y, z, a in
+                                            zip(x[1], difficulties, answerability)])
+                    t += "************************\n"
+                    writeline2(t)
+                    examples.append(t)
 
                 vals = getvals(scores)
                 s = {"name": name, "harmonic_mean": harmonic_mean(
                     list(vals.values()) + [avg_complexity / 9] + [avg_answerability]),
                      "values_from_similarity": vals,
                      f"avg_complexity{'(mocked)' if kwargs['llm_amount'] == 0 else ''}": avg_complexity,
-                     f"avg_answerability{'(mocked)' if kwargs['llm_amount'] == 0 else ''}": avg_answerability}
-                r[-1].append(s)
+                     f"avg_answerability{'(mocked)' if kwargs['llm_amount'] == 0 else ''}": avg_answerability, "questions": questionstext, "examples": examples}
+                r[arg].append(s)
     return r
 
 

@@ -22,8 +22,9 @@ locs = ["meta-llama/Llama-3.1-8B-Instruct",
         "meta-llama/Llama-3.2-1B-Instruct"]
 
 parser.add_argument("--model_name", default=locs[2], type=str, help="The model and tokenizer to use.")
-parser.add_argument("--max_new_tokens", default=200, type=str, help="Max tokens for the model to generate.")
+parser.add_argument("--max_new_tokens", default=200, type=int, help="Max tokens for the model to generate.")
 parser.add_argument("--data_path", default="../devset", type=str, help="Path to the folder containing the data.")
+parser.add_argument("--words_per", default=200, type=int, help="Number of words to feed the network.")
 
 
 def reshape(enumerable, per=25):
@@ -80,7 +81,7 @@ def make_model(args, mock=False):
 
 
 def make_prompt(text, question, answer, tokenizer: PreTrainedTokenizer, question_tag, answer_tag):
-    system_prompt = f"You are a university teacher's assistant. Create a sequence of question and example answer pairs given a text. Make sure the questions challenge the students but are answerable . Do not describe your output, give the output directly. Mark each question with \"{question_tag}\" and the answer with \"{answer_tag}\"."
+    system_prompt = f"You use only English. You are a university teacher's assistant. Create a sequence of question and example answer pairs given a text. Make sure the questions challenge the students but are answerable. Do not describe your output, give the output directly. Mark each question with \"{question_tag}\" and the answer with \"{answer_tag}\"."
     user_prompt = f"Create questions and example short answers given the following text. {text}"
     prompt = tokenizer.apply_chat_template(
         [{"role": "system", "content": system_prompt},
@@ -138,7 +139,7 @@ def make_devset_json(root):
 
 def eval_test(model: PreTrainedModel, tokenizer: PreTrainedTokenizer, args):
     make_devset_json(args.data_path)
-    vs = load_questions_and_texts("devset.json", args.data_path)
+    vs = load_questions_and_texts("devset.json", args.data_path, True)
     r = {}
 
     def get_first_end_with_sentence(x, amount):
@@ -149,15 +150,20 @@ def eval_test(model: PreTrainedModel, tokenizer: PreTrainedTokenizer, args):
     question_tag = "**Question:**"
     answer_tag = "**Answer:**"
     prompts = [
-        (make_prompt(get_first_end_with_sentence(text, 1000), None, None, tokenizer, question_tag, answer_tag)[0], path)
+        (make_prompt(get_first_end_with_sentence(text, args.words_per), None, None, tokenizer, question_tag, answer_tag)[0], path)
         for question, text, question_reference, path in vs]
     GenerationConfig(num_beams=5, do_sample=True, top_k=10, top_p=0.9)
-    bad_words_ids = None
+    bad_words_ids = [tokenizer.encode("<|eot_id|>", add_special_tokens=False)]
+    print(bad_words_ids)
     generationConfig = GenerationConfig(num_beams=10, num_beam_groups=2, max_new_tokens=args.max_new_tokens,
                                         eos_token_id=model.config.eos_token_id[0],
                                         bad_words_ids=bad_words_ids, diversity_penalty=0.1, pad_token_id=model.config.pad_token_id[0])
     for i, (x, path) in enumerate(prompts):
         x = x + tokenizer.encode(f"""\n\n{question_tag}""")
+        print("context size", len(x))
+        if len(x) > 8192-args.max_new_tokens:
+            print("Warning: context size is too large.")
+
         inp = torch.tensor([x]).to(model.device)
         output = model.generate(inp, generationConfig,attention_mask = torch.ones_like(inp))
         t = tokenizer.decode(output[0])
@@ -172,25 +178,28 @@ def eval_test(model: PreTrainedModel, tokenizer: PreTrainedTokenizer, args):
 
 
 def main(args):
+    args.experiment_name = "baseline2"
     torch.manual_seed(42)
     random.seed(42)
     np.random.seed(42)
     eval_only = False
     finetune = False
+    os.makedirs("outputs", exist_ok=True)
+    os.makedirs("results", exist_ok=True)
     if not eval_only:
         model, tokenizer = make_model(args)
-        os.makedirs("data", exist_ok=True)
         if finetune:
             model, tokenizer = train(model, tokenizer)
         r = eval_test(model, tokenizer, args)
-        json.dump(r, open("baseline.json", "w"), indent=4, ensure_ascii=False)
-    r_1 = teacher_evaluator.evaluate(json_path="baseline.json", data_path=args.data_path, outs_path="outs_baseline")
+        with open(f"outputs/{args.experiment_name}.json", "w") as f:
+            json.dump(r, f, indent=4, ensure_ascii=False)
+    r_1 = teacher_evaluator.evaluate(json_path=f"outputs/{args.experiment_name}.json", data_path=args.data_path, outs_path="outs_baseline", top_windows = 2)
     for x in r_1:
         for y in r_1[x]:
-            for z in y:
+            for z in r_1[x][y]:
                 z.pop("avg_complexity(mocked)")
                 z.pop("avg_answerability(mocked)")
-    json.dump(r_1, open("results_baseline.json", "w"), indent=4)
+    json.dump(r_1, open(f"results/{args.experiment_name}.json", "w"), indent=4, ensure_ascii=False)
 
 
 if __name__ == "__main__":

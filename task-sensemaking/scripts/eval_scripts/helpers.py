@@ -4,14 +4,14 @@ import os
 ##Fill in you access token here to have it as default
 default_access_token = ...
 
-def load_questions_and_texts(json_file, data_path):
+def load_questions_and_texts(json_file, data_path, use_english = True):
     r = []
     with open(json_file) as f:
         questions_answers = json.load(f)
     for path in questions_answers:
         dn = os.path.join(data_path, os.path.dirname(path))
         enpath = os.path.join(dn, "text.en.txt")
-        if os.path.isfile(enpath):
+        if os.path.isfile(enpath) and use_english:
             with open(enpath) as f:
                 text = f.read()
         else:

@@ -1,94 +1,70 @@
 {
     "popular/video-22/questions.json": [
         [
-            " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects. How do vaccinations work and how dangerous are they really?",
-            " Vaccinations work by introducing a small, harmless piece of a pathogen (such as a virus or bacteria) to the body, which triggers the production of antibodies and activates the immune system to fight off the infection.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
-        ],
-        [
-            " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects. How do vaccinations work and how dangerous are they really?",
-            " Vaccinations work by introducing"
+            " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects.",
+            " Vaccinations are incredibly important for fighting disease. But an increasingly large group of people seem to believe that vaccinations put our health at risk. There are many reports on the internet of negative vaccination effects such as allergies, disabilities and even deaths. And it's true, vaccination can have side effects."
         ]
     ],
     "ukrbiology/book01/topic01-Різноманітність тварин/questions.json": [
         [
-            " What are the main groups of animals studied in this topic?",
-            " Plants and Animals<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " What is the main focus of the study of animal diversity?",
+            " Carl von Linnaeus was a prominent Swedish biologist, professor at Uppsala University, and the author of modern classification of plants and animals.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " What are the main groups of animals studied in this topic?",
-            " Animals<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " What is the basis of any classification in biology?",
+            " The basis of any classification in biology is the species.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " Who divided living organisms into two large kingdoms - Plants and Animals?",
-            " Aristotle<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " What is the scientific name of a species?",
+            " The scientific name of a species consists of two words, written in Latin, and is translated into the local language.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " What are the main groups of animals studied in this topic?",
-            " Animals<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " Who is the author of modern classification of plants and animals?",
+            " Carl von Linnaeus was a prominent Swedish biologist, professor at Uppsala University, and the author of modern classification of plants and animals.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
         ],
         [
-            " What are the main groups of animals studied in this topic?",
-            " Animals<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
-        ],
-        [
-            " Who divided living organisms into two large kingdoms - Plants and Animals?",
-            " Aristotle<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
-        ],
-        [
-            " What are the main groups of animals studied in this topic?",
-            " Animals<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
-        ],
-        [
-            " What are the main groups of animals studied in this topic?",
-            " Animals<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " What is the common name for the species Green Toad?",
+            " The common name for the species"
         ]
     ],
     "ukrbiology/book01/topic02-Процеси життєдіяльностітварин/questions.json": [
         [
-            " What is one of the main properties of animals as living beings?",
-            " Animals are heterotrophs.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " 123",
+            " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through digestion."
         ],
         [
-            " What is one of the main properties of animals as living beings?",
-            " Animals are heterotrophs.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " 31",
+            " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through digestion."
         ],
         [
-            " What is one of the main properties of animals as living beings?",
-            " Animals are heterotrophs.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " 123",
+            " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through digestion."
         ],
         [
-            " What is one of the main properties of animals as living beings?",
-            " Animals are heterotrophs.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " 31",
+            " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through digestion."
         ],
         [
-            " What is one of the main properties of animals as living beings?",
-            " Animals are heterotrophs.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
-        ],
-        [
-            " What is one of the main properties of animals as living beings?",
-            " Animals are heterotrophs.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " 123",
+            " Animals are heterotrophic organisms. In the process of evolution, they have adapted to certain conditions of existence and obtaining energy through food, which occurs through"
         ]
     ],
     "ukrbiology/book01/topic03-Поведінка тварин/questions.json": [
         [
-            " Why do animals exhibit unique and often inexplicable behavior?",
-            " The biological meaning of this or that behavior refers to the scientific study of animal behavior, which is known as ethology.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " Why?",
+            " What is the biological meaning of this or that behavior?"
         ],
         [
-            " What are some examples of unique and often inexplicable animal behavior?",
-            " Hares, foxes, wolves, herons, flies, beetles, and crayfish are all examples of animals that exhibit unique and often inexplicable behavior.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " What elements does it consist of?",
+            " It answers these questions, the science of ethology, which you will also learn about. After studying this section, the world of animals will become more understandable and interesting for you."
         ],
         [
-            " What are some characteristic features of animals?",
-            " The characteristic features of animals include their behavior.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+            " What are the specific ethological methods used in ethology?",
+            " There are research methods that are used only in ethology. Yes, K. Lorenz developed an ethological method for studying animal behavior. In conditions of semi-captivity. Based on observation, description, and comparison, scientists formulate Scientific hypotheses are assumptions that explain facts. A specific method is the compilation of species ethograms - \"catalogs\" behavior\" of different species. By comparing ethograms, scientists make conclusions about the evolution of various forms of behavior."
         ],
         [
-            " What are some methods of studying animal behavior?",
-            " Methods of studying animal behavior include ethology.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
-        ],
-        [
-            " What are some examples of animals that exhibit unique and often inexplicable behavior?",
-            " Hares, foxes, wolves, herons, flies, beetles, and crayfish are all examples"
+            " What are the general biological methods of studying ethology?",
+            " Ethological studies are conducted by zo"
         ]
     ]
 }
