@@ -49,9 +49,7 @@ change the suggested prompt string to something more suitable, this is allowed,
 but this must be reported upon submission and in the written report of the
 experiment.
 
-Test data have not yet been released for the 2025 experiment. They will be in the same format and style as the 2024 data. We expect to release the data in the first week of April 2025. 
-
-[Task 4 sample and 2024 test topics on Huggingface](https://huggingface.co/datasets/Eloquent/Voight-Kampff)
+[Test data for 2025 and 2024 on Huggingface](https://huggingface.co/datasets/Eloquent/Voight-Kampff)
 
 
 
@@ -62,13 +60,13 @@ with the generated texts in plain text form:
 
 OurTeamName/030.txt
 ...
-OurTeamName/059.txt
+OurTeamName/062.txt
 
 # Result scoring
 System outputs are scored by how often they fool a classifier into believing the
 output was human-authored.
 
-# Sample
+# Sample (from the 2024 data)
 
 
 
