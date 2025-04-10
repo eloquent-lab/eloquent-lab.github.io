@@ -112,4 +112,6 @@ We welcome suggestions for inspiring publications to add to this bibliography!
 * Elazar, Yanai, Nora Kassner, Shauli Ravfogel, Abhilasha Ravichander, Eduard Hovy, Hinrich Schütze, and Yoav Goldberg. "Measuring and improving consistency in pretrained language models." Transactions of the Association for Computational Linguistics 9 (2021): 1012-1031.
 * Bell, Allan. "Language style as audience design." Language in society 13, no. 2 (1984): 145-204.
 * Clark, Herbert H., and Gregory L. Murphy. "Audience design in meaning and reference." In Advances in psychology, vol. 9, pp. 287-299. North-Holland, 1982.
+* Zuccon, Guido, and Bevan Koopman. "Dr ChatGPT, tell me what I want to hear: How prompt knowledge impacts health answer correctness." arXiv preprint arXiv:2302.13793 (2023).
+
 
