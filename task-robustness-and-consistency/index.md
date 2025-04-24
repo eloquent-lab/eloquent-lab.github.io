@@ -113,5 +113,23 @@ We welcome suggestions for inspiring publications to add to this bibliography!
 * Bell, Allan. "Language style as audience design." Language in society 13, no. 2 (1984): 145-204.
 * Clark, Herbert H., and Gregory L. Murphy. "Audience design in meaning and reference." In Advances in psychology, vol. 9, pp. 287-299. North-Holland, 1982.
 * Zuccon, Guido, and Bevan Koopman. "Dr ChatGPT, tell me what I want to hear: How prompt knowledge impacts health answer correctness." arXiv preprint arXiv:2302.13793 (2023).
+* G. Zuccon, B. Koopman, Dr chatgpt, tell me what i want to hear: How prompt knowledge impacts
+health answer correctness, arXiv preprint arXiv:2302.13793 (2023).
+* S. Singh, A. Romanou, C. Fourrier, D. I. Adelani, J. G. Ngui, D. Vila-Suero, P. Limkonchotiwat,
+K. Marchisio, W. Q. Leong, Y. Susanto, et al., Global MMLU: Understanding and addressing cultural
+and linguistic biases in multilingual evaluation, arXiv preprint arXiv:2412.03304 (2024).
+* M. Wu, W. Wang, S. Liu, H. Yin, X. Wang, Y. Zhao, C. Lyu, L. Wang, W. Luo, K. Zhang, The bitter
+lesson learned from 2,000+ multilingual benchmarks, 2025. URL: https://arxiv.org/abs/2504.15521.
+arXiv:2504.15521.
+* C. Zheng, H. Zhou, F. Meng, J. Zhou, M. Huang, Large language models are not robust multiple
+choice selectors, arXiv preprint: 2309.03882 (2023).
+* B. Wang, S. Wang, Y. Cheng, Z. Gan, R. Jia, B. Li, J. Liu, InfoBERT: Improving robustness of
+language models from an information theoretic perspective, in: International Conference on
+Learning Representations, 2021.
+* M. Moradi, M. Samwald, Evaluating the robustness of neural language models to input pertur-
+bations, in: Proceedings of the 2021 Conference on Empirical Methods in Natural Language
+Processing, 2021.
+* E. Altinisik, H. Sajjad, H. T. Sencar, S. Messaoud, S. Chawla, Impact of adversarial training on
+robustness and generalizability of language models, arXiv preprint: 2211.05523 (2023).
 
 
