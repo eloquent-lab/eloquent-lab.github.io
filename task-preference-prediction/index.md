@@ -36,8 +36,9 @@ We are running our sub-tasks in two stages: development and private test stages.
 *This stage defines the final system rankings based on our private test set and offers you further opportunity to explore various approaches.*
 
 * We release our private test set without human-annotated preferences  and explanations (see Data below). The private test set can be found at [HuggingFace](https://huggingface.co/datasets/Eloquent/preference_prediction) (see the ```test``` split).
-* We offer a baseline based on [```meta-llama/Meta-Llama-3.1-8B-Instruct```](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct). The codebase can be found [here](./baseline.py). Please find an example for running the baseline on the development set: ```python3 baseline.py --dataset_split validation```. The code will save the baseline predictions for the *second* sub-task in the required format (see **Submission** for more details below). You can benchmark your systems against the baseline on our development set. You can improve the baseline as part of your submission. Our baseline will also be ranked on our private test leaderboards.
+* We offer a baseline based on [```meta-llama/Meta-Llama-3.1-8B-Instruct```](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct). The codebase can be found [here](./baseline.py). Please find an example for running the baseline on the development set: ```python3 baseline.py --dataset_split validation```. The code will save the baseline predictions for the *second* sub-task in the required format (see **Submission** for more details below). You can benchmark your systems against the baseline on our development set. You can improve the baseline as part of your submission. Our baseline will also be ranked on our private test leaderboard.
 * We provide an [official evaluation script](./evaluation_script.py), which is used during both development and private test stages. Please refer to the **Experimental setup** section for more details.
+
 
 ### Data
 
@@ -107,6 +108,7 @@ Below is an example for running our [official evaluation script](./evaluation_sc
 
 ### Submission
 
+
 #### Preference prediction
 
 * **Submission format:** Your submission for the first sub-task must be in the form of a tab-separated dataframe as shown [here](./first_subtask_sample_submission.tsv). The sample submission is based on our baseline's predictions on the development set.
@@ -116,6 +118,15 @@ Below is an example for running our [official evaluation script](./evaluation_sc
 
 * **Submission format:** Your submission for the second sub-task must be in the form of a tab-separated dataframe as shown [here](./second_subtask_sample_submission.tsv). The sample submission is based on our baseline's predictions on the development set.
 * **Submission form:** Please fill in the [Google form](https://forms.gle/Zq6hKj62Gjp88PFP7); answer the questions and upload your best system's predictions. Please submit *only once*.
+
+#### Timeline
+
+* 20.05.2025 (23:59 AoE): the end of the private test stage for each sub-task.
+* 23.05.2025: the release of the evaluation results for each sub-task.
+* 31.05.2025: the paper submission system deadline. We are going to use [EasyChair](https://easychair.org), and we will provide further details regarding the paper format and template requirements later. 
+* Late June: reviews are available to you. 
+* Early July: you submit the camera-ready version of your paper taking into account the reviewers' feedback.
+
 
 ### Bibliography
 
