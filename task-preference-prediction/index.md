@@ -121,11 +121,13 @@ Below is an example for running our [official evaluation script](./evaluation_sc
 
 #### Timeline
 
+**Paper submission guidelines** can be found [here](https://drive.google.com/file/d/1C-n8-F6GmKIlP1Ng1I-xAlJjbkJ__0lV/view?usp=drive_link).
+
 * 20.05.2025 (23:59 AoE): the end of the private test stage for each sub-task.
 * 23.05.2025: the release of the evaluation results for each sub-task.
-* 31.05.2025: the paper submission system deadline. We are going to use [EasyChair](https://easychair.org), and we will provide further details regarding the paper format and template requirements later. 
-* Late June: reviews are available to you. 
-* Early July: you submit the camera-ready version of your paper taking into account the reviewers' feedback.
+* 30.05.2025: the paper submission system deadline.
+* 30.06.2025: reviews are available to you. 
+* 07.07.2025: you submit the camera-ready version of your paper taking into account the reviewers' feedback.
 
 
 ### Bibliography
