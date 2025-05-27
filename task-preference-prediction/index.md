@@ -132,7 +132,7 @@ Below is an example for running our [official evaluation script](./evaluation_sc
 
 ### Results
 
-## Subtask 1: Preference prediction
+#### Subtask 1: Preference prediction
 
 The accuracy scores (%) for the first sub-task are presented below:
 
@@ -144,7 +144,7 @@ The accuracy scores (%) for the first sub-task are presented below:
 | Random | 20.00 | 20.00| 20.00| 20.00| 20.00| 20.00|
 
 
-## Subtask 2: Preference prediction & explanation
+#### Subtask 2: Preference prediction & explanation
 
 TBA
 
