@@ -141,7 +141,7 @@ The accuracy scores (%) for the first sub-task are presented below:
 | VerbaNexAI	| **45.91**	| 30.29 |	**75.16** |**94.15** | 39.42|**56.99**|
 | Team UTK |39.98 |**33.01**|38.62|48.96|33.01 |38.72 |
 | Baseline| 33.81| 29.17| 17.95| 17.95| **49.6**| 29.70|
-| Random | 20.00 | 20.00| 20.00| 20.00| 20.00| 20.00|
+| Random | 25.00 | 25.00| 25.00| 25.00| 25.00| 25.00|
 
 
 #### Subtask 2: Preference prediction & explanation
