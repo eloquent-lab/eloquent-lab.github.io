@@ -134,19 +134,24 @@ Below is an example for running our [official evaluation script](./evaluation_sc
 
 #### Subtask 1: Preference prediction
 
-The accuracy scores (%) for the first sub-task are presented below:
-
 |**Team**  |**Relevance**  |**Naturalness** |**Truthfulness**|**Safety** |**Overall Quality** |**Avg.** |
 |:---|:---|:---|:---|:---|:---|:---|
-| VerbaNexAI	| **45.91**	| 30.29 |	**75.16** |**94.15** | 39.42|**56.99**|
-| Team UTK |39.98 |**33.01**|38.62|48.96|33.01 |38.72 |
-| Baseline| 33.81| 29.17| 17.95| 17.95| **49.6**| 29.70|
-| Random | 25.00 | 25.00| 25.00| 25.00| 25.00| 25.00|
+| 🥇**VerbaNexAI**	| 45.91	| 30.29 |	75.16 |**94.15** | 39.42|**56.99**|
+| **FHS*** | **51.12** | **44.39** | **80.53** | 83.33 | 10.1 | 53.89|
+| 🥈**UTK** |39.98 |**33.01**|38.62|48.96|33.01 |38.72 |
+| 🥉**Baseline**| 33.81| 29.17| 17.95| 17.95| **49.6**| 29.70|
+| **Random** | 20.00 | 20.00| 20.00| 20.00| 20.00| 20.00|
 
 
-#### Subtask 2: Preference prediction & explanation
+## Subtask 2: Preference prediction & explanation
 
-TBA
+The accuracy (%), ROUGE-L, BERTScore, and LLM-as-a-judge results for the second sub-task are presented below. **Avg.** refers to the metric-specific average scores. We use GPT4o as the judge and [the Borda count](https://aclanthology.org/2023.eacl-main.48/) to establish the final ranking.
+
+|**Team**  |**Relevance (Acc./RougeL/BERTScore/LLM-as-a-judge)**  |**Naturalness (Acc./RougeL/BERTScore/LLM-as-a-judge)** |**Truthfulness (Acc./RougeL/BERTScore/LLM-as-a-judge)**|**Safety (Acc./RougeL/BERTScore/LLM-as-a-judge)** |**Overall Quality (Acc./RougeL/BERTScore/LLM-as-a-judge)** |**Avg. (Acc./RougeL/BERTScore/LLM-as-a-judge)** |**Borda**|
+|:---|:---|:---|:---|:---|:---|:---|:---|
+| 🥇**VerbaNexAI**	| **45.91**/**23.20**/**87.43**/17.71	| 30.29/**17.91**/**87.49**/16.91 |	**75.16**/**17.25**/**83.05**/**38.14** |**94.15**/**22.97**/**88.04**/**82.82** | 39.42/**18.90**/**87.03**/38.14 |**56.99**/**20.04**/**87.00**/**33.04**|**34**|
+| 🥈**UTK** |39.98/10.95/84.50/**20.83** |**33.01**/8.54/83.82/15.30|38.62/9.02/82.73/11.70|48.96/6.02/82.10/15.74|33.01/10.45/84.20/28.53 |38.72/9.0/83.46/18.38 |17|
+| 🥉**Baseline**| 33.81/10.01/84.08/31.33 | 29.17/8.08/83.51/**21.39**| 17.95/8.40/82.31/13.22| 17.95/5.80/81.91/9.05| **49.6**/9.62/83.40/**46.39**| 29.70/8.40/83.13/24.27|9|
 
 ### Bibliography
 
