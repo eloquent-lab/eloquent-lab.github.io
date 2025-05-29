@@ -124,8 +124,8 @@ Below is an example for running our [official evaluation script](./evaluation_sc
 **Paper submission guidelines** can be found [here](https://drive.google.com/file/d/1C-n8-F6GmKIlP1Ng1I-xAlJjbkJ__0lV/view?usp=drive_link).
 
 * ~~20.05.2025 (23:59 AoE)~~ 23.05.2025 (23:59 AoE): the end of the private test stage for each sub-task.
-* ~~23.05.2025~~ ~~26.05.2025~~ 28.05.2025: the release of the evaluation results for each sub-task.
-* 30.05.2025: the paper submission system deadline.
+* ~~23.05.2025~~ ~~26.05.2025~~ 29.05.2025: the release of the evaluation results for each sub-task.
+* 30.05.2025: the paper submission system deadline. Let us know if you need an extension.
 * 30.06.2025: reviews are available to you. 
 * 07.07.2025: you submit the camera-ready version of your paper taking into account the reviewers' feedback.
 
