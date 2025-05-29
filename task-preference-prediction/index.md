@@ -134,6 +134,10 @@ Below is an example for running our [official evaluation script](./evaluation_sc
 
 #### Subtask 1: Preference prediction
 
+
+The accuracy scores (%) for the first sub-task are presented below. The FHS team submitted their system predictions after the deadline; they are not included in the final ranking.
+
+
 |**Team**  |**Relevance**  |**Naturalness** |**Truthfulness**|**Safety** |**Overall Quality** |**Avg.** |
 |:---|:---|:---|:---|:---|:---|:---|
 | 🥇**VerbaNexAI**	| 45.91	| 30.29 |	75.16 |**94.15** | 39.42|**56.99**|
