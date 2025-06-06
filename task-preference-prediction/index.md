@@ -125,7 +125,7 @@ Below is an example for running our [official evaluation script](./evaluation_sc
 
 * ~~20.05.2025 (23:59 AoE)~~ 23.05.2025 (23:59 AoE): the end of the private test stage for each sub-task.
 * ~~23.05.2025~~ ~~26.05.2025~~ 29.05.2025: the release of the evaluation results for each sub-task.
-* 30.05.2025: the paper submission system deadline. Let us know if you need an extension.
+* ~~30.05.2025~~: the paper submission system deadline. Let us know if you need an extension.
 * 30.06.2025: reviews are available to you. 
 * 07.07.2025: you submit the camera-ready version of your paper taking into account the reviewers' feedback.
 
@@ -144,7 +144,7 @@ The accuracy scores (%) for the first sub-task are presented below. The FHS team
 | **FHS*** | **51.12** | **44.39** | **80.53** | 83.33 | 10.1 | 53.89|
 | 🥈**UTK** |39.98 |**33.01**|38.62|48.96|33.01 |38.72 |
 | 🥉**Baseline**| 33.81| 29.17| 17.95| 17.95| **49.6**| 29.70|
-| **Random** | 20.00 | 20.00| 20.00| 20.00| 20.00| 20.00|
+| **Random** | 25.00 | 25.00| 25.00| 25.00| 25.00| 25.00|
 
 
 ## Subtask 2: Preference prediction & explanation
