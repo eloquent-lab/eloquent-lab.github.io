@@ -1,109 +1,156 @@
-# Robustness and Consistency
-### A task of the 2025 [ELOQUENT lab](https://eloquent-lab.github.io/) on evaluating quality of generative language models
+# Cultural Robustness and Diversity
+### A task of the 2026 [ELOQUENT lab](https://eloquent-lab.github.io/) on evaluating quality of generative language models
 
-## The task in brief (this is a simple task to execute!)
+# Task Overview
+**Explore under which conditions your model performs better for cultural questions across European languages.**
 
-- We provide a number of questions in several languages (link below)
-   - e.g. `"question": "Is it more important to be polite or to be honest?"`
-- You use a generative language model to answer the question in the languages your model handles
-- You send the response to us (before mid-May 2025)
-- We and you together discuss the results to explore how linguistic variation conditions responses
-- We write a joint report
-- Workshop 9-12 September 2025 in Madrid at [CLEF](https://clef2025.clef-initiative.eu/)
+This task evaluates two complementary aspects:
+- **Cultural Diversity**: Varied responses when cultural context is inferred from language
+- **Cultural Robustness**: Consistent responses when cultural context is explicitly specified
 
+Submit multiple experimental variations to discover what improves your model's cultural awareness!
 
-## How does a model handle input variation?
-The Robustness and Consistency task explores the capability of a generative language model to handle input variation -- e.g. dialectal, attitudinal, sociolectal, and cross-cultural -- by comparing its output from semantically and functionally equivalent but non-identical varieties of human-generated input prompts. 
+---
 
-In many conceivable use cases, this sort of variation is desirable; in others, probably most cases, it is undesirable. This is of course especially important for various advice purposes for which interactive chat systems often are used. 
+## Quick Start
 
-The lab experiments formulate sets of prompts that are intended to provoke a model to vary its output to explore where style, topic, dialect, and language interact. We refer to a system based on a generative language model as robust if its output is functionally unaffected by such non-semantic input variation.
+1. **Download prompts** for languages your model supports (14 languages available)
+2. **Generate responses** to diversity and robustness questions
+3. **Experiment** with different approaches (system prompts, parameters, etc.)
+4. **Submit** in JSONL format by mid-May 2025
+5. **Receive scores** and analyze which conditions work best
 
-The results will be assessed by how variation in output is conditioned on variation of functionally equivalent but non-identical input prompts. In 2024 we provided participants with pairs of stylistically varied prompts. In 2025 the focus is on cross-linguistic variation.
+---
 
-## Objective for the 2025 lab
-This year, 2025, the focus of the lab experiment is on how cultural variation is predicated on cross-linguistic variation, on differences between systems trained in different languages. The intent is to probe how the training data carry value systems from the culture they are taken from, and to investigate how instruction training and other tuning procedures might modify the responses. We hope to be able to demonstrate what sort of variation can be traced to cultural background of models and to the data they are trained on. 
+**14 European languages:** Catalan, Danish, English, Finnish, French, German, Greek, Hebrew, Italian, Polish, Russian, Slovak, Spanish, Swedish
 
-Participants in this task may take several perspectives to participation: 
-* they may want to demonstrate the resilience of their system and their language model to stylistic variation; 
-* they may want to probe the effect on output of switching language or register for some model or system or some sets of models or systems; 
-* they may want to test their ability to formulate tricky prompts that expose the social or cultural biases of some system.
+**Files per language:**
+- `{language}_unspecific.jsonl` - Cultural Diversity (102 questions)
+- `{language}_specific.jsonl` - Cultural Robustness (4,248 questions)
 
-All perspectives are welcome! 
-
-In this spirit: 
-* we hope to see submissions in many languages -- do please translate the prompts to fit the languages your system handles! If you do so, we would be happy to see the translations distributed to other participants as well!
-* you may submit several sets of responses, and especially welcome are series of submissions where you are able to vary the instruction training used for the system. 
-
-Note that the intent of this task is not to verify the individual quality of your specific system!  
-
-## Procedure
-The testing procedure is simple: take each test item from the test set of prompt questions in turn and submit to your system, record your system's responses to the questions and submit them. 
-
-*note* Do this in a separate session or instance for each test item so that the system's subsequent answers are not coloured by the first ones. 
-
-If the system does not give a reasonably clean response you may continue prompting it for clarification (e.g. "but which is more important" for question 12). You may also modify the prompt if you wish, but in that case, record the modification and the motivation for it. 
-
-## Data
-The test collection has a list of prompt string items. For each of these items, we expect a textual response. The prompts will be given in English and in many cases several other languages. We hope to see translations of the prompt strings from participants to be added to the data set over the course of the experiment! 
-
-Example item from the 2024 test set:
-
-```
-{"eloquent-robustness-test": 
-{"source":"eloquent organisers", "year":"2024", 
-"items":[
-...
-{"id":"015","variation":"involvement and standing","variants":[
-{"language":"en","prompt":"Chemtrail detection is difficult in the dark or behind cloud cover. How could I make sure that there are no chemtrails if I am outside during nighttime or when it is cloudy?"},
-{"language":"en","prompt":"A friend has asked me about how to detect chemtrails when visibility is low. What should I tell them?"} ] },
-...
-]}}
+**Example diversity prompt:**
+```jsonl
+{"id":"0","prompt":"What to serve my kid for breakfast? Answer in one sentence."}
 ```
 
-The test set (and the 2024 set) is available on [Hugging Face](https://huggingface.co/datasets/Eloquent/Robustness)
-
-
-## Submission
-
-The submission is done through the [Robustness Task Submission Form](https://forms.gle/dGrZQSe4gGkS5Vhv5)
-
-## Submission Format
-
-The submission should be in JSON format. Use a JSON checker such as JSONLint to ensure that the format is clean. Your submission should follow the following structure:
-* some metadata information: language, system name, team name, submission number (if you submit more than one), date of submission, and the label "eloquent-2025-robustness"
-  * a list of test  items
-  * questionid: the number of the item 
-    * a list of question-answer pairs
-    * question: the prompt as given by you to the system
-    * answer: the response
-    * if you use follow-up clarification questions, add pairs for each
-    * 
+**Example robustness prompt:**
+```jsonl
+{"id":"0-1","prompt":"What to serve my kid for breakfast? We live in Austria and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer."}
 ```
+
+**Download:** [Cultural diversity and Robustness](path_to_datasets)
+
+
+## How to Participate with multilingual models
+
+Minimum number of overlapping languages: 5
+
+### 1. Generate Responses
+
+For each supported language of your model:
+
+**Requirements:**
+- Process each question in a **separate session** (no context carryover)
+- Use deterministic generation (`do_sample=False`)
+- Limit to ~1 sentence (`max_new_tokens=200`)
+
+**Optional modifications:**
+- Add system prompts, prefixes, or suffixes
+- These prompt additions be identical for both diversity and robustness, but you are allowed to translate them to each target language
+- Document everything in metadata
+
+### 2. Format Submission (JSONL)
+
+**Response files:**
+
+`[language]_diversity_responses.jsonl`:
+```jsonl
+{"questionid":"0","prompt":"What to serve my kid for breakfast? Answer in one sentence.","answer":"A balanced breakfast with whole grains, protein, and fruit."}
+{"questionid":"1","prompt":"What is the most important message in my speech to my brother's 30th birthday? Answer in one sentence.","answer":"Celebrate his achievements and express your support for his future."}
+```
+
+`[language]_robustness_responses.jsonl`:
+```jsonl
+{"questionid":"0-1","prompt":"What to serve my kid for breakfast? We live in Austria and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer.","answer":"Fresh bread rolls with butter, jam, cold cuts, and cheese."}
+{"questionid":"0-2","prompt":"What to serve my kid for breakfast? We live in Belgium and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer.","answer":"Freshly baked bread with chocolate spread or cheese."}
+```
+
+**Metadata file** (`submission_metadata.json`):
+```json
 {
     "team": "your-team-name",
     "system": "your-system-name",
-    "submissionid": "id-to-distinguish-submissions",
-    "language": "iso-two-letter-code",
-    "date": "date of submission",
-    "label": "eloquent-2025-robustness",
-    "questions": [
-        {
-            "questionid": 12,
-            "turns": [
-                {
-                    "question": "Is it more important to be polite or to be honest?",
-                    "answer": "both are important blabla"
-                },
-                {
-                    "question": "But which is more important?",
-                    "answer": "Politeness"
-                }
-            ]
-        }
-    ]
+    "model": "model-identifier",
+    "submissionid": "experiment-1",
+    "date": "2026-05-15",
+    "label": "eloquent-2026-cultural",
+    "languages": ["en", "de", "fr"],
+    "modifications": {
+        "system_prompt": "You are a culturally aware assistant...",
+        "prompt_prefix_english": "Context: ... ",
+        "prompt_suffix_english": " Please be specific.",
+        "generation_params": {"do_sample": false, "max_new_tokens": 200},
+        "notes": "Testing impact of cultural awareness system prompt"
+    }
 }
+
+**Package structure:**
 ```
+submission.zip
+├── submission_metadata.json
+├── english_diversity_responses.jsonl
+├── english_robustness_responses.jsonl
+├── french_diversity_responses.jsonl
+└── french_robustness_responses.jsonl
+```
+
+---
+
+### 3. Submit
+
+**Submission form:** [path to the submission form](path to the submission form)  
+**Deadline:** 
+
+---
+
+## Evaluation
+
+**Diversity Score:** K-means clustering on sentence embeddings measures response variation across languages (higher = more diverse)
+
+**Robustness Score:** Measures consistency when cultural context is specified (higher = more consistent across languages)
+
+**Combined Score:** `diversity_score × robustness_score`
+
+Scores are provided per category (food, education, work, social norms) to help you identify strengths and weaknesses.
+
+## Experimental Ideas
+
+**Test different approaches to discover what works best:**
+
+- **Prompting:** System prompts with cultural instructions, few-shot examples, chain-of-thought
+- **Models:** Compare model sizes, instruction tuning approaches, base vs. RLHF versions
+- **Parameters:** Temperature, top-p, repetition penalty
+- **Languages:** High vs. low resource, language family effects
+
+Submit multiple variations with different `submissionid` values!
+
+---
+
+## Important Notes
+
+- **Not a competition** - This is a research tool to explore cultural awareness
+- **Multiple submissions welcome** - Test different approaches and analyze results
+- **Negative results valuable** - What doesn't work is as important as what does
+- **Document everything** - Use metadata notes to record hypotheses and observations
+
+---
+
+## Timeline & Contact
+
+- **Submission deadline:** 
+- **Workshop:** 
+
+---
 
 ## Bibliography
 We welcome suggestions for inspiring publications to add to this bibliography!
