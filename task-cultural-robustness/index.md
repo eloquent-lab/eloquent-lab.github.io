@@ -109,9 +109,9 @@ submission.zip
 
 ### 3. Submit
 
-**Submission form:** [coming up](path to the submission form)  
-**Deadline:** May 7, 2026
-**Write a notebook experiment report with your result** May 28, 2026
+- **Submission form:** [coming up](path to the submission form)  
+- **Deadline:** May 7, 2026
+- **Write a notebook experiment report with your result** May 28, 2026
 
 
 ---
