@@ -55,6 +55,7 @@ For each supported language of your model:
 - Limit to ~1 sentence (`max_new_tokens=200`)
 
 **Optional modifications:**
+- Make one submission without any modifications for a direct comparison between models and your own baseline
 - Add system prompts, prefixes, or suffixes
 - These prompt additions be identical for both diversity and robustness, but you are allowed to translate them to each target language
 - Document everything in metadata
@@ -93,7 +94,7 @@ For each supported language of your model:
         "notes": "Testing impact of cultural awareness system prompt"
     }
 }
-
+```
 **Package structure:**
 ```
 submission.zip
@@ -108,8 +109,10 @@ submission.zip
 
 ### 3. Submit
 
-**Submission form:** [path to the submission form](path to the submission form)  
-**Deadline:** 
+**Submission form:** [coming up](path to the submission form)  
+**Deadline:** May 7, 2026
+**Write a notebook experiment report with your result** May 28, 2026
+
 
 ---
 
@@ -145,12 +148,9 @@ Submit multiple variations with different `submissionid` values!
 
 ---
 
-## Timeline & Contact
 
-- **Submission deadline:** 
-- **Workshop:** 
-
----
+## Missing a language?
+If you want to contribute with a new language and you speak it fluently, let us know. It takes around two hours of annotation to get a new language supported.
 
 ## Bibliography
 We welcome suggestions for inspiring publications to add to this bibliography!
