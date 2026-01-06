@@ -4,8 +4,14 @@ Coming up soon!
 
 ## Task overview 
 
-This task is about generating quiz items, given a stimulus text.
+This task focuses on automatic test items generated from a given document, targeting students aged 10 to 15. The objective is to generate assessment items in the form of Question–Answer pairs based on the provided text.
+We provide participants with a ready-to-use question–answer generation prompt as a baseline, along with five automatically generated QA test items and one gold test item, all derived from the same source stimulus. The scope of participation is intentionally open and flexible. Participants may choose to:
+* improve or extend the existing prompt,
+* experiment with different off-the-shelf or homemade models,
+* modify or redesign the prompt to generate new types of questions,
+* or explore any other innovative approach to test items generation.
 
+For this edition, English is the selected language.
 
 ## Quick Start
 
