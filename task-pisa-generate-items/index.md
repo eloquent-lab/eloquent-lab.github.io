@@ -3,8 +3,10 @@
 
 ## Task overview 
 
-This task focuses on automatic test items generated from a given document, targeting students aged 10 to 15. The objective is to generate assessment items in the form of Question–Answer pairs based on the provided text.
+This task focuses on automatic test items generated from a given document, targeting students aged 10 to 15. The objective is to generate assessment items in the form of Question–Answer pairs based on a provided text (the "stimulus").
+
 We provide participants with a ready-to-use question–answer generation prompt as a baseline, along with five automatically generated QA test items and one gold test item, all derived from the same source stimulus. The scope of participation is intentionally open and flexible. Participants may choose to:
+
 * improve or extend the existing prompt,
 * experiment with different off-the-shelf or homemade models,
 * modify or redesign the prompt to generate new types of questions,
@@ -17,6 +19,7 @@ For this edition, English is the selected language.
 ## How to participate, in more detail
 
 ## Example item
+Some example items can be found <a href="Examples/">here</a>
 
 ## Submission instructions
 
@@ -25,11 +28,18 @@ For this edition, English is the selected language.
 PISA, public items, link to repo here
 
 ## Quality Criteria
-
-Relevance, Level of Difficulty, Scoreability, Coverage over stimulus
+The following quality criteria will in various ways be taken into account. 
+* Topical relevance and coherence
+* Naturalness and fluency
+* Level of Difficulty
+* Scoreability
+* Anchoring in stimulus text
+* Ambiguity (or rather, the lack thereof)
+* Coverage of set of test items over stimulus
+* Diversity of set of test items i.e. the distribution of different types of item
 
 ## Scoring
-
+The scoring of submissions will be made using expertise from human editors who have worked with putting together previous PISA editions.
 ## Timeline
 
 ## Bibliography
