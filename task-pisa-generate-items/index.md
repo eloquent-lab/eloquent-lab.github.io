@@ -46,9 +46,9 @@ The scoring of submissions will be made using expertise from human editors who h
 
 ## Organisers
 
-Université Grenoble Alpes: Diandra Fabre, Lorraine Goeuriot, Philippe Mulhem, Didier Schwab, Markarit Vartampetian
-OECD: Mario Piacentini, Luis Francisco Vargas Madriz, Katherina Thomas
-AMD Silo AI: Jussi Karlgren
+* **Université Grenoble Alpes**: Diandra Fabre, Lorraine Goeuriot, Philippe Mulhem, Didier Schwab, Markarit Vartampetian
+* **OECD**: Mario Piacentini, Luis Francisco Vargas Madriz, Katherina Thomas
+* **AMD Silo AI**: Jussi Karlgren
 
 Contact address for questions or suggestions: eloquent-clef2026-organizers@googlegroups.com
 
