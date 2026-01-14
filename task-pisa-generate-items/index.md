@@ -1,6 +1,8 @@
 # Topical PISA Quiz Task --- Generating Test Items
 ### A task of the 2026 [ELOQUENT lab](https://eloquent-lab.github.io/) on evaluating quality of generative language models
 
+Contact: eloquent-clef2026-organizers@googlegroups.com
+
 ## Task overview 
 
 This task focuses on automatic test items generated from a given document, targeting students aged 10 to 15. The objective is to generate assessment items in the form of Question–Answer pairs based on a provided text (the "stimulus").
@@ -41,6 +43,14 @@ The following quality criteria will in various ways be taken into account.
 ## Scoring
 The scoring of submissions will be made using expertise from human editors who have worked with putting together previous PISA editions.
 ## Timeline
+
+## Organisers
+
+Université Grenoble Alpes: Diandra Fabre, Lorraine Goeuriot, Philippe Mulhem, Didier Schwab, Markarit Vartampetian
+OECD: Mario Piacentini, Luis Francisco Vargas Madriz, Katherina Thomas
+AMD Silo AI: Jussi Karlgren
+
+Contact address for questions or suggestions: eloquent-clef2026-organizers@googlegroups.com
 
 ## Bibliography
 Some relevant previous work -- feel free to suggest items for this list e.g. by a pull request!
