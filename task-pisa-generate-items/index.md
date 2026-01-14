@@ -22,7 +22,7 @@ For this edition, English is the selected language.
 
 ## Data
 
-PISA, public items, example item here
+PISA, public items, link to repo here
 
 ## Quality Criteria
 
@@ -32,3 +32,5 @@ Relevance, Level of Difficulty, Scoreability, Coverage over stimulus
 
 ## Timeline
 
+## Bibliography
+Some relevant previous work
