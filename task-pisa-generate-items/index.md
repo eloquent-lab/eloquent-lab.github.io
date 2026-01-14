@@ -1,4 +1,3 @@
-Coming up soon!
 # Topical PISA Quiz Task --- Generating Test Items
 ### A task of the 2026 [ELOQUENT lab](https://eloquent-lab.github.io/) on evaluating quality of generative language models
 
@@ -16,6 +15,8 @@ For this edition, English is the selected language.
 ## Quick Start
 
 ## How to participate, in more detail
+
+## Example item
 
 ## Submission instructions
 
