@@ -43,5 +43,7 @@ The scoring of submissions will be made using expertise from human editors who h
 ## Timeline
 
 ## Bibliography
-Some relevant previous work
+Some relevant previous work -- feel free to suggest items for this list e.g. by a pull request!
+
 * The PISA website for background on the survey itself: https://www.oecd.org/en/about/programmes/pisa.html
+* A survey on automatic question generation: Nikahat Mulla and Prachi Gharpure. 2023. Automatic question generation: a review of methodologies, datasets, evaluation metrics, and applications. _Progress in Artificial Intelligence_ 12. https://doi.org/10.1007/s13748-023-00295-9
