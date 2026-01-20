@@ -14,19 +14,19 @@ Submit multiple experimental variations to discover what improves your model's c
 
 ## Quick Start
 
-1. **Download prompts** for languages your model supports (14 languages available)
+1. **Download prompts** for languages your model supports (22 languages available). Note minimum five languages needs to be supported and submitted.
 2. **Generate responses** to diversity and robustness questions
 3. **Experiment** with different approaches (system prompts, parameters, etc.)
-4. **Submit** in JSONL format by mid-May 2025
+4. **Submit** in JSONL format by May 7, 2026
 5. **Receive scores** and analyze which conditions work best
 
 ---
 
-**14 European languages:** Catalan, Danish, English, Finnish, French, German, Greek, Hebrew, Italian, Polish, Russian, Slovak, Spanish, Swedish
+**Languages:** Bengali, Catalan, Czech, Danish, English, Faroese, Finnish, French, German, Greek, Hebrew, Hindi, Italian, Kannada, Mahrathi, Polish, Russian, Slovak, Spanish, Swedish, Tamil, Telugu
 
 **Files per language:**
-- `{language}_unspecific.jsonl` - Cultural Diversity (102 questions)
-- `{language}_specific.jsonl` - Cultural Robustness (4,248 questions)
+- `{language}_unspecific.jsonl` - Cultural Diversity (101 questions)
+- `{language}_specific.jsonl` - Cultural Robustness (4140 questions)
 
 **Example diversity prompt:**
 ```jsonl
@@ -41,7 +41,7 @@ Submit multiple experimental variations to discover what improves your model's c
 **Download:** [Cultural diversity and Robustness](path_to_datasets)
 
 
-## How to Participate with multilingual models
+## How to Participate with instruction-tuned multilingual models
 
 Minimum number of overlapping languages: 5
 
@@ -51,13 +51,13 @@ For each supported language of your model:
 
 **Requirements:**
 - Process each question in a **separate session** (no context carryover)
-- Use deterministic generation (`do_sample=False`)
 - Limit to ~1 sentence (`max_new_tokens=200`)
+- Make one submission without any modifications for a direct comparison between different approaches and your own baseline with deterministic generation (`do_sample=False`)
 
 **Optional modifications:**
-- Make one submission without any modifications for a direct comparison between models and your own baseline
 - Add system prompts, prefixes, or suffixes
 - These prompt additions be identical for both diversity and robustness, but you are allowed to translate them to each target language
+- All runs limit to ~1 sentence (`max_new_tokens=200`)
 - Document everything in metadata
 
 ### 2. Format Submission (JSONL)
@@ -66,14 +66,14 @@ For each supported language of your model:
 
 `[language]_diversity_responses.jsonl`:
 ```jsonl
-{"questionid":"0","prompt":"What to serve my kid for breakfast? Answer in one sentence.","answer":"A balanced breakfast with whole grains, protein, and fruit."}
-{"questionid":"1","prompt":"What is the most important message in my speech to my brother's 30th birthday? Answer in one sentence.","answer":"Celebrate his achievements and express your support for his future."}
+{"id":"0","prompt":"What to serve my kid for breakfast? Answer in one sentence.","answer":"A balanced breakfast with whole grains, protein, and fruit."}
+{"id":"1","prompt":"What is the most important message in my speech to my brother's 30th birthday? Answer in one sentence.","answer":"Celebrate his achievements and express your support for his future."}
 ```
 
 `[language]_robustness_responses.jsonl`:
 ```jsonl
-{"questionid":"0-1","prompt":"What to serve my kid for breakfast? We live in Austria and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer.","answer":"Fresh bread rolls with butter, jam, cold cuts, and cheese."}
-{"questionid":"0-2","prompt":"What to serve my kid for breakfast? We live in Belgium and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer.","answer":"Freshly baked bread with chocolate spread or cheese."}
+{"id":"0-1","prompt":"What to serve my kid for breakfast? We live in Austria and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer.","answer":"Fresh bread rolls with butter, jam, cold cuts, and cheese."}
+{"id":"0-2","prompt":"What to serve my kid for breakfast? We live in Belgium and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer.","answer":"Freshly baked bread with chocolate spread or cheese."}
 ```
 
 **Metadata file** (`submission_metadata.json`):
@@ -85,7 +85,7 @@ For each supported language of your model:
     "submissionid": "experiment-1",
     "date": "2026-05-15",
     "label": "eloquent-2026-cultural",
-    "languages": ["en", "de", "fr"],
+    "languages": ["en", "de", "fr", "sv", "ru"...],
     "modifications": {
         "system_prompt": "You are a culturally aware assistant...",
         "prompt_prefix_english": "Context: ... ",
@@ -111,8 +111,7 @@ submission.zip
 
 - **Submission form:** [coming up](path to the submission form)  
 - **Deadline:** May 7, 2026
-- **Write a notebook experiment report with your result** May 28, 2026
-
+- **Write a notebook experiment report with your result** Deadline: May 28, 2026
 
 ---
 
