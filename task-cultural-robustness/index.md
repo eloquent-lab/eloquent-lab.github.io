@@ -20,7 +20,7 @@ Submit multiple experimental variations to discover what improves your model's c
 4. **Submit** in JSONL format by May 7, 2026
 5. **Receive scores** and analyze which conditions work best
 6. **Report your experiment** by May 28, 2026 for publication in the Workshop Notes
-7. **Participate** in the workshop at [https://clef2026.clef-initiative.eu/](CLEF) in September 2026
+7. **Participate** in the workshop at [CLEF](https://clef2026.clef-initiative.eu/) in September 2026
 
 ---
 
