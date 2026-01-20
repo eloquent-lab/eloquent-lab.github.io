@@ -22,7 +22,7 @@ Submit multiple experimental variations to discover what improves your model's c
 
 ---
 
-**Languages:** Bengali, Catalan, Czech, Danish, English, Faroese, Finnish, French, German, Greek, Hebrew, Hindi, Italian, Kannada, Mahrathi, Polish, Russian, Slovak, Spanish, Swedish, Tamil, Telugu
+**Languages:** Bengali, Catalan, Czech, Danish, English, Faroese, Finnish, French, German, Greek, Hebrew, Hindi, Italian, Kannada, Marathi, Polish, Russian, Slovak, Spanish, Swedish, Tamil, Telugu
 
 **Files per language:**
 - `{language}_unspecific.jsonl` - Cultural Diversity (101 questions)
