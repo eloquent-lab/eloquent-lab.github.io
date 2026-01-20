@@ -19,6 +19,8 @@ Submit multiple experimental variations to discover what improves your model's c
 3. **Experiment** with different approaches (system prompts, parameters, etc.)
 4. **Submit** in JSONL format by May 7, 2026
 5. **Receive scores** and analyze which conditions work best
+6. **Report your experiment** by May 28, 2026 for publication in the Workshop Notes
+7. **Participate** in the workshop at [https://clef2026.clef-initiative.eu/](CLEF) in September 2026
 
 ---
 
@@ -150,6 +152,8 @@ Submit multiple variations with different `submissionid` values!
 
 ## Missing a language?
 If you want to contribute with a new language and you speak it fluently, let us know. It takes around two hours of annotation to get a new language supported.
+
+---
 
 ## Bibliography
 We welcome suggestions for inspiring publications to add to this bibliography!
