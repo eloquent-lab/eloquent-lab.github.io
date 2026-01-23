@@ -153,6 +153,9 @@ Submit multiple variations with different `submissionid` values!
 ## Missing a language?
 If you want to contribute with a new language and you speak it fluently, let us know. It takes around two hours of annotation to get a new language supported.
 
+*** Thanks to our translators ***
+Adam Hrin, Annika Simonsen, Araceli Cañadas Ruiz, Daniel Zautner, Georgios Stampoulidis, Josiane Mothe, Jussi Karlgren, Lucie Poláková, Luisa Weinisch, Maria Barrett, Pawel Kowalski, Pier Luigi Dovesi, Rohit Gunti, Samu Tamminen, Stig-Arne Grönroos, Věra Kloudová, Xavier Aguilar Fruto
+
 ---
 
 ## Bibliography
