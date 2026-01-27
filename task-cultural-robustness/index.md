@@ -16,7 +16,7 @@ Submit multiple experimental variations to discover what improves your model's c
 
 1. **Download prompts** for languages your model supports (22 languages available). Note minimum five languages needs to be supported and submitted per experiment run.
 2. **Generate responses** to both diversity and robustness questions
-3. **Experiment** with different approaches (system prompts, parameters, etc.)
+3. **Experiment** with different approaches using the *same approach* across the entire experiment (system prompts, parameters, etc.)
 4. **Submit** in JSONL format by May 7, 2026
 5. **Receive scores** and analyze which conditions work best
 6. **Report your experiment** by May 28, 2026 for publication in the Workshop Notes
@@ -40,7 +40,7 @@ Submit multiple experimental variations to discover what improves your model's c
 {"id":"0-1","prompt":"What to serve my kid for breakfast? We live in Austria and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer."}
 ```
 
-**Download:** [Cultural diversity and Robustness](path_to_datasets)
+**Download:** [Cultural diversity and Robustness](data/)
 
 
 ## How to Participate with instruction-tuned multilingual models
