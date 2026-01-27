@@ -40,7 +40,7 @@ Submit multiple experimental variations to discover what improves your model's c
 {"id":"0-1","prompt":"What to serve my kid for breakfast? We live in Austria and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer."}
 ```
 
-**Download:** [Cultural diversity and Robustness](data/)
+**Download:** [Cultural diversity and Robustness](https://github.com/eloquent-lab/eloquent-lab.github.io/tree/main/task-cultural-robustness/data)
 
 
 ## How to Participate with instruction-tuned multilingual models
