@@ -14,8 +14,8 @@ Submit multiple experimental variations to discover what improves your model's c
 
 ## Quick Start
 
-1. **Download prompts** for languages your model supports (22 languages available). Note minimum five languages needs to be supported and submitted.
-2. **Generate responses** to diversity and robustness questions
+1. **Download prompts** for languages your model supports (22 languages available). Note minimum five languages needs to be supported and submitted per experiment run.
+2. **Generate responses** to both diversity and robustness questions
 3. **Experiment** with different approaches (system prompts, parameters, etc.)
 4. **Submit** in JSONL format by May 7, 2026
 5. **Receive scores** and analyze which conditions work best
@@ -66,13 +66,13 @@ For each supported language of your model:
 
 **Response files:**
 
-`[language]_diversity_responses.jsonl`:
+`[language]_unspecific.jsonl`:
 ```jsonl
 {"id":"0","prompt":"What to serve my kid for breakfast? Answer in one sentence.","answer":"A balanced breakfast with whole grains, protein, and fruit."}
 {"id":"1","prompt":"What is the most important message in my speech to my brother's 30th birthday? Answer in one sentence.","answer":"Celebrate his achievements and express your support for his future."}
 ```
 
-`[language]_robustness_responses.jsonl`:
+`[language]_specific.jsonl`:
 ```jsonl
 {"id":"0-1","prompt":"What to serve my kid for breakfast? We live in Austria and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer.","answer":"Fresh bread rolls with butter, jam, cold cuts, and cheese."}
 {"id":"0-2","prompt":"What to serve my kid for breakfast? We live in Belgium and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer.","answer":"Freshly baked bread with chocolate spread or cheese."}
@@ -93,7 +93,7 @@ For each supported language of your model:
         "prompt_prefix_english": "Context: ... ",
         "prompt_suffix_english": " Please be specific.",
         "generation_params": {"do_sample": false, "max_new_tokens": 200},
-        "notes": "Testing impact of cultural awareness system prompt"
+        "notes": "Testing impact of cultural awareness system prompt version 1"
     }
 }
 ```
@@ -101,10 +101,10 @@ For each supported language of your model:
 ```
 submission.zip
 ├── submission_metadata.json
-├── english_diversity_responses.jsonl
-├── english_robustness_responses.jsonl
-├── french_diversity_responses.jsonl
-└── french_robustness_responses.jsonl
+├── en_specific.jsonl
+├── en_unspecific_.jsonl
+├── fr_specific.jsonl
+└── fr_unspecific.jsonl
 ```
 
 ---
