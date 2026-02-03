@@ -15,9 +15,9 @@ Submit multiple experimental variations to discover what improves your model's c
 ## Quick Start
 
 1. **Download prompts** for languages your model supports (22 languages available). Note minimum five languages needs to be supported and submitted per experiment run.
-2. **Generate responses** to both diversity and robustness questions
-3. **Experiment** with different approaches using the *same approach* across the entire experiment (system prompts, parameters, etc.)
-4. **Submit** in JSONL format by May 7, 2026
+2. **Generate responses** to both diversity and robustness questions with your baseline system
+3. **Optional: Experiment** with different approaches using the *same approach* across the entire experiment (system prompts, parameters, etc.)
+4. **Submit** the baseline run as well as your experiments in JSONL format by May 7, 2026
 5. **Receive scores** and analyze which conditions work best
 6. **Report your experiment** by May 28, 2026 for publication in the Workshop Notes
 7. **Participate** in the workshop at [CLEF](https://clef2026.clef-initiative.eu/) in September 2026
@@ -49,16 +49,16 @@ Minimum number of overlapping languages: 5
 
 ### 1. Generate Responses
 
-For each supported language of your model:
+For each supported language (minimum 5) of your model:
 
-**Requirements:**
+**Requirements: Baseline output**
 - Process each question in a **separate session** (no context carryover)
 - Limit to ~1 sentence (`max_new_tokens=200`)
 - Make one submission without any modifications for a direct comparison between different approaches and your own baseline with deterministic generation (`do_sample=False`)
 
 **Optional modifications:**
 - Add system prompts, prefixes, or suffixes
-- These prompt additions be identical for both diversity and robustness, but you are allowed to translate them to each target language
+- These prompt additions be *identical for both diversity and robustness*, but you are allowed to translate them to each target language
 - All runs limit to ~1 sentence (`max_new_tokens=200`)
 - Document everything in metadata
 
@@ -79,6 +79,7 @@ For each supported language of your model:
 ```
 
 **Metadata file** (`submission_metadata.json`):
+For each experimental condition:
 ```json
 {
     "team": "your-team-name",
