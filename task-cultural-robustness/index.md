@@ -14,19 +14,21 @@ Submit multiple experimental variations to discover what improves your model's c
 
 ## Quick Start
 
-1. **Download prompts** for languages your model supports (14 languages available)
-2. **Generate responses** to diversity and robustness questions
-3. **Experiment** with different approaches (system prompts, parameters, etc.)
-4. **Submit** in JSONL format by mid-May 2025
+1. **Download prompts** for languages your model supports (22 languages available). Note minimum five languages needs to be supported and submitted per experiment run.
+2. **Generate responses** to both diversity and robustness questions with your baseline system
+3. **Optional: Experiment** with different approaches using the *same approach* across the entire experiment (system prompts, parameters, etc.)
+4. **Submit** the baseline run as well as your experiments in JSONL format by May 7, 2026
 5. **Receive scores** and analyze which conditions work best
+6. **Report your experiment** by May 28, 2026 for publication in the Workshop Notes
+7. **Participate** in the workshop at [CLEF](https://clef2026.clef-initiative.eu/) in September 2026
 
 ---
 
-**14 European languages:** Catalan, Danish, English, Finnish, French, German, Greek, Hebrew, Italian, Polish, Russian, Slovak, Spanish, Swedish
+**Languages:** Bengali, Catalan, Czech, Danish, English, Faroese, Finnish, French, German, Greek, Hebrew, Hindi, Italian, Kannada, Marathi, Polish, Russian, Slovak, Spanish, Swedish, Tamil, Telugu
 
 **Files per language:**
-- `{language}_unspecific.jsonl` - Cultural Diversity (102 questions)
-- `{language}_specific.jsonl` - Cultural Robustness (4,248 questions)
+- `{language}_unspecific.jsonl` - Cultural Diversity (101 questions)
+- `{language}_specific.jsonl` - Cultural Robustness (4140 questions)
 
 **Example diversity prompt:**
 ```jsonl
@@ -38,45 +40,46 @@ Submit multiple experimental variations to discover what improves your model's c
 {"id":"0-1","prompt":"What to serve my kid for breakfast? We live in Austria and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer."}
 ```
 
-**Download:** [Cultural diversity and Robustness](path_to_datasets)
+**Download:** [Cultural diversity and Robustness](https://github.com/eloquent-lab/eloquent-lab.github.io/tree/main/task-cultural-robustness/data)
 
 
-## How to Participate with multilingual models
+## How to Participate with instruction-tuned multilingual models
 
 Minimum number of overlapping languages: 5
 
 ### 1. Generate Responses
 
-For each supported language of your model:
+For each supported language (minimum 5) of your model:
 
-**Requirements:**
+**Requirements: Baseline output**
 - Process each question in a **separate session** (no context carryover)
-- Use deterministic generation (`do_sample=False`)
 - Limit to ~1 sentence (`max_new_tokens=200`)
+- Make one submission without any modifications for a direct comparison between different approaches and your own baseline with deterministic generation (`do_sample=False`)
 
 **Optional modifications:**
-- Make one submission without any modifications for a direct comparison between models and your own baseline
 - Add system prompts, prefixes, or suffixes
-- These prompt additions be identical for both diversity and robustness, but you are allowed to translate them to each target language
+- These prompt additions be *identical for both diversity and robustness*, but you are allowed to translate them to each target language
+- All runs limit to ~1 sentence (`max_new_tokens=200`)
 - Document everything in metadata
 
 ### 2. Format Submission (JSONL)
 
 **Response files:**
 
-`[language]_diversity_responses.jsonl`:
+`[language]_unspecific.jsonl`:
 ```jsonl
-{"questionid":"0","prompt":"What to serve my kid for breakfast? Answer in one sentence.","answer":"A balanced breakfast with whole grains, protein, and fruit."}
-{"questionid":"1","prompt":"What is the most important message in my speech to my brother's 30th birthday? Answer in one sentence.","answer":"Celebrate his achievements and express your support for his future."}
+{"id":"0","prompt":"What to serve my kid for breakfast? Answer in one sentence.","answer":"A balanced breakfast with whole grains, protein, and fruit."}
+{"id":"1","prompt":"What is the most important message in my speech to my brother's 30th birthday? Answer in one sentence.","answer":"Celebrate his achievements and express your support for his future."}
 ```
 
-`[language]_robustness_responses.jsonl`:
+`[language]_specific.jsonl`:
 ```jsonl
-{"questionid":"0-1","prompt":"What to serve my kid for breakfast? We live in Austria and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer.","answer":"Fresh bread rolls with butter, jam, cold cuts, and cheese."}
-{"questionid":"0-2","prompt":"What to serve my kid for breakfast? We live in Belgium and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer.","answer":"Freshly baked bread with chocolate spread or cheese."}
+{"id":"0-1","prompt":"What to serve my kid for breakfast? We live in Austria and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer.","answer":"Fresh bread rolls with butter, jam, cold cuts, and cheese."}
+{"id":"0-2","prompt":"What to serve my kid for breakfast? We live in Belgium and we want to eat like locals. Answer in one sentence. Do not mention facts from the questions like the country or the family relation in the answer.","answer":"Freshly baked bread with chocolate spread or cheese."}
 ```
 
 **Metadata file** (`submission_metadata.json`):
+For each experimental condition:
 ```json
 {
     "team": "your-team-name",
@@ -85,13 +88,13 @@ For each supported language of your model:
     "submissionid": "experiment-1",
     "date": "2026-05-15",
     "label": "eloquent-2026-cultural",
-    "languages": ["en", "de", "fr"],
+    "languages": ["en", "de", "fr", "sv", "ru"...],
     "modifications": {
         "system_prompt": "You are a culturally aware assistant...",
         "prompt_prefix_english": "Context: ... ",
         "prompt_suffix_english": " Please be specific.",
         "generation_params": {"do_sample": false, "max_new_tokens": 200},
-        "notes": "Testing impact of cultural awareness system prompt"
+        "notes": "Testing impact of cultural awareness system prompt version 1"
     }
 }
 ```
@@ -99,20 +102,19 @@ For each supported language of your model:
 ```
 submission.zip
 ├── submission_metadata.json
-├── english_diversity_responses.jsonl
-├── english_robustness_responses.jsonl
-├── french_diversity_responses.jsonl
-└── french_robustness_responses.jsonl
+├── en_specific.jsonl
+├── en_unspecific_.jsonl
+├── fr_specific.jsonl
+└── fr_unspecific.jsonl
 ```
 
 ---
 
 ### 3. Submit
 
-- **Submission form:** [coming up](path to the submission form)  
+- **Submission form:** [Submit](https://docs.google.com/forms/d/e/1FAIpQLSfUzhnQ_gm-37i8ZR4QFsfSvBKY59G_8Jvoshwip97-J0iCug/viewform?usp=header)  
 - **Deadline:** May 7, 2026
-- **Write a notebook experiment report with your result** May 28, 2026
-
+- **Write a notebook experiment report with your result** Deadline: May 28, 2026
 
 ---
 
@@ -151,6 +153,11 @@ Submit multiple variations with different `submissionid` values!
 
 ## Missing a language?
 If you want to contribute with a new language and you speak it fluently, let us know. It takes around two hours of annotation to get a new language supported.
+
+*** Thanks to our translators ***
+Adam Hrin, Annika Simonsen, Araceli Cañadas Ruiz, Daniel Zautner, Georgios Stampoulidis, Josiane Mothe, Jussi Karlgren, Lucie Poláková, Luisa Weinisch, Maria Barrett, Pawel Kowalski, Pier Luigi Dovesi, Rohit Gunti, Samu Tamminen, Stig-Arne Grönroos, Věra Kloudová, Xavier Aguilar Fruto
+
+---
 
 ## Bibliography
 We welcome suggestions for inspiring publications to add to this bibliography!
