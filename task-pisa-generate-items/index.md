@@ -65,3 +65,6 @@ Some relevant previous work -- feel free to suggest items for this list e.g. by 
 * A survey on automatic question generation: Nikahat Mulla and Prachi Gharpure. 2023. Automatic question generation: a review of methodologies, datasets, evaluation metrics, and applications. _Progress in Artificial Intelligence_ 12. https://doi.org/10.1007/s13748-023-00295-9
 * A typology of questions (originally for automatic question answering purposes): Wendy Lehnert. 1977. A Conceptual Theory of Question Answering. _Proceedings of IJCAI_
 * A typology of educational goals: Bloom, Benjamin S., Max D. Engelhart, Edward J. Furst, Walker H. Hill, and David R. Krathwohl. Taxonomy of educational objectives: The classification of educational goals. New York: _Longman_, 1956.
+* Nikahat Mulla and Prachi Gharpure. 2023. Automatic question generation: a review of
+methodologies, datasets, evaluation metrics, and applications. Prog Artificial Intelligence 12.
+https://doi.org/10.1007/s13748-023-00295-9
