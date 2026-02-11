@@ -44,7 +44,7 @@ The following quality criteria will in various ways be taken into account.
 The scoring of submissions will be made using expertise from human editors who have worked with putting together previous PISA editions.
 
 ## Timeline
-* Task launch: January 2026
+* Task launch: February 2026
 * Presentation at European Conference on Information Retrieval (ECIR) in Delft: End of March 2026
 * Task submission deadline: May 2026
 * Reporting deadline: June 2026
