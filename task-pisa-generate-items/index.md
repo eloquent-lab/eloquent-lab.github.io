@@ -20,25 +20,39 @@ For this edition, English is the selected language.
 
 ## How to participate, in more detail
 
-## Example item
-Some example items can be found <a href="Examples/">here</a>
+## Example training items
+
+Example items can be found <a href="Examples/">here</a>
+
+## Types of test item
+The PISA tests test for a set of cognitive processes related to reading. Test items are expected to probe them, separately or jointly. 
+
+* Access and retrieve information within a text
+* Search for and select relevant text
+* Represent literal meaning
+* Integrate and generate inferences
+* Integrate and generate inferences across multiple sources
+* Detect and handle conflict
+* Reflect on content and form
+* Assess quality and credibility
+
+## Evaluation data set
+
+Evaluation stimulus items will be released in late March 2026. 
 
 ## Submission instructions
 
-## Data
-
-PISA, public items, link to repo here
+Submission over web form will be opened at release of evaluation data set
 
 ## Quality Criteria
-The following quality criteria will in various ways be taken into account. 
-* Topical relevance and coherence
-* Naturalness and fluency of language
+The following quality criteria will in various ways be taken into account. Scoring will be done by OECD readers who currently work with the development of PISA tests. 
+
+* Topical relevance, coherence, and clarity
+* Anchoring and coverage of test item set over the stimulus, i.e. that the test items do not address only one section of the stimul
+* Distribution over the above types of item
 * Level of difficulty and its variation, to cater for the application of the test in varied cultural areas
-* Anchoring and coverage of set of test items over stimulus, i.e. that the test items do not address only one section of the stimulus
 * Diversity of set of test items i.e. the distribution of different types of item
-* Scoreability
-* Anchoring in stimulus text
-* Ambiguity (or rather, the lack thereof)
+* Naturalness and fluency of language
 
 ## Scoring
 The scoring of submissions will be made using expertise from human editors who have worked with putting together previous PISA editions.
