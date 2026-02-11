@@ -32,19 +32,20 @@ PISA, public items, link to repo here
 ## Quality Criteria
 The following quality criteria will in various ways be taken into account. 
 * Topical relevance and coherence
-* Naturalness and fluency
-* Level of Difficulty
+* Naturalness and fluency of language
+* Level of difficulty and its variation, to cater for the application of the test in varied cultural areas
+* Anchoring and coverage of set of test items over stimulus, i.e. that the test items do not address only one section of the stimulus
+* Diversity of set of test items i.e. the distribution of different types of item
 * Scoreability
 * Anchoring in stimulus text
 * Ambiguity (or rather, the lack thereof)
-* Coverage of set of test items over stimulus
-* Diversity of set of test items i.e. the distribution of different types of item
 
 ## Scoring
 The scoring of submissions will be made using expertise from human editors who have worked with putting together previous PISA editions.
 
 ## Timeline
-* Task launch: January 2026
+* Task launch: First week of March, 2026
+* Test data release: TBD, March 2026
 * Presentation at European Conference on Information Retrieval (ECIR) in Delft: End of March 2026
 * Task submission deadline: May 2026
 * Reporting deadline: June 2026
