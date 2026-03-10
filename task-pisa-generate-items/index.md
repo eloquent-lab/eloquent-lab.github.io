@@ -27,7 +27,7 @@ Some example items can be found <a href="Examples/">here</a>
 
 ## Data
 
-PISA, public items, link to repo here
+Publicly released PISA assessment items are available here: <a href="https://github.com/eloquent-lab/eloquent-lab.github.io/tree/pisa-gen-items/task-pisa-generate-items/data">data</a>
 
 ## Quality Criteria
 The following quality criteria will in various ways be taken into account. 
@@ -39,6 +39,15 @@ The following quality criteria will in various ways be taken into account.
 * Ambiguity (or rather, the lack thereof)
 * Coverage of set of test items over stimulus
 * Diversity of set of test items i.e. the distribution of different types of item
+
+
+## Models and Tools
+
+Participants can use any models of their choice.
+
+* Open-weight language models can be downloaded from the <a href="https://huggingface.co/models">Hugging Face Hub</a>.
+* A tool to estimate the hardware resources required to run different LLMs: <a href="https://huggingface.co/spaces/Vokturz/can-it-run-llm">https://huggingface.co/spaces/Vokturz/can-it-run-llm</a>
+
 
 ## Scoring
 The scoring of submissions will be made using expertise from human editors who have worked with putting together previous PISA editions.
