@@ -20,6 +20,9 @@ For this edition, English is the selected language.
 
 ## How to participate, in more detail
 
+## Submission instructions
+
+Submission over web form will be opened at release of evaluation data set
 
 ## Types of test item
 The PISA tests test for a set of cognitive processes related to reading. Test items are expected to probe them, separately or jointly. 
@@ -56,11 +59,6 @@ Some example items can be found <a href="Examples/">here</a>
 ### Evaluation data set
 
 Evaluation stimulus items will be released in late March 2026. 
-
-
-## Submission instructions
-
-Submission over web form will be opened at release of evaluation data set
 
 ## Models and Tools
 
