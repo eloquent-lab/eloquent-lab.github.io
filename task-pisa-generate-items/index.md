@@ -20,26 +20,47 @@ For this edition, English is the selected language.
 
 ## How to participate, in more detail
 
-## Example item
-Some example items can be found <a href="Examples/">here</a>
 
-## Submission instructions
+## Types of test item
+The PISA tests test for a set of cognitive processes related to reading. Test items are expected to probe them, separately or jointly. 
+
+* Access and retrieve information within a text
+* Search for and select relevant text
+* Represent literal meaning
+* Integrate and generate inferences
+* Integrate and generate inferences across multiple sources
+* Detect and handle conflict
+* Reflect on content and form
+* Assess quality and credibility
+* 
+
+## Quality Criteria
+The following quality criteria will in various ways be taken into account. Scoring will be done by OECD readers who currently work with the development of PISA tests. 
+
+* Topical relevance, coherence, and clarity
+* Anchoring and coverage of test item set over the stimulus, i.e. that the test items do not address only one section of the stimulus
+* Distribution over the above types of item
+* Level of difficulty and its variation, to cater for the application of the test in varied cultural areas
+* Diversity of set of test items i.e. the distribution of different types of item
+* Naturalness and fluency of language
 
 ## Data
 
+### Publicly released PISA items
 Publicly released PISA assessment items are available here: <a href="https://github.com/eloquent-lab/eloquent-lab.github.io/tree/pisa-gen-items/task-pisa-generate-items/data">data</a>
 
-## Quality Criteria
-The following quality criteria will in various ways be taken into account. 
-* Topical relevance and coherence
-* Naturalness and fluency
-* Level of Difficulty
-* Scoreability
-* Anchoring in stimulus text
-* Ambiguity (or rather, the lack thereof)
-* Coverage of set of test items over stimulus
-* Diversity of set of test items i.e. the distribution of different types of item
+### Example training items
 
+Some example items can be found <a href="Examples/">here</a>
+
+### Evaluation data set
+
+Evaluation stimulus items will be released in late March 2026. 
+
+
+## Submission instructions
+
+Submission over web form will be opened at release of evaluation data set
 
 ## Models and Tools
 
@@ -53,7 +74,8 @@ Participants can use any models of their choice.
 The scoring of submissions will be made using expertise from human editors who have worked with putting together previous PISA editions.
 
 ## Timeline
-* Task launch: February 2026
+* Task launch: First week of March, 2026
+* Test data release: TBD, March 2026
 * Presentation at European Conference on Information Retrieval (ECIR) in Delft: End of March 2026
 * Task submission deadline: May 2026
 * Reporting deadline: June 2026
