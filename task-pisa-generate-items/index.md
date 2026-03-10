@@ -32,7 +32,7 @@ The PISA tests test for a set of cognitive processes related to reading. Test it
 * Detect and handle conflict
 * Reflect on content and form
 * Assess quality and credibility
-* 
+
 
 ## Quality Criteria
 The following quality criteria will in various ways be taken into account. Scoring will be done by OECD readers who currently work with the development of PISA tests. 
