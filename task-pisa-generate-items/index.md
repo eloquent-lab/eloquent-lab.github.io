@@ -40,6 +40,8 @@ The PISA tests test for a set of cognitive processes related to reading. Test it
 ## Quality Criteria
 The following quality criteria will in various ways be taken into account. Scoring will be done by OECD readers who currently work with the development of PISA tests. 
 
+An overview of commonly used evaluation metrics for natural language generation is provided by <a href="https://aclanthology.org/2024.inlg-main.44/">Schmidtova et al. (2024)</a>.
+
 * Topical relevance, coherence, and clarity
 * Anchoring and coverage of test item set over the stimulus, i.e. that the test items do not address only one section of the stimulus
 * Distribution over the above types of item
@@ -52,7 +54,6 @@ The following quality criteria will in various ways be taken into account. Scori
 * Item quality: clarity and natural phrasing; appropriateness of text and questions for 15‑year‑olds; cultural and linguistic suitability.
 * Alignment: match between question and stimulus; correctness of the declared cognitive process and difficulty level.
 * Coverage of cognitive processes, item dimensions and difficulty levels: the full test form should cover the different cognitive processes (search/access, understand/interpret, evaluate/reflect), text dimensions (text sources, literary types, response formats, text length) and difficulty levels elaborated in the PISA reading framework. The exact distribution is less important than showing the ability to generate distinct items on these dimensions.
-
 
 
 ## Data
