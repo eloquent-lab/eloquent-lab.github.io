@@ -47,6 +47,14 @@ The following quality criteria will in various ways be taken into account. Scori
 * Diversity of set of test items i.e. the distribution of different types of item
 * Naturalness and fluency of language
 
+### Additional information on the evaluation criteria
+
+* Item quality: clarity and natural phrasing; appropriateness of text and questions for 15‑year‑olds; cultural and linguistic suitability.
+* Alignment: match between question and stimulus; correctness of the declared cognitive process and difficulty level.
+* Coverage of cognitive processes, item dimensions and difficulty levels: the full test form should cover the different cognitive processes (search/access, understand/interpret, evaluate/reflect), text dimensions (text sources, literary types, response formats, text length) and difficulty levels elaborated in the PISA reading framework. The exact distribution is less important than showing the ability to generate distinct items on these dimensions.
+
+
+
 ## Data
 
 ### Publicly released PISA items
