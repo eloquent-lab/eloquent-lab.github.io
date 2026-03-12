@@ -55,6 +55,7 @@ An overview of commonly used evaluation metrics for natural language generation 
 * Alignment: match between question and stimulus; correctness of the declared cognitive process and difficulty level.
 * Coverage of cognitive processes, item dimensions and difficulty levels: the full test form should cover the different cognitive processes (search/access, understand/interpret, evaluate/reflect), text dimensions (text sources, literary types, response formats, text length) and difficulty levels elaborated in the PISA reading framework. The exact distribution is less important than showing the ability to generate distinct items on these dimensions.
 
+A detailed description of the evaluation criteria is available <a href="https://github.com/eloquent-lab/eloquent-lab.github.io/blob/pisa-gen-items/task-pisa-generate-items/Evaluation/Evaluating-AI-generated-Reading-Items.md">here</a>.
 
 ## Data
 
