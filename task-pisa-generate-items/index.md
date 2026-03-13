@@ -93,7 +93,7 @@ The scoring of submissions will be made using expertise from human editors who h
   
 ## Organisers
 
-* **Université Grenoble Alpes**: Diandra Fabre, Lorraine Goeuriot, Philippe Mulhem, Didier Schwab, Markarit Vartampetian
+* **Université Grenoble Alpes**: Sarah Bouaraba, Diandra Fabre, Lorraine Goeuriot, Philippe Mulhem, Didier Schwab, Markarit Vartampetian
 * **OECD**: Said Ettejjari, Mario Piacentini, Luis Francisco Vargas Madriz, Katherina Thomas
 * **AMD Silo AI**: Jussi Karlgren
 
