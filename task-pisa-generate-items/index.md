@@ -20,8 +20,6 @@ For this edition, English is the selected language.
 
 Example items can be found <a href="https://eloquent-lab.github.io/Examples/5ex_QA_generated.jsonl">here</a>
 
-https://github.com/eloquent-lab//blob/main/task-pisa-generate-items/Examples/
-
 ## Types of test item
 The PISA tests test for a set of cognitive processes related to reading. Test items are expected to probe them, separately or jointly. 
 
@@ -33,6 +31,10 @@ The PISA tests test for a set of cognitive processes related to reading. Test it
 * Detect and handle conflict
 * Reflect on content and form
 * Assess quality and credibility
+
+## Evaluation and Scoring
+
+<A HREF="prompt_baseline.md">More details about the task, including scoring principles</A>
 
 ## Evaluation data set
 
