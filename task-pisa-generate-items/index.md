@@ -16,13 +16,11 @@ We provide participants with a ready-to-use question–answer generation prompt 
 
 For this edition, English is the selected language.
 
-## Quick Start
-
-## How to participate, in more detail
-
 ## Example training items
 
-Example items can be found <a href="Examples/">here</a>
+Example items can be found <a href="https://eloquent-lab.github.io/Examples/5ex_QA_generated.jsonl">here</a>
+
+https://github.com/eloquent-lab//blob/main/task-pisa-generate-items/Examples/
 
 ## Types of test item
 The PISA tests test for a set of cognitive processes related to reading. Test items are expected to probe them, separately or jointly. 
