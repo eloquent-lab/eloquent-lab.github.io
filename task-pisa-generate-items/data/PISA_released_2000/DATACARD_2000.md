@@ -5,7 +5,7 @@
 This dataset contains the released reading literacy items from the PISA 2000 assessment, serialized into JSONL format. Each line in `PISA_2000.jsonl` represents a single **item** — an independently scored response.
 Multi-part questions (e.g., paired open responses, table-based sub-items) are expanded into one item per sub-part.
 
-PISA 2000 was a **paper-based** assessment. Metadata such as cognitive process, difficulty scores, source requirements, or scoring guides are not included in the official released items (unlike PISA 2018). However, these fields are present in the schema for cross-year compatibility but are set to `null`.
+PISA 2000 was a **paper-based** assessment. Metadata such as difficulty scores, source requirements, or pedagogical explanations are not included in the official released items (unlike PISA 2018). However, these fields are present in the schema for cross-year compatibility but are set to `null`. Cognitive processes and scoring guides (correct answers and rubrics) were sourced separately and are populated for all items.
 
 **Total:** 46 lines across 11 units (43 questions)
 
@@ -27,7 +27,7 @@ PISA 2000 was a **paper-based** assessment. Metadata such as cognitive process, 
 
 ## Sources
 
-- **Released Items PDF:** [PISA 2000 Reading Sample Tasks](https://www.oecd.org/content/dam/oecd/en/about/programmes/edu/pisa/publications/2002/01/sample-tasks-from-the-pisa-2000-assessment-of-reading-mathematical-and-scientific-literacy/sample_tasks_pisa_2000.pdf)
+- **Released Items PDF:** [PISA 2000 Reading Items](https://nces.ed.gov/surveys/pisa/pdf/items2_reading.pdf)
 
 ## Schema
 
@@ -38,7 +38,7 @@ PISA 2000 was a **paper-based** assessment. Metadata such as cognitive process, 
 | `item_id`           | string          | Yes         | PISA item code, e.g. `R077Q02`, `R119Q09A`                    |
 | `unit_title`        | string          | Yes         | Reading unit name, e.g. `"Flu"`                                |
 | `released_item`     | string          | Yes         | Item number within unit, e.g. `"1"`, `"7"`                    |
-| `cognitive_process` | null            | Yes         | Always `null` (not available for PISA 2000 released items)     |
+| `cognitive_process` | string          | Yes         | PISA reading cognitive process (cf. list below)                |
 | `response_format`   | string          | Yes         | Item type (cf. Response Formats below)                         |
 | `difficulty_score`  | null            | Yes         | Always `null` (not available for PISA 2000 released items)     |
 | `difficulty_level`  | null            | Yes         | Always `null` (not available for PISA 2000 released items)     |
@@ -48,7 +48,7 @@ PISA 2000 was a **paper-based** assessment. Metadata such as cognitive process, 
 | `question_stem`     | string          | Sub-items   | Shared stem for multi-part items (e.g., Amanda Q3)             |
 | `question`          | string          | Yes         | The specific question or statement to evaluate                 |
 | `options`           | object          | MCQ items   | Answer choices keyed by letter (typically `A`–`D`, sometimes `A`–`E`) |
-| `answer`            | null            | Yes         | Always `null` (scoring guides not available for PISA 2000)     |
+| `answer`            | object          | Yes         | Correct answer and scoring info (see Answer Types below)       |
 | `item_explanation`  | null            | Yes         | Always `null` (not available for PISA 2000 released items)     |
 
 ### Response Formats
@@ -58,16 +58,59 @@ PISA 2000 was a **paper-based** assessment. Metadata such as cognitive process, 
 | `Simple Multiple Choice`| Single correct answer from options                   | MCQ items  |
 | `Open Response`         | Free-text answer (no options field)                  | Open items |
 
+### Cognitive Processes
+
+The following PISA 2000 reading cognitive processes appear in the dataset:
+
+- Access and retrieve
+- Integrate and interpret
+- Interpreting texts
+- Reflect and evaluate
+
+### Answer Types
+
+#### Simple MCQ
+
+```json
+{
+  "type": "simple",
+  "correct": "B"
+}
+```
+
+#### Open Response
+
+Scoring rubrics are verbatim from the PISA 2000 scoring guide. Multi-path criteria are separated by `\n\nOR\n\n`. When the source provides concrete example responses, they are included in the criteria text.
+
+```json
+{
+  "type": "open",
+  "full_credit": {
+    "criteria": "Verbatim scoring criteria from PISA...",
+    "acceptable_answers": null
+  },
+  "partial_credit": {
+    "criteria": "Verbatim partial credit criteria..."
+  },
+  "incorrect": {
+    "criteria": "Verbatim incorrect response criteria..."
+  }
+}
+```
+
+- `full_credit.criteria` — verbatim from the PISA scoring guide
+- `full_credit.acceptable_answers` — always `null` (PISA 2000 does not provide structured example answers as PISA 2018 does; example responses are included inline in the criteria text when provided)
+- `partial_credit` — present only for items with partial credit scoring (scoring code `0 1 2 9`)
+- `incorrect` — present when the scoring guide provides explicit incorrect response criteria
+
 ### Null Fields (Cross-Year Compatibility)
 
 The following fields are always `null` to maintain schema compatibility with PISA 2018, since the released items PDF from 2000 does not include the detailed metadata available for later PISA cycles:
 
-- `cognitive_process` — PISA reading cognitive process assessed
 - `difficulty_score` — PISA difficulty score
 - `difficulty_level` — PISA proficiency level
 - `source_requirement` — single vs. multiple source
 - `source_tab` — tab(s) needed to answer
-- `answer` — correct answer and scoring information
 - `item_explanation` — pedagogical rationale
 
 ### Stimulus Text Conventions
@@ -94,7 +137,7 @@ When a PISA question requires multiple distinct answers (e.g., The Gift Q1 asks 
 
 When a PISA question presents a table where the student evaluates multiple statements (e.g., Amanda Q3), each row becomes its own JSONL line:
 
-- `item_id` uses variations of the base code: `R216Q03A`, `R216Q03`, `R216Q03C`
+- `item_id` uses variations of the base code: `R216Q03A`, `R216Q03B`, `R216Q03C`
 - All sub-items share: `question_stem`, `stimulus_text`, `released_item`
 - Each sub-item has its own: `item_id`, `question`
 
