@@ -16,9 +16,13 @@ We provide participants with a ready-to-use question–answer generation prompt 
 
 For this edition, English is the selected language.
 
-## Example training items
+## Quick Start
 
-Example items can be found <a href="https://eloquent-lab.github.io/Examples/5ex_QA_generated.jsonl">here</a>
+## How to participate, in more detail
+
+## Submission instructions
+
+Submission over web form will be opened at release of evaluation data set
 
 ## Types of test item
 The PISA tests test for a set of cognitive processes related to reading. Test items are expected to probe them, separately or jointly. 
@@ -32,27 +36,49 @@ The PISA tests test for a set of cognitive processes related to reading. Test it
 * Reflect on content and form
 * Assess quality and credibility
 
-## Evaluation and Scoring
-
-<A HREF="prompt_baseline.md">More details about the task, including scoring principles</A>
-
-## Evaluation data set
-
-Evaluation stimulus items will be released in late March 2026. 
-
-## Submission instructions
-
-Submission over web form will be opened at release of evaluation data set
 
 ## Quality Criteria
 The following quality criteria will in various ways be taken into account. Scoring will be done by OECD readers who currently work with the development of PISA tests. 
 
 * Topical relevance, coherence, and clarity
-* Anchoring and coverage of test item set over the stimulus, i.e. that the test items do not address only one section of the stimul
+* Anchoring and coverage of test item set over the stimulus, i.e. that the test items do not address only one section of the stimulus
 * Distribution over the above types of item
 * Level of difficulty and its variation, to cater for the application of the test in varied cultural areas
 * Diversity of set of test items i.e. the distribution of different types of item
 * Naturalness and fluency of language
+
+An overview of commonly used evaluation metrics for natural language generation is provided by <a href="https://aclanthology.org/2024.inlg-main.44/">Schmidtova et al. (2024)</a>.
+
+### Additional information on the evaluation criteria
+
+* Item quality: clarity and natural phrasing; appropriateness of text and questions for 15‑year‑olds; cultural and linguistic suitability.
+* Alignment: match between question and stimulus; correctness of the declared cognitive process and difficulty level.
+* Coverage of cognitive processes, item dimensions and difficulty levels: the full test form should cover the different cognitive processes (search/access, understand/interpret, evaluate/reflect), text dimensions (text sources, literary types, response formats, text length) and difficulty levels elaborated in the PISA reading framework. The exact distribution is less important than showing the ability to generate distinct items on these dimensions.
+
+#### Evaluating AI-generated Reading Items
+
+A detailed description of the evaluation criteria is available <a href="https://github.com/eloquent-lab/eloquent-lab.github.io/blob/pisa-gen-items/task-pisa-generate-items/Evaluation/Evaluating-AI-generated-Reading-Items.md">here</a>.
+
+## Data
+
+### Publicly released PISA items
+Publicly released PISA assessment items are available here: <a href="https://github.com/eloquent-lab/eloquent-lab.github.io/tree/pisa-gen-items/task-pisa-generate-items/data">data</a>
+
+### Example training items
+
+Some example items can be found <a href="Examples/">here</a>
+
+### Evaluation data set
+
+Evaluation stimulus items will be released in late March 2026. 
+
+## Models and Tools
+
+Participants can use any models of their choice.
+
+* Open-weight language models can be downloaded from the <a href="https://huggingface.co/models">Hugging Face Hub</a>.
+* A tool to estimate the hardware resources required to run different LLMs: <a href="https://huggingface.co/spaces/Vokturz/can-it-run-llm">https://huggingface.co/spaces/Vokturz/can-it-run-llm</a>
+
 
 ## Scoring
 The scoring of submissions will be made using expertise from human editors who have worked with putting together previous PISA editions.
@@ -67,7 +93,7 @@ The scoring of submissions will be made using expertise from human editors who h
   
 ## Organisers
 
-* **Université Grenoble Alpes**: Diandra Fabre, Lorraine Goeuriot, Philippe Mulhem, Didier Schwab, Markarit Vartampetian
+* **Université Grenoble Alpes**: Sarah Bouaraba, Diandra Fabre, Lorraine Goeuriot, Philippe Mulhem, Didier Schwab, Markarit Vartampetian
 * **OECD**: Said Ettejjari, Mario Piacentini, Luis Francisco Vargas Madriz, Katherina Thomas
 * **AMD Silo AI**: Jussi Karlgren
 
@@ -80,3 +106,6 @@ Some relevant previous work -- feel free to suggest items for this list e.g. by 
 * A survey on automatic question generation: Nikahat Mulla and Prachi Gharpure. 2023. Automatic question generation: a review of methodologies, datasets, evaluation metrics, and applications. _Progress in Artificial Intelligence_ 12. https://doi.org/10.1007/s13748-023-00295-9
 * A typology of questions (originally for automatic question answering purposes): Wendy Lehnert. 1977. A Conceptual Theory of Question Answering. _Proceedings of IJCAI_
 * A typology of educational goals: Bloom, Benjamin S., Max D. Engelhart, Edward J. Furst, Walker H. Hill, and David R. Krathwohl. Taxonomy of educational objectives: The classification of educational goals. New York: _Longman_, 1956.
+* Nikahat Mulla and Prachi Gharpure. 2023. Automatic question generation: a review of
+methodologies, datasets, evaluation metrics, and applications. Prog Artificial Intelligence 12.
+https://doi.org/10.1007/s13748-023-00295-9
