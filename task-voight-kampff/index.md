@@ -62,7 +62,8 @@ OurTeamName/030.txt
 ...
 OurTeamName/062.txt
 
-[Submit using this form](https://forms.gle/tuypEyDCyoUtnoPS9)
+[Submit using this form](https://forms.gle/sZmqFUjxxfCCT8wF6)
+
 
 # Result scoring
 System outputs are scored by how often they fool a classifier into believing the
