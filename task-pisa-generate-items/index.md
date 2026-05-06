@@ -22,7 +22,7 @@ For this edition, English is the selected language.
 
 ## Submission instructions
 
-Submission over web form will be opened at release of evaluation data set
+Submission over this web form.
 
 ## Types of test item
 The PISA tests test for a set of cognitive processes related to reading. Test items are expected to probe them, separately or jointly. 
