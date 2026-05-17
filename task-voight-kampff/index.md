@@ -58,19 +58,23 @@ experiment.
 The submission should be in a plain zip file of a directory named after the team
 with the generated texts in plain text form:
 
+```
 OurTeamName/030.txt
 ...
 OurTeamName/062.txt
+```
 
-[Submit using this form](https://forms.gle/tuypEyDCyoUtnoPS9)
+[Submit using this form](https://forms.gle/sZmqFUjxxfCCT8wF6)
+
+This will require you to sign in. If you cannot do this for some reason, contact the organisers by e-mail to submit your experiment!
+
+
 
 # Result scoring
 System outputs are scored by how often they fool a classifier into believing the
 output was human-authored.
 
 # Sample (from the 2024 data)
-
-
 
 ```
 {
