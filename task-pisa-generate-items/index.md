@@ -70,7 +70,7 @@ Some example items can be found <a href="Examples/">here</a>
 
 ### Evaluation data set -- these are the ones to use to generate items
 
-Evaluation stimulus items are <a href="data/PISA_released_2018">here</a>. 
+Evaluation stimulus items are <a href="data/PISA_released_2018/items_2018.jsonl">here, in jsonl</a> (<a href="data/PISA_released_2018/items_2018.jsonl">data card</a>. 
 
 
 ## Models and Tools
