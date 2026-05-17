@@ -68,7 +68,7 @@ Publicly released PISA assessment items are available here: <a href="https://git
 
 Some example items can be found <a href="Examples/">here</a>
 
-### Evaluation data set
+### Evaluation data set -- these are the ones to use to generate items
 
 Evaluation stimulus items are <a href="https://github.com/eloquent-lab/eloquent-lab.github.io/tree/pisa-gen-items/task-pisa-generate-items/data/PISA_released_2018">here</a>. 
 
