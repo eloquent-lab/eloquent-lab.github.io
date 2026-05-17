@@ -17,8 +17,7 @@ We provide participants with a ready-to-use question–answer generation prompt 
 For this edition, English is the selected language.
 
 ## Quick Start
-
-## How to participate, in more detail
+Download the evaluation items below, use the vanilla prompt suggested below, and run them through a generative language model. Submit thru the link below.
 
 ## Submission instructions
 
@@ -61,12 +60,14 @@ A detailed description of the evaluation criteria is available <a href="https://
 
 ## Data
 
-### Publicly released PISA items
-Publicly released PISA assessment items are available here: <a href="https://github.com/eloquent-lab/eloquent-lab.github.io/tree/pisa-gen-items/task-pisa-generate-items/data">data</a>
+
 
 ### Example training items
+Some example items can be found [here](https://eloquent-lab.github.io/task-pisa-generate-items/Examples/index.html
+).
 
-Some example items can be found <a href="Examples/">here</a>
+### Publicly released PISA items
+Publicly released PISA assessment items are available [here](https://github.com/eloquent-lab/eloquent-lab.github.io/tree/main/task-pisa-generate-items/data).
 
 ### Evaluation data set -- these are the ones to use to generate items
 
