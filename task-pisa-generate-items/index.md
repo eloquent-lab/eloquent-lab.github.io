@@ -17,7 +17,7 @@ We provide participants with a ready-to-use question–answer generation prompt 
 For this edition, English is the selected language.
 
 ## Quick Start
-Download the evaluation items below, use the vanilla prompt suggested below, and run them through a generative language model. Submit thru the link below.
+Download the evaluation items below, use the [baseline prompt](https://eloquent-lab.github.io/task-pisa-generate-items/prompt_baseline), and run them through a generative language model. Submit thru the link below. Primary experiment variables are (a) which language model you use and (b) how you modify the baseline prompt. 
 
 ## Submission instructions
 
