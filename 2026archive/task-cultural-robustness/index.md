@@ -112,9 +112,10 @@ submission.zip
 
 ### 3. Submit
 
-- **Submission form:** [Submit](https://docs.google.com/forms/d/e/1FAIpQLSfUzhnQ_gm-37i8ZR4QFsfSvBKY59G_8Jvoshwip97-J0iCug/viewform?usp=header)  
-- **Deadline:** May 7, 2026
-- **Write a notebook experiment report with your result** Deadline: May 28, 2026
+- ~~**Submission form:**~~
+<!-- - [Submit](https://docs.google.com/forms/d/e/1FAIpQLSfUzhnQ_gm-37i8ZR4QFsfSvBKY59G_8Jvoshwip97-J0iCug/viewform?usp=header)  -->
+- ~~**Deadline:** May 7, 2026~~
+- ~~**Write a notebook experiment report with your result** Deadline: May 28, 2026~~
 
 ---
 
